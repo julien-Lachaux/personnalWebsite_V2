@@ -1,0 +1,162 @@
+/*
+               ______________________________
+              |==============================|
+              |           COMPONENT          |
+              |==============================|
+              |$                            $|
+              |$            CARD            $|
+              |$                            $|
+              |==============================|
+              |          FILES-INFO          |
+              |==============================|
+              |    author : Julien Lachaux   |
+              |      date : 22-05-2017       |
+              |      type : CSS              |
+              |==============================|
+              |           CONTACT            |
+              |==============================|
+              |   lachauxWebDev@gmail.com    |
+              |______________________________|
+*/
+
+.card {
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  border-radius: 0.3em;
+  padding: 2em;
+  min-width: 10em;
+  max-width: 50em;
+  margin: 0 auto 2em auto;
+  position: relative;
+  text-align: left;
+}
+
+.cards-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.card .tags {
+  font-size: 1.2em;
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0;
+  cursor: default;
+  margin: 1em 0 0 0;
+}
+.card .tags .tag {
+  border-radius: 2em;
+  padding: 0.4em 1em;
+  font-size: 0.6em;
+  margin: 0.5em 0.5em;
+  color: white;
+  background: #588b61;
+  border: 0.1em solid #588b61;
+}
+
+.card .separator {
+  width: 50%;
+  margin: 2em auto;
+  height: 1px;
+  background: #677273;
+}
+
+.active .onLoadCard {
+  opacity: 0;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+.active .onLoadCard.top {
+  transform: translateY(-75vh);
+  animation-name: webContentLoad-top;
+  animation-delay: 0.45s;
+}
+
+@keyframes webContentLoad-top {
+  from {
+    opacity: 0;
+    transform: translateY(-75vh);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.active .onLoadCard.bottom {
+  transform: translateY(75vh);
+  animation-name: webContentLoad-bottom;
+  animation-delay: 0.75s;
+}
+
+@keyframes webContentLoad-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(75vh);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.active .onLoadCard.left {
+  transform: translateX(-100vw);
+  animation-name: webContentLoad-left;
+  animation-delay: 0.20s;
+}
+
+@keyframes webContentLoad-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.active .onLoadCard.right {
+  transform: translateX(100vw);
+  animation-name: webContentLoad-right;
+  animation-delay: 0.20s;
+}
+
+@keyframes webContentLoad-right {
+  from {
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/*
+       __________________________
+      |                          |
+      |         version          |
+      |        responsive        |
+      |__________________________| 
+*/
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 425px) {
+  .card .tag {
+    font-size: 0.55em !important;
+    padding: 0.6em 1em;
+    color: white !important;
+    background: #588b61;
+    border: 0.1em solid #588b61 !important;
+  }
+}

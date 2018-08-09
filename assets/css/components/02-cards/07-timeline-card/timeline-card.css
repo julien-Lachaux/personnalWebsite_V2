@@ -1,0 +1,206 @@
+/*
+               ______________________________
+              |==============================|
+              |           COMPONENT          |
+              |==============================|
+              |$                            $|
+              |$         TIMELINE-CARD      $|
+              |$                            $|
+              |==============================|
+              |          FILES-INFO          |
+              |==============================|
+              |    author : Julien Lachaux   |
+              |      date : 22-05-2017       |
+              |      type : CSS              |
+              |==============================|
+              |           CONTACT            |
+              |==============================|
+              |   lachauxWebDev@gmail.com    |
+              |______________________________|
+*/
+
+.experiences-container {
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: left;
+  margin: 1em auto 0 auto;
+}
+
+.timeline-card {
+  margin: 1em auto;
+  padding: 0 1em 1em 1em;
+  width: 35em;
+  transform: translateX(10em);
+}
+
+.timeline-card::before {
+  content: attr(data-descr);
+  position: absolute;
+  left: -20em;
+  top: 10.5em;
+  color: #fff;
+}
+
+.timeline-card::after {
+  content: '';
+  position: absolute;
+  left: -7em;
+  top: 8.5em;
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  border: 0.5em solid #fff;
+  color: #fff;
+}
+
+.timeline-card .card-title::after {
+  content: '';
+  position: absolute;
+  left: -2em;
+  top: 8.9em;
+  width: 2em;
+  height: 0.5em;
+  background: #fff;
+}
+
+.timeline-card .card-logo {
+  position: absolute;
+  width: 5em;
+  margin: 1em 0 0 1em;
+}
+
+.timeline-card .card-logo img {
+  width: 100%;
+}
+
+.timeline-card .card-title {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin: 0 0 0 6em;
+  padding: 1em 0 0 0;
+  display: block;
+  color: #677273;
+}
+
+.timeline-card .card-subtitle {
+  margin: 0 0 0 7.2em;
+  display: block;
+  color: #677273;
+  font-family: "roboto-light";
+}
+
+.timeline-card .card-date {
+  display: none;
+  padding: 0 0 0 1em;
+  font-size: 0.8em;
+  color: #677273;
+  position: absolute;
+  right: 1.5em;
+  top: 1.5em;
+  font-family: "roboto-light";
+}
+
+.timeline-card .card-descr {
+  margin: 2em 1em 1em 1em;
+  line-height: 2em;
+  font-size: 0.9em;
+  list-style: none;
+  padding: 0;
+  font-family: "roboto-light";
+  color: #677273;
+}
+
+/*
+       __________________________
+      |                          |
+      |         version          |
+      |        responsive        |
+      |__________________________| 
+*/
+@media screen and (max-width: 1200px) {
+  .timeline-card {
+    width: 80%;
+    margin: 1em auto 4em auto;
+    transform: translateX(0);
+  }
+  
+  .timeline-card::before {
+    content: none;
+  }
+  
+  .timeline-card::after {
+    content: none;
+  }
+  
+  .timeline-card .card-title::after {
+    content: none;
+  }
+  
+  .timeline-card .card-title {
+    font-size: 1em;
+    margin: 1em 0 0 8em;
+  }
+  
+  .timeline-card .card-subtitle {
+    font-size: 0.8em;
+    margin: 1em 0 0 10em;
+  }
+  
+  .timeline-card .card-logo {
+    width: 7em;
+    margin: 1em 0 0 0em;
+  }
+  
+  .timeline-card .card-descr {
+    font-size: 0.8em;
+    margin-top: 3em;
+  }
+  
+  .timeline-card .card-date {
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .timeline-card {
+    width: 90%;
+    padding: 2em 5% 1em 5%;
+    margin: 1em 0 2em 0;
+  }
+  
+  .timeline-card::before {
+    content: none;
+  }
+  
+  .timeline-card::after {
+    content: none;
+  }
+  
+  .timeline-card .card-title::after {
+    content: none;
+  }
+  
+  .timeline-card .card-title {
+    font-size: 1em;
+    margin: 1em 0 0 8em;
+  }
+  
+  .timeline-card .card-subtitle {
+    font-size: 0.8em;
+    margin: 1em 0 0 10em;
+  }
+  
+  .timeline-card .card-logo {
+    width: 7em;
+    margin: 1em 0 0 0em;
+  }
+  
+  .timeline-card .card-descr {
+    font-size: 0.8em;
+    margin-top: 3em;
+  }
+  
+  .timeline-card .card-date {
+    display: inline;
+  }
+}

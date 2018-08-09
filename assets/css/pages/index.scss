@@ -1,0 +1,36 @@
+/*
+               ______________________________
+              |==============================|
+              |             PAGE             |
+              |==============================|
+              |$                            $|
+              |$           ACCUEIL          $|
+              |$                            $|
+              |==============================|
+              |          FILES-INFO          |
+              |==============================|
+              |    author : Julien Lachaux   |
+              |      date : 22-05-2017       |
+              |      type : CSS              |
+              |==============================|
+              |           CONTACT            |
+              |==============================|
+              |   lachauxWebDev@gmail.com    |
+              |______________________________|
+*/
+
+
+
+#bienvenue-panel { background-image: url(/public/assets/img/accueil/background.jpg) }
+#favori-panel { background-image: url(/public/assets/img/accueil/background_favori.png) }
+
+.separator { background: #464646 !important }
+
+.card-title {
+  padding-bottom: 1em;
+}
+
+#presentation {
+  top: 2em;
+  margin: 0em auto 4em auto;
+}

@@ -1,0 +1,202 @@
+/*
+               ______________________________
+              |==============================|
+              |            DEFAULT           |
+              |==============================|
+              |$                            $|
+              |$         GENERAL CSS        $|
+              |$                            $|
+              |==============================|
+              |          FILES-INFO          |
+              |==============================|
+              |    author : Julien Lachaux   |
+              |      date : 22-05-2017       |
+              |      type : CSS              |
+              |==============================|
+              |           CONTACT            |
+              |==============================|
+              |   lachauxWebDev@gmail.com    |
+              |______________________________|
+*/
+
+
+  
+  /*
+         __________________________
+        |                          |
+        |         GENERAL          |
+        |__________________________| 
+  */
+  body {
+    padding: 0px;
+    margin: 0px;
+    font-family: "roboto";
+    overflow: hidden;
+    background: #4f5c6a;
+  }
+  
+  .mainFlux {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+  }
+  
+  .webFlux {
+    position: relative;
+    width: calc(100% - 15em);
+    height: calc(100% - 3em);
+    top: 3em;
+  }
+  
+  .webContent {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow-x: hidden;
+    text-align: center;
+    overflow-y: scroll;
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    background-attachment:scroll;
+    transform-origin: left;
+    transform-style: flat;
+    transition: all 0.5s ease-in-out;
+    z-index: 50;
+  }
+  
+  .active {z-index: 100 !important;}
+  .inactive {z-index: 80 !important;}
+  
+  .webContent::-webkit-scrollbar {
+    width: 0.5em;
+    background: #636c74;
+  }
+  
+  .webContent::-webkit-scrollbar-thumb {	
+    background: #8a98a3;
+  }
+  
+  .webContent::-webkit-scrollbar-thumb:hover {	
+    background: #aebdc9;
+  }
+  
+  .webContent::-webkit-scrollbar-thumb:active {	
+    background: #99b9d3;
+  }
+  
+  .singleFlux {
+    position: absolute;
+    top: 3em;
+    height: calc(100vh - 3em);
+    width: 100%;
+  }
+  
+  .singleContent {
+    height: 100%;
+    width: 100%;
+    padding: 2em 0 0 0;
+    overflow-y: scroll;
+    background-image: url("/public/assets/img/cv/backgrounds/pattern_contact.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+  
+  .singleContent::-webkit-scrollbar {
+    width: 0.5em;
+    background: #636c74;
+  }
+  
+  .singleContent::-webkit-scrollbar-thumb {	
+    background: #8a98a3;
+  }
+  
+  .singleContent::-webkit-scrollbar-thumb:hover {	
+    background: #aebdc9;
+  }
+  
+  .singleContent::-webkit-scrollbar-thumb:active {	
+    background: #99b9d3;
+  }
+  
+  .hidden { visibility: hidden !important; }
+  
+  .desktop-hidden { display: none !important; }
+  
+  .mobile-hidden { display: block !important; }
+  
+  /*
+         __________________________
+        |                          |
+        |          PopUp           |
+        |__________________________| 
+  */
+  
+  /* default */
+  .popUp-wrap {
+    position: absolute;
+    width: calc(100% - 15em);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+  
+  @keyframes popOut {
+    from{
+      opacity: 1
+    }
+    to{
+      opacity: 0;
+      display: none;
+    }
+  }
+  
+  .popUp {
+    z-index: 1002;
+    position: absolute;
+    text-align: center;
+    line-height: 3em;
+    top: 5em;
+    padding: 1em 1.5em;
+    color: #b5c8ca;
+    background: #555d5e;
+    border-radius: 0.3em;
+    animation-name: popOut;
+    animation-delay: 2s;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+  
+  /* mailDonne */
+  
+  
+  
+  /*
+         __________________________
+        |                          |
+        |         version          |
+        |        responsive        |
+        |__________________________| 
+  */
+  @media screen and (max-width: 1024px) {
+    
+    .webFlux {
+      width: 100%;
+    }
+    
+    .webContent {
+      height: calc(100vh - 7em) !important;
+      padding: 2em 0;
+    }
+  
+    .mobile-hidden { display: none !important; }
+    
+    .desktop-hidden {
+      display: flex !important;
+    }
+  }

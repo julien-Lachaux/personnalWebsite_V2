@@ -1,0 +1,96 @@
+/*
+               ______________________________
+              |==============================|
+              |           COMPONENT          |
+              |==============================|
+              |$                            $|
+              |$          TEXT-CARD         $|
+              |$                            $|
+              |==============================|
+              |          FILES-INFO          |
+              |==============================|
+              |    author : Julien Lachaux   |
+              |      date : 22-05-2017       |
+              |      type : CSS              |
+              |==============================|
+              |           CONTACT            |
+              |==============================|
+              |   lachauxWebDev@gmail.com    |
+              |______________________________|
+*/
+
+.text-card {
+  margin: 2em auto 0 auto;
+}
+
+.text-card .card-logo {
+  position: relative;
+  width: 8em;
+  height: 8em;
+  border-radius: 50%;
+  margin: 0 1em 2em 0;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  left: 1em;
+  background: #b5c8ca;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.text-card .card-logo img {
+  width: 8em;
+  height: 8em;
+  bottom: 0;
+}
+
+.text-card .card-title {
+  font-size: 1.25em;
+  color: #677273;
+  font-weight: 700;
+  display: inline-block;
+  position: absolute;
+  top: 4.5em;
+  left: 10em;
+}
+
+.text-card .card-subtitle {
+  display: block;
+  color: #677273;
+  font-size: 1em;
+}
+
+.text-card .card-descr {
+  font-family: "roboto-light";
+  font-size: 0.9em;
+  text-align: justify;
+  color: #677273;
+}
+
+/*
+       __________________________
+      |                          |
+      |         version          |
+      |        responsive        |
+      |__________________________| 
+*/
+@media screen and (max-width: 1024px) {
+  .text-card .card-logo, .text-card .card-logo img {
+    height: 6em;
+    width: 6em;
+  }
+  
+  .text-card .card-title {
+    top: 4em;
+    left: 8em;
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .text-card {
+    width: 90%;
+    padding: 2em 5%;
+  }
+}

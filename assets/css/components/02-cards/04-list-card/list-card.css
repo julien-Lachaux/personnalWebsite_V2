@@ -1,0 +1,326 @@
+/*
+               ______________________________
+              |==============================|
+              |           COMPONENT          |
+              |==============================|
+              |$                            $|
+              |$          LIST-CARD         $|
+              |$                            $|
+              |==============================|
+              |          FILES-INFO          |
+              |==============================|
+              |    author : Julien Lachaux   |
+              |      date : 22-05-2017       |
+              |      type : CSS              |
+              |==============================|
+              |           CONTACT            |
+              |==============================|
+              |   lachauxWebDev@gmail.com    |
+              |______________________________|
+*/
+
+.list-card {
+  display: none;
+}
+
+.cards {
+  width: 100%;
+  background: #fff;
+  height: 40em;
+  border-radius: 0 1em 1em 1em;
+  overflow: hidden;
+}
+
+.selectors {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+.selector {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 3em;
+  margin: 0 1em 0 0;
+  background: rgba(0, 0, 0, 0.27);
+  color: white;
+  border-radius: 1em 1em 0 0;
+  transition: all 300ms ease-in-out;
+}
+
+.selector.active-selector {
+  background: #fff !important;
+  color: black;
+}
+
+.selector:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.27);
+}
+
+.list-card-selector .card-title {
+  margin: 0;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 0 0 50% 50%;
+  transition: all 300ms ease-in-out;
+  font-size: 1.25em;
+  font-weight: 700;
+  text-align: center;
+  display: block;
+  color: white;
+  padding: 1em 0 0.2em 0;
+}
+
+.list-card .card-list {
+  color: #677273;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.1em;
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  height: 18em;
+}
+
+.list-card .card-list .list-item {
+  padding: 0 1em;
+  font-size: 0.8em;
+  margin: 0;
+  width: 20%;
+}
+
+.list-card .card-list .list-item .title-logo {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 13em;
+  position: relative;
+  padding: 4em 0 0 0;
+  margin: 0 0 4em 0;
+  background: #fff;
+  z-index: 5;
+  border-bottom: 2px solid #b5c8ca;
+}
+
+.list-card .card-list .list-item .title-logo img {
+  width: auto;
+  height: 10em;
+  padding: 0 0 3em 0;
+}
+
+.list-card .card-list .list-item .title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.5em;
+  font-size: 1.5em;
+  margin: 0 0 1em 0;
+}
+
+.list-card .card-list .list-item .descr {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 2em 0;
+  font-family: 'roboto-light';
+  z-index: 10;
+  display: block;
+  line-height: 1.5em;
+}
+
+.list-card .card-list .list-item .descr::before {
+  display: block;
+  text-align: center;
+  font-size: 1.25em;
+  color: #869596;
+  font-family: 'roboto';
+  margin: 0 0 1em 0;
+}
+
+.list-card .card-list .list-item .descr.framework::before { content: 'Frameworks :'; }
+.list-card .card-list .list-item .descr.library::before { content: 'Librairies :'; }
+.list-card .card-list .list-item .descr.preprocessor::before { content: 'Préprocesseurs :'; }
+.list-card .card-list .list-item .descr.norme::before { content: 'Normes :'; }
+.list-card .card-list .list-item .descr.modules::before { content: 'Modules :'; }
+.list-card .card-list .list-item .descr.language::before { content: 'Langages :'; }
+.list-card .card-list .list-item .descr.bdd::before { content: 'Base de données :'; }
+.list-card .card-list .list-item .descr.api::before { content: 'API :'; }
+.list-card .card-list .list-item .descr.method::before { content: 'Méthodologie :'; }
+.list-card .card-list .list-item .descr.design::before { content: 'Design :'; }
+.list-card .card-list .list-item .descr.communication::before { content: 'Communication :'; }
+.list-card .card-list .list-item .descr.os::before { content: 'Système d\'exploication :'; }
+.list-card .card-list .list-item .descr.mobile::before { content: 'Application mobile :'; }
+.list-card .card-list .list-item .descr.outils::before { content: 'Outils :'; }
+.list-card .card-list .list-item .descr.commande::before { content: 'Lignes de commande :'; }
+.list-card .card-list .list-item .descr.echelle::before { content: 'Travail en équipe :'; }
+.list-card .card-list .list-item .descr.mentora::before { content: 'Prise en charge débutant :'; }
+.list-card .card-list .list-item .descr.langue::before { content: 'Langues :'; }
+
+/* le system d'onglet */
+
+.list-cards-container {
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 90%;
+  margin: 2em auto 0 auto;
+  border-radius: 1em;
+}
+
+@keyframes active-list {
+  from {
+    transform: translateY(-500px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+.list-card.active-list {
+  display: block;
+}
+
+.list-card.active-list .list-item .descr{
+  transform: translateY(-500px);
+  animation-name: active-list;
+  animation-delay: 1s;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes active-logo {
+  from {
+    clip-path: inset(0px 0px 200px 0px);
+    transform: translateY(200px);
+  }
+  to {
+    clip-path: inset(0 0);
+    transform: translateY(0em);
+  }
+}
+
+.list-card.active-list .list-item .title-logo img{
+  animation-name: active-logo;
+  animation-delay: 500ms;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  clip-path: inset(0px 0px 200px 0px);
+  transform: translateY(200px);
+}
+
+/*
+       __________________________
+      |                          |
+      |         version          |
+      |        responsive        |
+      |__________________________| 
+*/
+@media screen and (max-width: 1024px) {
+  
+  .cards {
+    border-radius: 1em;
+  }
+  
+  .selectors {
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    position: absolute;
+    z-index: 1001;
+    width: 3em;
+    right: 0;
+    top: 10px;
+  }
+  
+  .selector {
+    width: 6em;
+    z-index: 1002;
+    transform-origin: center;
+    transform: rotateZ(90deg) translateY(-1.5em);
+    margin: 3em 0;
+    border-radius: 0 0 1em 1em;
+    position: relative;
+  }
+  
+  .selector.active-selector {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background: #fff !important;
+    color: black;
+  }
+  
+  .card-list {
+    height: auto !important;
+  }
+  
+  .list-card {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  .list-cards-container {
+    width: 100%;
+  }
+  
+  .cards {
+    height: auto;
+  }
+  
+  .list-card .card-title {
+    font-size: 1.5em;
+  }
+  
+  .list-card .card-list .list-item {
+    font-size: 1.25em;
+  }
+  
+  .list-card .card-list .list-item .title-logo {
+    width: 80%;
+    margin: 0 auto 2em auto;
+    padding: 0;
+  }
+  .list-card .card-list .list-item .title-logo img{
+    width: auto;
+    height: 5em;
+    padding: 0;
+  }
+  
+  .list-card.active-list .list-item .descr{
+    transform: translateY(0px);
+    animation-name: none;
+  }
+
+  .list-card.active-list .list-item .title-logo img{
+    animation-name: none;
+    clip-path: inset(0px 0px 0px 0px);
+    transform: none;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  
+  .list-card {
+    width: 100% !important;
+    margin: 1em 0 !important;
+  }
+  
+  .list-card .card-title {
+    font-size: 1.5em;
+  }
+
+  .list-card .card-list .list-item {
+    width: 100%;
+  }
+}

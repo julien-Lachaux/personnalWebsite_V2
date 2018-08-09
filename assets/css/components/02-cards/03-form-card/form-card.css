@@ -1,0 +1,139 @@
+/*
+               ______________________________
+              |==============================|
+              |           COMPONENT          |
+              |==============================|
+              |$                            $|
+              |$          FORM-CARD         $|
+              |$                            $|
+              |==============================|
+              |          FILES-INFO          |
+              |==============================|
+              |    author : Julien Lachaux   |
+              |      date : 22-05-2017       |
+              |      type : CSS              |
+              |==============================|
+              |           CONTACT            |
+              |==============================|
+              |   lachauxWebDev@gmail.com    |
+              |______________________________|
+*/
+
+.form-card {
+  padding: 2em;
+  width: 23.5em;
+  height: 32em;
+  margin: 0 auto;
+}
+
+.form-card .card-title {
+  display: block;
+  color: #677273;
+  font-weight: 700;
+}
+
+.form-card input, .form-card textarea {
+  display: block;
+  margin: 2em 0;
+  width: 29.5em;
+  border: none;
+}
+
+.form-card input::-webkit-input-placeholder,
+.form-card textarea::-webkit-input-placeholder {
+  font: inherit;
+  color: #677273;
+  -webkit-transition: font-size 0.3s ease-in-out, visibility 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: font-size 0.3s ease-in-out, visibility 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out, visibility 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+.form-card input,
+.form-card textarea {
+  font: inherit;
+  font-size: 0.8em;
+  display: block;
+  border: none;
+  padding: 20px 0 10px;
+  border-bottom: solid 2px #91cfbd !important;
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 98%, #91cfbd 2%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 98%, #91cfbd 2%);
+  background-position: -400px 0;
+  background-size: 400px 100%;
+  background-repeat: no-repeat;
+  -webkit-transition: background 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  transition: background 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  resize: none;
+  overflow: hidden;
+}
+
+.form-card textarea {
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 99.5%, #91cfbd 0.5%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 99.5%, #91cfbd 0.5%);
+  background-position: -400px 0;
+  background-size: 400px 100%;
+  background-repeat: no-repeat;
+  -webkit-transition: background 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  transition: background 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+}
+.form-card input:focus::-webkit-input-placeholder,
+.form-card textarea:focus::-webkit-input-placeholder {
+  color: #91cfbd;
+}
+.form-card input:focus, input:valid,
+.form-card textarea:focus,
+.form-card textarea:valid {
+  box-shadow: none;
+  outline: none;
+  background-position: 0 0;
+}
+.form-card input:focus::-webkit-input-placeholder, .form-card input:valid::-webkit-input-placeholder,
+.form-card textarea:focus::-webkit-input-placeholder,
+.form-card textarea:valid::-webkit-input-placeholder {
+  font-size: 0.8em;
+  -webkit-transform: translateY(-20px);
+  transform: translateY(-20px);
+  visibility: visible !important;
+  opacity: 1;
+}
+
+.form-card input.inputName {
+  display: inline-block;
+  width: 14.53em;
+  margin: 0.5em 0;
+}
+
+.form-card .submit {
+  width: 8em;
+  border-radius: 1em;
+  padding: 1em;
+  float: right;
+  transform: translateY(-1em);
+  background: #91cfbd;
+  color: white;
+}
+
+/*
+       __________________________
+      |                          |
+      |         version          |
+      |        responsive        |
+      |__________________________| 
+*/
+@media screen and (max-width: 1024px) {
+  .form-card {
+    margin: 0 auto;
+    width: 90%;
+    overflow-y: auto;
+    padding: 1em 5%;
+    height: auto;
+  }
+  .form-card input, .form-card textarea {
+    width: 100%;
+  }
+  
+  .form-card input.inputName {
+    width: 100%;
+  }
+}
