@@ -58,8 +58,8 @@ fermeture.addEventListener('click', function() {
 // on ajoute le rechargement de la page avec la section passez en url
 var hash = window.location.hash;
 if(hash == '') {
-  window.location.hash = '#bienvenue';
-  hash = '#bienvenue';
+  window.location.hash = '#welcome';
+  hash = '#welcome';
 }
 var saltyHash = (hash + '-panel');
 //  declarations des variables

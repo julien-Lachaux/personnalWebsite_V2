@@ -19,22 +19,22 @@ class NavRepository extends ServiceEntityRepository
         parent::__construct($registry, Nav::class);
     }
 
-//    /**
-//     * @return Nav[] Returns an array of Nav objects
-//     */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Nav[] Returns an array of Nav objects
+     */
+    public function getDisplayed($section)
     {
+        $section = $section === 'index' ? 1 : $section;
         return $this->createQueryBuilder('n')
-            ->andWhere('n.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('n.section_id = :val')
+            ->andWhere('n.displayed = 1')
+            ->setParameter('val', $section)
             ->orderBy('n.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?Nav

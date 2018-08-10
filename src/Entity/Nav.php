@@ -28,6 +28,11 @@ class Nav
     private $display_text;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $link;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $icon_source;
@@ -36,6 +41,11 @@ class Nav
      * @ORM\Column(type="string", length=255)
      */
     private $icon_type;
+
+    /**
+     * @ORM\Column(type="string", length=6)
+     */
+    private $icon_color;
 
     /**
      * @ORM\Column(type="integer")
@@ -55,6 +65,30 @@ class Nav
     public function setSectionId(?int $section_id): self
     {
         $this->section_id = $section_id;
+
+        return $this;
+    }
+
+    public function getLink(): ?string
+    {
+        return $this->link;
+    }
+
+    public function setLink(string $link): self
+    {
+        $this->link = $link;
+
+        return $this;
+    }
+
+    public function getIconColor(): ?string
+    {
+        return $this->icon_color;
+    }
+
+    public function setIconColor(string $icon_color): self
+    {
+        $this->icon_color = $icon_color;
 
         return $this;
     }

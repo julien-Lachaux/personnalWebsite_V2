@@ -11,9 +11,9 @@
             <li class="mainNav-link mainNavOut desktop-hidden">
               <i class="material-icons desktop-hidden">menu</i>
             </li>
-            <li class="mainNav-link"><a href="../#bienvenue">Accueil</a></li>
-            <li class="mainNav-link"><a href="../public/index.php?p=cv#profile">CV</a></li>
-            <li class="mainNav-link"><a href="../public/index.php?p=projets#infographie">Réalisations</a></li>
+            {% for section in sections %}
+              <li class="mainNav-link {% if currentPage == section.link %}current{% endif %}"><a href="{{ section.link }}">{{ section.displayName }}</a></li>
+            {% endfor %}
 
             <div class="sideNav-contact desktop-hidden">
               <div class="separator"></div>

@@ -11,10 +11,12 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block navs %}{% endblock %}
+        <s class="mainFlux">
+            {% block navs %}{% endblock %}
 
-        <div class="webFlux">
-            {% block body %}{% endblock %}
+            <section class="webFlux">
+                {% block body %}{% endblock %}
+            </section>
         </div>
 
         {% block javascripts %}{% endblock %}

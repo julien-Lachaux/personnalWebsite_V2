@@ -6,6 +6,7 @@
 //
 @import "imports/fonts.scss";
 @import "imports/variables.scss";
+@import "imports/functions.scss";
 @import "imports/mixins.scss";
 
 //
@@ -42,10 +43,10 @@
   }
   
   .webFlux {
-    position: relative;
+    height: calc(100% - #{$page-top});
     width: $page-width;
-    height: $page-height;
-    top: 3em;
+    position: relative;
+    top: $page-top;
   }
 
   .active {z-index: $lvl-10 !important;}
@@ -85,7 +86,7 @@
   .singleFlux {
     position: absolute;
     top: $page-top;
-    height: $page-true-height;
+    height: calc(100vh - #{$page-top});
     width: 100%;
   }
   
