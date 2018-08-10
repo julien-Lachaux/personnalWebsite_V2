@@ -17,11 +17,17 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if you JavaScript imports CSS.
      */
+    //
+    // ─────────────────────────────────────────────────────────── LES SCRIPTS JS ─────
+    //
     .addEntry('js/app', './assets/js/app.js')
+    .addEntry('js/app', './assets/js/components/navs.js')
+    .addEntry('js/app', './assets/js/components/cards.js')
+
+    //
+    // ──────────────────────────────────────────────────────── LES FICHIERS SASS ─────
+    //
     .addEntry('css/app', './assets/css/app.scss')
-    .addEntry('css/index', './assets/css/pages/index.scss')
-    //.addEntry('page1', './assets/js/page1.js')
-    //.addEntry('page2', './assets/js/page2.js')
 
     /*
      * FEATURE CONFIG

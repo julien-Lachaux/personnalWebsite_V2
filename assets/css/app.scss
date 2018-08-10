@@ -1,38 +1,37 @@
-/*
-               ______________________________
-              |==============================|
-              |            DEFAULT           |
-              |==============================|
-              |$                            $|
-              |$         GENERAL CSS        $|
-              |$                            $|
-              |==============================|
-              |          FILES-INFO          |
-              |==============================|
-              |    author : Julien Lachaux   |
-              |      date : 22-05-2017       |
-              |      type : CSS              |
-              |==============================|
-              |           CONTACT            |
-              |==============================|
-              |   lachauxWebDev@gmail.com    |
-              |______________________________|
-*/
+//
+// ─── App.scss ───────────────────────────────────────────────────────────────────────
+//
+//
+// ───────────────────────────────────────────────────────────────────── Imports ─────
+//
+@import "imports/fonts.scss";
+@import "imports/variables.scss";
+@import "imports/mixins.scss";
 
+//
+// ────────────────────────────────────────────────────────────────── Components ─────
+//
+@import "components/navs.scss";
+@import "components/cards.scss";
 
-  
-  /*
-         __________________________
-        |                          |
-        |         GENERAL          |
-        |__________________________| 
-  */
+//
+// ───────────────────────────────────────────────────────────────────── pages ───────
+//
+@import "pages/index.scss";
+@import "pages/cv.scss";
+@import "pages/portfolio.scss";
+@import "pages/projets.scss";
+@import "pages/demo.scss";
+
+//
+// ───────────────────────────────────────────────────────────────────── Globals ─────
+//
   body {
     padding: 0px;
     margin: 0px;
     font-family: "roboto";
     overflow: hidden;
-    background: #4f5c6a;
+    background: $body-background_color;
   }
   
   .mainFlux {
@@ -44,10 +43,13 @@
   
   .webFlux {
     position: relative;
-    width: calc(100% - 15em);
-    height: calc(100% - 3em);
+    width: $page-width;
+    height: $page-height;
     top: 3em;
   }
+
+  .active {z-index: $lvl-10 !important;}
+  .inactive {z-index: $lvl-8 !important;}
   
   .webContent {
     display: block;
@@ -65,33 +67,25 @@
     transform-origin: left;
     transform-style: flat;
     transition: all 0.5s ease-in-out;
-    z-index: 50;
+    z-index: $lvl-5;
+    ::-webkit-scrollbar {
+      width: $scrollbar-width;
+      background: $scrollbar-background_color;
+    }
+    ::-webkit-scrollbar-thumb {	
+      background: $scrollbar_thumb-background_color;
+    }
+    ::-webkit-scrollbar-thumb:hover {	
+      background: $scrollbar_thumb-hover-background_color;
+    }
+    ::-webkit-scrollbar-thumb:active {	
+      background: $scrollbar_thumb-active-background_color;
+    }
   }
-  
-  .active {z-index: 100 !important;}
-  .inactive {z-index: 80 !important;}
-  
-  .webContent::-webkit-scrollbar {
-    width: 0.5em;
-    background: #636c74;
-  }
-  
-  .webContent::-webkit-scrollbar-thumb {	
-    background: #8a98a3;
-  }
-  
-  .webContent::-webkit-scrollbar-thumb:hover {	
-    background: #aebdc9;
-  }
-  
-  .webContent::-webkit-scrollbar-thumb:active {	
-    background: #99b9d3;
-  }
-  
   .singleFlux {
     position: absolute;
-    top: 3em;
-    height: calc(100vh - 3em);
+    top: $page-top;
+    height: $page-true-height;
     width: 100%;
   }
   
@@ -105,42 +99,35 @@
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    ::-webkit-scrollbar {
+      width: $scrollbar-width;
+      background: $scrollbar-background_color;
+    }
+    ::-webkit-scrollbar-thumb {	
+      background: $scrollbar_thumb-background_color;
+    }
+    ::-webkit-scrollbar-thumb:hover {	
+      background: $scrollbar_thumb-hover-background_color;
+    }
+    ::-webkit-scrollbar-thumb:active {	
+      background: $scrollbar_thumb-active-background_color;
+    }
   }
-  
-  .singleContent::-webkit-scrollbar {
-    width: 0.5em;
-    background: #636c74;
-  }
-  
-  .singleContent::-webkit-scrollbar-thumb {	
-    background: #8a98a3;
-  }
-  
-  .singleContent::-webkit-scrollbar-thumb:hover {	
-    background: #aebdc9;
-  }
-  
-  .singleContent::-webkit-scrollbar-thumb:active {	
-    background: #99b9d3;
-  }
-  
+
   .hidden { visibility: hidden !important; }
   
   .desktop-hidden { display: none !important; }
   
   .mobile-hidden { display: block !important; }
   
-  /*
-         __________________________
-        |                          |
-        |          PopUp           |
-        |__________________________| 
-  */
+//
+// ───────────────────────────────────────────────────────────────────── PopUp ─────
+//
   
   /* default */
   .popUp-wrap {
     position: absolute;
-    width: calc(100% - 15em);
+    width: $page-width;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -157,32 +144,24 @@
   }
   
   .popUp {
-    z-index: 1002;
+    z-index: $lvl-alert;
     position: absolute;
     text-align: center;
     line-height: 3em;
-    top: 5em;
+    top: $popUp-top;
     padding: 1em 1.5em;
-    color: #b5c8ca;
-    background: #555d5e;
+    color: $popUp-color;
+    background: $popUp-background_color;
     border-radius: 0.3em;
     animation-name: popOut;
     animation-delay: 2s;
     animation-duration: 2s;
     animation-fill-mode: forwards;
   }
-  
-  /* mailDonne */
-  
-  
-  
-  /*
-         __________________________
-        |                          |
-        |         version          |
-        |        responsive        |
-        |__________________________| 
-  */
+
+//
+// ───────────────────────────────────────────────────────────────────── Responsive ─────
+//
   @media screen and (max-width: 1024px) {
     
     .webFlux {

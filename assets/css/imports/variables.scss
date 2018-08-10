@@ -1,0 +1,57 @@
+//
+// ─── Variables ───────────────────────────────────────────────────────────────────────
+//
+//
+// ───────────────────────────────────────────────────────────────────── Structur ──────
+//
+// body
+$body-background_color: #4f5c6a;
+
+// page structure
+$page-top: 3em;
+$page-width: calc(100% - 15em);
+$page-height: calc(100% - $page-top);
+$page-true-height: calc(100vh - $page-top);
+
+//
+// ───────────────────────────────────────────────────────────────────── Z-index ───────
+//
+// Rapide
+$lvl-min: -10;
+$lvl-max: 500;
+$lvl-alert: 1000;
+
+// Précis
+$lvl-1: 10;
+$lvl-2: 20;
+$lvl-3: 30;
+$lvl-4: 40;
+$lvl-5: 50;
+$lvl-6: 60;
+$lvl-7: 70;
+$lvl-8: 80;
+$lvl-9: 90;
+$lvl-9: 90;
+$lvl-10: 100;
+
+//
+// ───────────────────────────────────────────────────────────────────── Scrollbar -────
+//
+// size & position
+$scrollbar-width: 0.5em;
+
+// color
+$scrollbar-background_color: #636c74;
+$scrollbar_thumb-background_color: #8a98a3;
+$scrollbar_thumb-hover-background_color: #aebdc9;
+$scrollbar_thumb-active-background_color: #99b9d3;
+
+//
+// ───────────────────────────────────────────────────────────────────── Pop-Up -────
+//
+// size & position
+$popUp-top: 5em;
+
+// color
+$popUp-color: #b5c8ca;
+$popUp-background_color: #555d5e;
