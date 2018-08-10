@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
- * @ORM\Table(name="Skills")
+ * @ORM\Table(name="skills")
  * @ORM\Entity(repositoryClass="App\Repository\SkillRepository")
  * @UniqueEntity(fields="name", message="Name is already taken.")
  */

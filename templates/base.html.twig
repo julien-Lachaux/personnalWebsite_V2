@@ -4,12 +4,22 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="stylesheet" href="{{ asset('build/css/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('build/css/index.css') }}">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block navs %}{% endblock %}
+
+        <div class="webFlux">
+            {% block body %}{% endblock %}
+        </div>
+
         {% block javascripts %}{% endblock %}
         <script src="{{ asset('build/js/app.js') }}"></script>
+        <script src="{{ asset('build/js/components/navs.js') }}"></script>
+        <script src="{{ asset('build/js/components/cards.js') }}"></script>
     </body>
 </html>

@@ -21,8 +21,8 @@ Encore
     // ─────────────────────────────────────────────────────────── LES SCRIPTS JS ─────
     //
     .addEntry('js/app', './assets/js/app.js')
-    .addEntry('js/app', './assets/js/components/navs.js')
-    .addEntry('js/app', './assets/js/components/cards.js')
+    .addEntry('js/components/navs', './assets/js/components/navs.js')
+    .addEntry('js/components/cards', './assets/js/components/cards.js')
 
     //
     // ──────────────────────────────────────────────────────── LES FICHIERS SASS ─────

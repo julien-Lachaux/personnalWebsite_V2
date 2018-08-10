@@ -24,7 +24,7 @@ var ouverture = document.querySelector('.mainNavIn');
 
 ouverture.addEventListener('click', function() {
   var topMenu = document.querySelector('.mainNav');  
-  topMenu.classList.toggle('visible-top');  
+  topMenu.classList.toggle('visible-top');
 });
 
 /* CLOSE */
