@@ -61,10 +61,7 @@
     overflow-x: hidden;
     text-align: center;
     overflow-y: scroll;
-    background-size: cover;
-    background-position: center;
-    background-repeat: repeat-y;
-    background-attachment:scroll;
+    background-color: $body-background_color;
     transform-origin: left;
     transform-style: flat;
     transition: all 0.5s ease-in-out;
