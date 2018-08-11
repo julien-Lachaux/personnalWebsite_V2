@@ -8,8 +8,8 @@
 {% block body %}
   <article class="webContent" id="welcome-panel">
     <div class="card title-card" id="presentation">
-      <h1 class="card-title">Bienvenue Sur le site officiel de Julien Lachaux</h1>
-      <h2 class="card-subtitle">Développeur web full-stack</h2>
+      <h1 class="card-title">Bienvenue Sur le site officiel de {{ profile.firstname }}{{ profile.lastname }}</h1>
+      <h2 class="card-subtitle">{{ profile.title }}</h2>
     </div>
     <div class="card title-card">
       <span class="card-descr"><b>Disponible immédiatement :</b> mission freelance<br><br><b>Recherche pour Septembre :</b> CDD ou CDI</span>
