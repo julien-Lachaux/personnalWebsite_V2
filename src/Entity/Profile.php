@@ -11,20 +11,15 @@ class Profile
 {
     /**
      * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
-     */
-    private $id;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
-    private $firstName;
+    private $firstname;
 
     /**
+     * @ORM\Id()
      * @ORM\Column(type="string", length=255)
      */
-    private $lastName;
+    private $lastname;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -54,38 +49,38 @@ class Profile
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $freelancePage;
+    private $freelance_website;
 
     /**
-     * @ORM\Column(type="string)
+     * @ORM\Column(type="string", length=255)
+     */
+    private $picture;
+
+    /**
+     * @ORM\Column(type="string")
      */
     private $description;
 
-    public function getId(): ?int
+    public function getFirstname(): ?string
     {
-        return $this->id;
+        return $this->firstname;
     }
 
-    public function getFirstName(): ?string
+    public function setFirstname(string $firstname): self
     {
-        return $this->firstName;
-    }
-
-    public function setFirstName(string $firstName): self
-    {
-        $this->firstName = $firstName;
+        $this->firstname = $firstname;
 
         return $this;
     }
 
-    public function getLastName(): ?string
+    public function getLastname(): ?string
     {
-        return $this->lastName;
+        return $this->lastname;
     }
 
-    public function setLastName(string $lastName): self
+    public function setLastname(string $lastname): self
     {
-        $this->lastName = $lastName;
+        $this->lastname = $lastname;
 
         return $this;
     }
@@ -150,14 +145,26 @@ class Profile
         return $this;
     }
 
-    public function getFreelancePage(): ?string
+    public function getFreelanceWebsite(): ?string
     {
-        return $this->freelancePage;
+        return $this->freelance_website;
     }
 
-    public function setFreelancePage(string $freelancePage): self
+    public function setFreelanceWebsite(string $freelanceWebsite): self
     {
-        $this->freelancePage = $freelancePage;
+        $this->freelance_website = $freelance_website;
+
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(string $picture): self
+    {
+        $this->picture = $picture;
 
         return $this;
     }

@@ -14,15 +14,14 @@
           <div class="separator"></div>
           <ul class="com-list">
             <li><a href="../public/index.php?p=contact"><i class="material-icons">contacts</i>Formulaire de contact (24/7)</a></li>
-            <li><a href="javascript:copy('lachauxWebDev@gmail.com')"><i class="material-icons">contact_mail</i>lachauxWebDev@gmail.com</a></li>
-            <li><a href="javascript:copy('06.66.81.40.59')"><i class="material-icons">contact_phone</i>06.66.81.40.59</a></li>
+            <li><a href="javascript:copy('lachauxWebDev@gmail.com')"><i class="material-icons">contact_mail</i>{{ profile.email }}</a></li>
+            <li><a href="javascript:copy('06.66.81.40.59')"><i class="material-icons">contact_phone</i>{{ profile.tel }}</a></li>
           </ul>
           <div class="separator"></div>
           <div class="social-icons">
-            <a href="https://www.linkedin.com/in/julien-lachaux-386484b8/" target="_blank" class="social-icon" id="linkedin"><img alt="logo de linkedin" src="assets/img/cv/contact/linkedin.png"></a>
-            <a href="https://www.hopwork.ch/profile/julienlachaux" target="_blank" class="social-icon" id="hopwork"><img alt="logo de hopwork" src="assets/img/cv/contact/hopwork.png"></a>
-            <a href="https://cremedelacreme.io/julien.lachaux" target="_blank" class="social-icon" id="creme"><img alt="logo de creme de la creme" src="assets/img/cv/contact/logo_cremedelacreme.png"></a>
-            <a href="https://github.com/julien-Lachaux" target="_blank" class="social-icon" id="git-hub"><img alt="logo de git-hub" src="assets/img/cv/contact/github.png"></a>
+            <a href="{{ profile.linkedin }}" target="_blank" class="social-icon" id="linkedin"><img alt="logo de linkedin" src="TO_DO"></a>
+            <a href="{{ profile.freelanceWebsite }}" target="_blank" class="social-icon" id="hopwork"><img alt="logo de hopwork" src="TO_DO"></a>
+            <a href="{{ profile.github }}" target="_blank" class="social-icon" id="git-hub"><img alt="logo de git-hub" src="TO_DO"></a>
           </div>
           <div class="separator"></div>
           <div class="copyright">CV développeur web full stack © 2017<br>Julien Lachaux - <a href="../public/index.php?p=legales">mentions légales</a></div>

@@ -1,10 +1,10 @@
 <nav class="mainBar">
         <div class="user-descr">
           <div class="user-logo">
-            <img alt="ma photo" src="/public/assets/img/global/man.png">
+            <img alt="ma photo" src="{{ profile.picture }}">
           </div>
-          <h1 class="user-name">Julien Lachaux</h1>
-          <h2 class="user-work">Développeur web full-stack</h2>
+          <h1 class="user-name">{{ profile.firstname }} {{ profile.lastname }}</h1>
+          <h2 class="user-work">{{ profile.title }}</h2>
         </div>
         <div class="mainNav">
           <ul class="mainNav-links">
@@ -32,7 +32,7 @@
             <a href="https://github.com/julien-Lachaux" target="_blank" class="social-icon" id="git-hub"><img alt="logo de git-hub" src="assets/img/cv/contact/github.png"></a>
               </div>
               <div class="separator"></div>
-              <div class="copyright">CV développeur web full stack © 2017<br>Julien Lachaux - <a href="../public/index.php?p=legales">mentions légales</a></div>
+              <div class="copyright">CV {{ profile.title }} © 2017<br>{{ profile.firstname }} {{ profile.lastname }} - <a href="TO_DO">mentions légales</a></div>
             </div>
           </ul>
         </div>
