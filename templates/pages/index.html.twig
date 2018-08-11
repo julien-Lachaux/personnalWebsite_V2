@@ -37,19 +37,19 @@
       <span class="card-subtitle">Les technologies qui ont su toucher mon coeur</span>
     </div>
     
-    <div class="card title-card">
-      <span class="card-title">Front-end</span>
-      <span class="card-subtitle">Pour transformer la visite de l'internaute</span>
-      <div class="card-imgs-container">
-      
+    {% for skillGroup in skills_groups %}
+      <div class="card title-card">
+        <span class="card-title">{{ skillGroup.name }}</span>
+        <span class="card-subtitle">{{ skillGroup.description }}</span>
+        <div class="card-imgs-container">
+          {% for favori in skillGroup.favoris %}
+            <a href="{{ favori.link }}" target="_blank" class="card-img">
+              <img alt="logo de {{ favori.name }}" src="{{ favori.picture }}">
+              <span><b>{{ favori.name }}</b></span>
+            </a>
+          {% endfor %}
+        </div>
       </div>
-    </div>
-    <div class="card title-card">
-      <span class="card-title">Back-end</span>
-      <span class="card-subtitle">Les coulisses du succès</span>
-      <div class="card-imgs-container">
-        
-      </div>
-    </div>
+    {% endfor %}
   </article>
 {% endblock %}
