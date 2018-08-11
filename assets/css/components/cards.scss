@@ -528,7 +528,7 @@
   justify-content: center;
   align-items: center;
   margin: 0 0 2em 0;
-  font-family: 'roboto-light';
+  font-family: 'IBM Plex Serif', serif;
   z-index: 10;
   display: block;
   line-height: 1.5em;
@@ -539,7 +539,7 @@
   text-align: center;
   font-size: 1.25em;
   color: #869596;
-  font-family: 'roboto';
+  font-family: 'IBM Plex Sans', sans-serif;
   margin: 0 0 1em 0;
 }
 
@@ -771,7 +771,7 @@
 
 .media-card .card-descr {
   text-align: justify;
-  font-family: "roboto-light";
+  font-family: 'IBM Plex Serif', serif;
 }
 
 /*
@@ -869,7 +869,7 @@
 }
 
 .text-card .card-descr {
-  font-family: "roboto-light";
+  font-family: 'IBM Plex Serif', serif;
   font-size: 0.9em;
   text-align: justify;
   color: #677273;
@@ -989,7 +989,7 @@
   margin: 0 0 0 7.2em;
   display: block;
   color: #677273;
-  font-family: "roboto-light";
+  font-family: 'IBM Plex Serif', serif;
 }
 
 .timeline-card .card-date {
@@ -1000,7 +1000,7 @@
   position: absolute;
   right: 1.5em;
   top: 1.5em;
-  font-family: "roboto-light";
+  font-family: 'IBM Plex Serif', serif;
 }
 
 .timeline-card .card-descr {
@@ -1009,7 +1009,7 @@
   font-size: 0.9em;
   list-style: none;
   padding: 0;
-  font-family: "roboto-light";
+  font-family: 'IBM Plex Serif', serif;
   color: #677273;
 }
 
@@ -1147,14 +1147,14 @@
   text-align: center;
   color: #677273;
   font-size: 1em;
-  font-family: 'roboto-light';
+  font-family: 'IBM Plex Serif', serif;
 }
 
 .title-card .card-descr {
   display: block;
   color: #677273;
   font-size: 1em;
-  font-family: 'roboto-light';
+  font-family: 'IBM Plex Serif', serif;
 }
 
 .title-card .card-imgs-container {

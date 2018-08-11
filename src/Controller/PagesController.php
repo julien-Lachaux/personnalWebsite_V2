@@ -61,7 +61,7 @@ class PagesController {
         $tools = $doctrine->getRepository(Tool::class)->getDisplayed();
         $skills_groups = $doctrine->getRepository(SkillGroup::class)->findAll();
 
-        return new response($twig->render('dev/testVars.html.twig', [
+        return new response($twig->render('test/variables.html.twig', [
             'profile' => $profile[0],
             'currentPage' => $currentPage,
             'currentSection' => $currentSection,

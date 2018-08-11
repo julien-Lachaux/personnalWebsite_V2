@@ -1,12 +1,5 @@
 //
 // ─── Fonts ───────────────────────────────────────────────────────────────────────
 //
-@font-face {
-    font-family: "roboto";
-    src: url("/public/assets/font/Roboto/Roboto-Regular.ttf");
-  }
-  
-  @font-face {
-    font-family: "roboto-light";
-    src: url("/public/assets/font/Roboto/Roboto-Light.ttf");
-  }
+// IBM PLEX
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans|IBM+Plex+Sans+Condensed|IBM+Plex+Serif');
