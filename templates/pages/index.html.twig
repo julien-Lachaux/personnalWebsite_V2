@@ -19,7 +19,14 @@
       <span class="card-subtitle">les outils qui j'utilise au quotidien</span>
       <div class="separator"></div>
       <div class="card-imgs-container">
-        
+        {% for tool in tools %}
+          <a href="{{ tool.link }}" target="_blank" class="card-img">
+            <b class="card-img-title">{{ tool.family }}:</b>
+            <img alt="logo de {{ tool.name }}" src="{{ tool.picture }}">
+            <br>
+            <span class="card-img-subtitle">{{ tool.name }}</span>
+          </a>
+        {% endfor %}
       </div>
     </div>
   </article>

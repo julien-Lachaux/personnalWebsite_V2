@@ -10,6 +10,7 @@ use App\Entity\Profile;
 use App\Entity\Section;
 use App\Entity\Nav;
 use App\Entity\Skill;
+use App\Entity\Tool;
 
 class PagesController {
     /**
@@ -24,12 +25,15 @@ class PagesController {
         $profile = $doctrine->getRepository(Profile::class)->getProfile();
         $sections = $doctrine->getRepository(Section::class)->getDisplayed();
         $navs = $doctrine->getRepository(Nav::class)->getDisplayed('index');
+        $tools = $doctrine->getRepository(Tool::class)->getDisplayed();
+
         
         return new response($twig->render('pages/index.html.twig', [
             'profile' => $profile[0],
             'currentPage' => $currentPage,
             'sections' => $sections,
-            'navs' => $navs
+            'navs' => $navs,
+            'tools' => $tools
         ]));
     }
 }
