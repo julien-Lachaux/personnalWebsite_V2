@@ -12,7 +12,7 @@
               <i class="material-icons desktop-hidden">menu</i>
             </li>
             {% for section in sections %}
-              <li class="mainNav-link {% if currentPage == section.link %}current{% endif %}"><a href="{{ section.link }}">{{ section.displayName }}</a></li>
+              <li class="mainNav-link {% if currentSection.link == section.link %}current{% endif %}"><a href="{{ section.link }}">{{ section.displayName }}</a></li>
             {% endfor %}
 
             <div class="sideNav-contact desktop-hidden">

@@ -1,6 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+{{currentPage}}
+{{currentSection.id}}
     <ul>
         {% for section in sections %}
             <li>

@@ -1,17 +1,12 @@
 <nav class="sideBar">
       <div class="sideNav">
         <ul class="sideNav-Links">
-          {% for section in sections %}
-            {% if section.id == currentSection %}
-              {% for nav in section.navs %}
-                <li class="sideNav-Link">
-                  <div class="link-txt" href="#{{ nav.link }}">{{ nav.displayText }}</div>
-                  <i class="material-icons link-logo" data-descr="#{{ nav.iconColor }}" class="start material-icons">{{ nav.iconSource }}</i>
-                </li>
-              {% endfor %}
-            {% endif %}
-            
-          {% endfor %}
+            {% for nav in currentSection.navs %}
+              <li class="sideNav-Link">
+                <div class="link-txt" href="#{{ nav.link }}">{{ nav.displayText }}</div>
+                <i class="material-icons link-logo" data-descr="#{{ nav.iconColor }}" class="start material-icons">{{ nav.iconSource }}</i>
+              </li>
+            {% endfor %}
         </ul>
         <div class="sideNav-contact mobile-hidden">
           <div class="separator"></div>
