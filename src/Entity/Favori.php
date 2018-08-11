@@ -5,10 +5,10 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Table(name="skills")
- * @ORM\Entity(repositoryClass="App\Repository\SkillRepository")
+ * @ORM\Table(name="favoris")
+ * @ORM\Entity(repositoryClass="App\Repository\FavoriRepository")
  */
-class Skill
+class Favori
 {
     /**
      * @ORM\Id()
@@ -18,7 +18,7 @@ class Skill
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\SkillGroup", inversedBy="skills")
+     * @ORM\ManyToOne(targetEntity="App\Entity\SkillGroup", inversedBy="favoris")
      */
     private $group;
 
@@ -28,9 +28,9 @@ class Skill
     private $name;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255)
      */
-    private $level;
+    private $link;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -71,14 +71,14 @@ class Skill
         return $this;
     }
 
-    public function getLevel(): ?int
+    public function getLink(): ?string
     {
-        return $this->level;
+        return $this->link;
     }
 
-    public function setLevel(int $level): self
+    public function setLink(string $link): self
     {
-        $this->level = $level;
+        $this->link = $link;
 
         return $this;
     }

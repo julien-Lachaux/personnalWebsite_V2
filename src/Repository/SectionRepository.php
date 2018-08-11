@@ -26,8 +26,7 @@ class SectionRepository extends ServiceEntityRepository
     public function getDisplayed()
     {
         return $this->createQueryBuilder('s')
-            ->andWhere('s.displayed = :val')
-            ->setParameter('val', 1)
+            ->andWhere('s.displayed = 1')
             ->orderBy('s.id', 'ASC')
             ->getQuery()
             ->getResult()

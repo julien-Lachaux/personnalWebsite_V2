@@ -22,19 +22,15 @@ class NavRepository extends ServiceEntityRepository
     /**
      * @return Nav[] Returns an array of Nav objects
      */
-    public function getDisplayed($section)
-    {
-        $section = $section === 'index' ? 1 : $section;
+    public function getDisplayed()
+    {   
         return $this->createQueryBuilder('n')
-            ->andWhere('n.section_id = :val')
             ->andWhere('n.displayed = 1')
-            ->setParameter('val', $section)
             ->orderBy('n.id', 'ASC')
             ->getQuery()
             ->getResult()
         ;
     }
-
 
     /*
     public function findOneBySomeField($value): ?Nav

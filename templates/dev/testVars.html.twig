@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <ul>
+        {% for section in sections %}
+            <li>
+                <b>{{ section.displayName }}</b>
+                <ul>
+                    {% for nav in section.navs %}
+                        <li>{{ nav.displayText }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+    <br>
+    <br>
+    <ul>
+        {% for skill_group in skills_groups %}
+            <li>
+                <b>{{ skill_group.name }}</b>
+                <br>
+                <span>Favoris:<span>
+                <ul>
+                    {% for favori in skill_group.favoris %}
+                        <li>{{ favori.name }}</li>
+                    {% endfor %}
+                </ul>
+                <br>
+                <span>Skills:<span>
+                <ul>
+                    {% for skill in skill_group.skills %}
+                        <li>{{ skill.name }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <br>
+            <br>
+        {% endfor %}
+    </ul>
+{% endblock %}

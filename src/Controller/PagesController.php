@@ -10,7 +10,9 @@ use App\Entity\Profile;
 use App\Entity\Section;
 use App\Entity\Nav;
 use App\Entity\Skill;
+use App\Entity\SkillGroup;
 use App\Entity\Tool;
+ use App\Entity\Favori;
 
 class PagesController {
     /**
@@ -22,18 +24,19 @@ class PagesController {
      */
     public function index (Request $request, Environment $twig, RegistryInterface $doctrine) {
         $currentPage = $request->getPathInfo();
+        $currentSection = 1;
         $profile = $doctrine->getRepository(Profile::class)->getProfile();
         $sections = $doctrine->getRepository(Section::class)->getDisplayed();
-        $navs = $doctrine->getRepository(Nav::class)->getDisplayed('index');
         $tools = $doctrine->getRepository(Tool::class)->getDisplayed();
+        $skills_groups = $doctrine->getRepository(SkillGroup::class)->findAll();
 
-        
         return new response($twig->render('pages/index.html.twig', [
             'profile' => $profile[0],
             'currentPage' => $currentPage,
+            'currentSection' => $currentSection,
             'sections' => $sections,
-            'navs' => $navs,
-            'tools' => $tools
+            'tools' => $tools,
+            'skills_groups' => $skills_groups
         ]));
     }
 }
