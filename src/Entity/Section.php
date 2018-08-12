@@ -30,7 +30,7 @@ class Section
     private $link;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="boolean")
      */
     private $displayed;
 

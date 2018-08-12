@@ -17,12 +17,19 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if you JavaScript imports CSS.
      */
+
+    //
+    // ─────────────────────────────────────────────────────────── LES VENDORS ────────
+    //
+    .addEntry('vendor/jscolor-2.0.5/jscolor', './assets/vendor/jscolor-2.0.5/jscolor.js')
+
     //
     // ─────────────────────────────────────────────────────────── LES SCRIPTS JS ─────
     //
     .addEntry('js/app', './assets/js/app.js')
     .addEntry('js/components/navs', './assets/js/components/navs.js')
     .addEntry('js/components/cards', './assets/js/components/cards.js')
+    .addEntry('js/admin/pages/skills', './assets/js/admin/pages/skills.js')
 
     //
     // ──────────────────────────────────────────────────────── LES FICHIERS SASS ─────
@@ -49,7 +56,7 @@ Encore
     //.enableTypeScriptLoader()
 
     // uncomment if you're having problems with a jQuery plugin
-    //.autoProvidejQuery()
+     .autoProvidejQuery()
 ;
 
 module.exports = Encore.getWebpackConfig();

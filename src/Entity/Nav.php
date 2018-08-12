@@ -38,17 +38,12 @@ class Nav
     private $icon_source;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $icon_type;
-
-    /**
      * @ORM\Column(type="string", length=6)
      */
     private $icon_color;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="boolean")
      */
     private $displayed;
 
@@ -101,18 +96,6 @@ class Nav
     public function setIconSource(?string $icon_source): self
     {
         $this->icon_source = $icon_source;
-
-        return $this;
-    }
-
-    public function getIconType(): ?string
-    {
-        return $this->icon_type;
-    }
-
-    public function setIconType(string $icon_type): self
-    {
-        $this->icon_type = $icon_type;
 
         return $this;
     }

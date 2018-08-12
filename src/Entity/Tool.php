@@ -38,7 +38,7 @@ class Tool
     private $family;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="boolean")
      */
     private $displayed;
 

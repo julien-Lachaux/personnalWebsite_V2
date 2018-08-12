@@ -1,0 +1,41 @@
+<div class="row">
+    <!-- Nav tabs -->
+    <ul class="nav flex-column nav-pills col-6" id="myTab" role="tablist">
+        {% for skill_group in skills_groups %}
+            <li class="nav-item">
+                <a class="nav-link {% if currentSkillGroupId == skill_group.id %}active{% endif %}" id="group_{{ skill_group.id }}-tab" data-toggle="pill" href="#group_{{ skill_group.id }}" role="tab" aria-controls="group_{{ skill_group.id }}" aria-selected="{% if currentSkillGroupId == skill_group.id %}true {% else %}false{% endif %}">{{ skill_group.id }} - {{ skill_group.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content col-6">
+        {% for skill_group in skills_groups %}
+            <div class="tab-pane {% if currentSkillGroupId == skill_group.id %}active{% endif %}" id="group_{{ skill_group.id }}" role="tabpanel" aria-labelledby="group_{{ skill_group.id }}-tab">
+                <div class="group_data">
+                    <p><b>Description:</b> {{skill_group.description}}</p>
+                    <p><b>Color:</b> <input class="jscolor" value="{{skill_group.color}}"></p>
+                    
+                </div>
+                <div class="group_skills">
+                    <p><b>Skills:</b></p>
+                    <ul>
+                        {% for skill in skill_group.skills %}
+                            <li>{{ skill.name }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="group_favoris">
+                    <p><b>Favoris:</b></p>
+                    <ul>
+                        {% for favori in skill_group.favoris %}
+                            <li>{{ favori.name }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script src="{{ asset('build/vendor/jscolor-2.0.5/jscolor.js') }}"></script>

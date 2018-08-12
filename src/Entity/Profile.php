@@ -11,13 +11,13 @@ class Profile
 {
     /**
      * @ORM\Id()
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=150)
      */
     private $firstname;
 
     /**
      * @ORM\Id()
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=150)
      */
     private $lastname;
 
@@ -57,7 +57,7 @@ class Profile
     private $picture;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="text")
      */
     private $description;
 

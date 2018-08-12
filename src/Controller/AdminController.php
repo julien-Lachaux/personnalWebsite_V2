@@ -13,6 +13,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormFactory;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use App\Entity\Profile;
+use App\Entity\Section;
+use App\Entity\Nav;
+use App\Entity\SkillGroup;
+use App\Entity\Tool;
+ use App\Entity\Favori;
 
 class AdminController extends Controller
 {
@@ -21,7 +27,7 @@ class AdminController extends Controller
      */
     public function index(Environment $twig)
     {
-        return new Response($twig->render('admin/index.html.twig', [
+        return new Response($twig->render('admin/pages/index.html.twig', [
             'controller_name' => 'AdminController',
         ]));
     }
@@ -33,20 +39,51 @@ class AdminController extends Controller
      */
     public function skills(Request $request, Environment $twig, RegistryInterface $doctrine)
     {
-        $skills = $doctrine->getRepository(Skill::class)->findAll();
-        $skill = new Skill();
-        $form = $this->createForm(SkillType::class, $skill);
+        $currentPage = $request->getPathInfo();
+        $currentSection = $doctrine->getRepository(Section::class)->findOneBy([
+            'link' => $currentPage
+        ]);
 
-        $form->handleRequest($request);
+        $profile = $doctrine->getRepository(Profile::class)->getProfile();
+        $sections = $doctrine->getRepository(Section::class)->getDisplayed();
+        $tools = $doctrine->getRepository(Tool::class)->getDisplayed();
+        $skills_groups = $doctrine->getRepository(SkillGroup::class)->findAll();
+
+        return new response($twig->render('admin/pages/skills.html.twig', [
+            // 'profile' => $profile[0],
+            'currentPage' => $currentPage,
+            'currentSection' => $currentSection,
+            'sections' => $sections,
+            'tools' => $tools,
+            'skills_groups' => $skills_groups
+        ]));
+    }
+
+    /**
+     * getNav
+     * @Route("/ajax/admin/getNav", name="/ajax/admin/getNav")
+     * @return void
+     */
+    public function getNav(Request $request, Environment $twig, RegistryInterface $doctrine)
+    {
+        return new response($twig->render('admin/components/nav.html.twig'));
+    }
+
+    /**
+     * getSkills
+     * @Route("/ajax/admin/getSkills", name="/ajax/admin/getSkills")
+     * @return void
+     */
+    public function getSkills(Request $request, Environment $twig, RegistryInterface $doctrine)
+    {
+        $skills_groups = $doctrine->getRepository(SkillGroup::class)->findAll();
+        $uri = $request->getPathInfo();
+        $diezPos = strpos($uri, '#');
+        $current_skill_group = $diezPos !== false ? substr($uri, $diezPos + 1) : 1;
         
-        if($form->isSubmitted() && $form->isValid()) {
-            $doctrine->getEntityManager()->persist($skill);
-            $doctrine->getEntityManager()->flush();
-        }
-
-        return new Response($twig->render('admin/skills.html.twig', [
-            'skills' => $skills,
-            'form'   => $form->createView()
+        return new response($twig->render('admin/contents/skills/skillsList.html.twig', [
+            'skills_groups' => $skills_groups,
+            'currentSkillGroupId' => $current_skill_group
         ]));
     }
 }
