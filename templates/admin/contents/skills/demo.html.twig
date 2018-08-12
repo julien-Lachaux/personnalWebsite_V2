@@ -1,0 +1,71 @@
+<div class="row" id="demo">
+    <!-- Nav tabs -->
+    <ul class="nav flex-column nav-pills col-3" id="myTab" role="tablist">
+        {% for skill_group in skills_groups %}
+            <li>
+                <a class="btn btn-primary collapse-btn" id="group_{{ skill_group.id }}-tab" data-parent="#demo" data-toggle="collapse" href="#group_{{ skill_group.id }}" role="button" aria-controls="group_{{ skill_group.id }}" aria-expanded="{% if currentSkillGroupId == skill_group.id %}true {% else %}false{% endif %}">{{ skill_group.id }} - {{ skill_group.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content col-9">
+        {% for skill_group in skills_groups %}
+            <div class="collapse" data-parent="#demo" id="group_{{ skill_group.id }}">
+                <div class="row">
+                    <div class="group col-1 col-sm-6">
+                        <form class="group_data">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="descriptionInput{{ skill_group.id }}">Description</span>
+                                </div>
+                                <input type="text" class="form-control" aria-describedby="descriptionInput{{ skill_group.id }}" placeholder="Enter the description of the Skill's Group" value="{{skill_group.description}}">
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="colorInputInput{{ skill_group.id }}">Color</span>
+                                </div>
+                                <input class="form-control" aria-describedby="colorInput{{ skill_group.id }}" class="jscolor" value="{{skill_group.color}}">
+                            </div>  
+                        </form>
+                        <div class="group_skills">
+                            <p><b>Skills:</b></p>
+                            <ul class="nav flex-column nav-pills col-3" id="myTab" role="tablist">
+                                {% for skill in skill_group.skills %}
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="skill_{{ skill.id }}-tab" data-toggle="pill" href="#skill_{{ skill.id }}" role="tab" aria-controls="skill_{{ skill.id }}" aria-selected="false">{{ skill.id }} - {{ skill.name }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="group_favoris">
+                            <p><b>Favoris:</b></p>
+                            <ul>
+                                {% for favori in skill_group.favoris %}
+                                    <li>{{ favori.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skills col-1 col-sm-6">
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            {% for skill in skill_group.skills %}
+                                <div class="tab-pane" id="skill_{{ skill.id }}" role="tabpanel" aria-labelledby="skill_{{ skill.id }}-tab">
+                                    <div class="skill_data">
+                                        <p><b>Name:</b> {{skill.name}}</p>
+                                        <p><b>Level:</b> {{skill.level}}></p>      
+                                        <p><b>Picture:</b> {{skill.picture}}></p>      
+                                        <p><b>Displayed:</b> {{skill.displayed}}></p>      
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script src="{{ asset('build/vendor/jscolor-2.0.5/jscolor.js') }}"></script>
