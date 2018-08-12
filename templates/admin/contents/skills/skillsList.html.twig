@@ -17,7 +17,8 @@
                         <form class="group_data">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="skillsGroupsNameInput{{ skill_group.name }}">Name</span>
+                                    <span class="input-group-text" id="skillsGroupsIdInput|{{ skill_group.id }}">ID - {{ skill_group.id }}</span>
+                                    <span class="input-group-text" id="skillsGroupsNameInput{{ skill_group.id }}">Name</span>
                                 </div>
                                 <input type="text" class="form-control" aria-describedby="skillsGroupsNameInput{{ skill_group.id }}" placeholder="Enter the name of the Skill's Group" value="{{skill_group.name}}">
                             </div>
