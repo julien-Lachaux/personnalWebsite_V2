@@ -14,44 +14,56 @@
             <div class="tab-pane {% if currentSkillGroupId == skill_group.id %}active{% endif %}" id="group_{{ skill_group.id }}" role="tabpanel" aria-labelledby="group_{{ skill_group.id }}-tab">
                 <div class="row">
                     <div class="group col-1 col-sm-6">
-                        <form class="group_data">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="skillsGroupsIdInput|{{ skill_group.id }}">ID - {{ skill_group.id }}</span>
-                                    <span class="input-group-text" id="skillsGroupsNameInput{{ skill_group.id }}">Name</span>
-                                </div>
-                                <input type="text" class="form-control" aria-describedby="skillsGroupsNameInput{{ skill_group.id }}" placeholder="Enter the name of the Skill's Group" value="{{skill_group.name}}">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Skill Group - {{ skill_group.id }}</h5>
+                                <form class="group_data" id="skillsGroups|{{ skill_group.id }}">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="skillsGroupsNameInput|{{ skill_group.id }}">Name</span>
+                                        </div>
+                                        <input type="text" class="form-control" name="id" value="{{ skill_group.id }}" hidden>
+                                        <input type="text" class="form-control" name="name" aria-describedby="skillsGroupsNameInput|{{ skill_group.id }}" placeholder="Enter the name of the Skill's Group" value="{{skill_group.name}}">
+                                    </div>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="skillsGroupsColorInputInput|{{ skill_group.id }}">Color</span>
+                                        </div>
+                                        <input class="form-control jscolor" name="color" aria-describedby="skillsGroupsColorInput|{{ skill_group.id }}" value="{{skill_group.color}}">
+                                    </div>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="skillsGroupsDescriptionInput|{{ skill_group.id }}">Description</span>
+                                        </div>
+                                        <input type="text" class="form-control" name="description" aria-describedby="skillsGroupsDescriptionInput|{{ skill_group.id }}" placeholder="Enter the description of the Skill's Group" value="{{skill_group.description}}">
+                                    </div>
+                                    <input class="mt-2" type="submit" value="Sauvegarder les modifications">
+                                </form>
                             </div>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="skillsGroupsColorInputInput{{ skill_group.id }}">Color</span>
-                                </div>
-                                <input class="form-control jscolor" aria-describedby="skillsGroupsColorInput{{ skill_group.id }}" value="{{skill_group.color}}">
-                            </div>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="skillsGroupsDescriptionInput{{ skill_group.id }}">Description</span>
-                                </div>
-                                <input type="text" class="form-control" aria-describedby="skillsGroupsDescriptionInput{{ skill_group.id }}" placeholder="Enter the description of the Skill's Group" value="{{skill_group.description}}">
-                            </div>  
-                        </form>
-                        <div class="group_skills">
-                            <p><b>Skills:</b></p>
-                            <ul class="nav flex-column nav-pills col-3" id="myTab" role="tablist">
-                                {% for skill in skill_group.skills %}
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="skill_{{ skill.id }}-tab" data-toggle="pill" href="#skill_{{ skill.id }}" role="tab" aria-controls="skill_{{ skill.id }}" aria-selected="false">{{ skill.id }} - {{ skill.name }}</a>
-                                    </li>
-                                {% endfor %}
-                            </ul>
                         </div>
-                        <div class="group_favoris">
-                            <p><b>Favoris:</b></p>
-                            <ul>
-                                {% for favori in skill_group.favoris %}
-                                    <li>{{ favori.name }}</li>
-                                {% endfor %}
-                            </ul>
+                        <div class="card group_skills">
+                            <div class="card-body">
+                                <h5 class="card-title">Skills:</h5>
+                                <ul class="nav flex-column nav-pills col-3" id="myTab" role="tablist">
+                                    {% for skill in skill_group.skills %}
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="skill_{{ skill.id }}-tab" data-toggle="pill" href="#skill_{{ skill.id }}" role="tab" aria-controls="skill_{{ skill.id }}" aria-selected="false">{{ skill.id }} - {{ skill.name }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card group_skills">
+                            <div class="card-body">
+                                <div class="group_favoris">
+                                    <p><b>Favoris:</b></p>
+                                    <ul>
+                                        {% for favori in skill_group.favoris %}
+                                            <li>{{ favori.name }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="skills col-1 col-sm-6">

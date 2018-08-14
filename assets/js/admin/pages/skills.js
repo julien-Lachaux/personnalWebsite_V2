@@ -4,5 +4,14 @@ $(document).ready( () => {
 
     admin.getNav();
     admin.getContent('skills', 'content', () => {
+        $('.group_data').each((key, form) => {
+            $(form).submit((event) => {
+                var formData = app.serializeForm(form);
+                app.post('/ajax/admin/updateSkillGroup', formData, (response) => {
+                    console.log(response);
+                });
+                event.preventDefault();
+            });
+        });
     });
 });

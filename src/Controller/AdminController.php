@@ -81,9 +81,35 @@ class AdminController extends Controller
         $diezPos = strpos($uri, '#');
         $current_skill_group = $diezPos !== false ? substr($uri, $diezPos + 1) : 1;
         
-        return new response($twig->render('admin/contents/skills/skillsList.html.twig', [
+        return new response($twig->render('admin/contents/skills/demo.html.twig', [
             'skills_groups' => $skills_groups,
             'currentSkillGroupId' => $current_skill_group
         ]));
+    }
+
+    /**
+     * updateSkillGroup
+     * @Route("/ajax/admin/updateSkillGroup", name="/ajax/admin/updateSkillGroup")
+     * @return void
+     */
+    public function updateSkillGroup(Request $request, Environment $twig, RegistryInterface $doctrine)
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $skill_group = $entityManager->getRepository(SkillGroup::class)->find(intval($request->request->get('id')));
+
+        if (!$skill_group) {
+            throw $this->createNotFoundException(
+                'No product found for id '.$id
+            );
+        }
+
+        $skill_group->setName($request->request->get('name'));
+        $skill_group->setColor($request->request->get('color'));
+        $skill_group->setDescription($request->request->get('description'));
+        $entityManager->persist($skill_group);
+        $entityManager->flush();
+        
+        return new response($request->request->get('description'));
     }
 }
