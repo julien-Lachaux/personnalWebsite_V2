@@ -19,62 +19,17 @@ class PagesController {
     /**
      * index
      *
-     * @Route("/home")
+     * @Route("/{page}")
      * @param Environment $twig
      * @return void
      */
     public function index (Request $request, Environment $twig, RegistryInterface $doctrine) {
         $profile = $doctrine->getRepository(Profile::class)->getProfile();
         $sections = $doctrine->getRepository(Section::class)->getDisplayed();
-        $tools = $doctrine->getRepository(Tool::class)->getDisplayed();
-        $skills_groups = $doctrine->getRepository(SkillGroup::class)->findAll();
-        $experiences = $doctrine->getRepository(Experience::class)->findAll();
 
         return new response($twig->render('pages/index.html.twig', [
             'profile' => $profile[0],
-            'sections' => $sections,
-            'tools' => $tools
-
-        ]));
-    }
-
-    /**
-     * favoris
-     *
-     * @Route("/favoris")
-     * @param Environment $twig
-     * @return void
-     */
-    public function favoris (Request $request, Environment $twig, RegistryInterface $doctrine) {
-        $profile = $doctrine->getRepository(Profile::class)->getProfile();
-        $sections = $doctrine->getRepository(Section::class)->getDisplayed();
-        $tools = $doctrine->getRepository(Tool::class)->getDisplayed();
-        $skills_groups = $doctrine->getRepository(SkillGroup::class)->findAll();
-        $experiences = $doctrine->getRepository(Experience::class)->findAll();
-
-        return new response($twig->render('pages/index.html.twig', [
-            'profile' => $profile[0],
-            'sections' => $sections,
-            'skills_groups' => $skills_groups
-        ]));
-    }
-
-    /**
-     * index
-     *
-     * @Route("/skills")
-     * @param Environment $twig
-     * @return void
-     */
-    public function skills (Request $request, Environment $twig, RegistryInterface $doctrine) {
-        $profile = $doctrine->getRepository(Profile::class)->getProfile();
-        $sections = $doctrine->getRepository(Section::class)->getDisplayed();
-        $skills_groups = $doctrine->getRepository(SkillGroup::class)->findAll();
-
-        return new response($twig->render('pages/index.html.twig', [
-            'profile' => $profile[0],
-            'sections' => $sections,
-            'skills_groups' => $skills_groups,
+            'sections' => $sections
         ]));
     }
 

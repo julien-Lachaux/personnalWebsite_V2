@@ -5,7 +5,7 @@
 // ───────────────────────────────────────────────────────────────────── Structur ──────
 //
 // body
-$body-background_color: #ebebeb;
+$body-background_color: #f5f5f6;
 
 // page structure
 $page-top: 0px;
@@ -53,3 +53,16 @@ $popUp-top: 5em;
 // color
 $popUp-color: #b5c8ca;
 $popUp-background_color: #555d5e;
+
+//
+// ───────────────────────────────────────────────────────────────────── Sidebar -────
+//
+$sidebar-background_color: #00796b;
+$sidebarSeparator-color: #439889;
+$sidebarSection-textColor: #439889;
+$sidebarLink-textColor: #ffffff;
+$sidebarProfile-color: #ffa726;
+$sidebarProfile-textColor: #fff;
+$sidebarLogo-color: #439889;
+$sidebarLogoHover-color: #ffa726;
+$sidebarLogoActive-color: #ffa726;
