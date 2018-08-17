@@ -1,0 +1,23 @@
+<article class="webContent" id="favoris-panel">
+    <div class="card title-card" id="favori-title">
+        <span class="card-title">Mes coups de coeur du moment</span>
+        <span class="card-subtitle">Les technologies qui ont su toucher mon coeur</span>
+    </div>
+
+    {% for skillGroup in skills_groups %}
+        <div class="card title-card">
+            <span class="card-title">{{ skillGroup.name }}</span>
+            <span class="card-subtitle">{{ skillGroup.description }}</span>
+            <div class="card-imgs-container">
+                {% for favori in skillGroup.favoris %}
+                    <a href="{{ favori.link }}" target="_blank" class="card-img">
+                        <i class="{{ favori.picture }}" style="font-size: 3em;"></i>
+                        <span>
+                            <b>{{ favori.name }}</b>
+                        </span>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</article>

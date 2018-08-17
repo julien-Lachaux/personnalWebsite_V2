@@ -1,0 +1,15 @@
+<article class="webContent" id="skills-panel">
+    <div class="skills-container">
+        {% for skillGroup in skills_groups %}
+            {% for skill in skillGroup.skills %}
+            <div class="card">
+                <div class="card-logo">
+                <i class="{{ skill.picture }}"></i>
+                </div>
+                <p>{{ skill.name }}</p>
+                <p>{{ skill.level }}</p>
+            </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</article>

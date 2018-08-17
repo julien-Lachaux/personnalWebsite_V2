@@ -1,0 +1,19 @@
+<article class="webContent" id="experiences-panel">
+    <div class="experiences-container">
+        {% for experience in experiences %}
+            <div class="card timeline-card" data-descr="{{ experience.dateStart|date('d/m/Y') }} - {{ experience.dateEnd|date('d/m/Y') }}">
+                <div class="card-logo">
+                    <img alt="logo de {{ experience.company }}" src="{{ experience.logo }}">
+                </div>
+                <div class="card-title">{{ experience.company }}</div>
+                <div class="card-subtitle">{{ experience.job }}</div>
+                <div class="card-date hidden-mobile">{{ experience.dateStart|date('d-M-Y') }} - {{ experience.dateEnd|date('d-M-Y') }}</div>
+                <p class="card-descr">
+                    {{ experience.description }}
+                </p>
+                <ul class="tags"></ul>
+            </div>
+        {% endfor %}
+
+    </div>
+</article>

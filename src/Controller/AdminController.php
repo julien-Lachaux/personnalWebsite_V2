@@ -81,7 +81,7 @@ class AdminController extends Controller
         $diezPos = strpos($uri, '#');
         $current_skill_group = $diezPos !== false ? substr($uri, $diezPos + 1) : 1;
         
-        return new response($twig->render('admin/contents/skills/demo.html.twig', [
+        return new response($twig->render('admin/contents/skills/skillsList.html.twig', [
             'skills_groups' => $skills_groups,
             'currentSkillGroupId' => $current_skill_group
         ]));

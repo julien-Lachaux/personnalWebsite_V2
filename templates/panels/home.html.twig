@@ -1,0 +1,29 @@
+<article class="webContent" id="home-panel">
+    <div class="card title-card" id="presentation">
+        <h1 class="card-title">Bienvenue Sur le site officiel de
+            {{ profile.firstname }}{{ profile.lastname }}</h1>
+        <h2 class="card-subtitle">{{ profile.title }}</h2>
+    </div>
+    <div class="card title-card">
+        <span class="card-descr">
+            <b>Disponible immédiatement :</b>
+            mission freelance<br><br>
+            <b>Recherche pour Septembre :</b>
+            CDD ou CDI</span>
+    </div>
+    <div class="card title-card">
+        <span class="card-title">Technologies</span>
+        <span class="card-subtitle">les outils qui j'utilise au quotidien</span>
+        <div class="separator"></div>
+        <div class="card-imgs-container">
+            {% for tool in tools %}
+                <a href="{{ tool.link }}" target="_blank" class="card-img">
+                    <b class="card-img-title">{{ tool.family }}:</b>
+                    <img alt="logo de {{ tool.name }}" src="{{ tool.picture }}">
+                    <br>
+                    <span class="card-img-subtitle">{{ tool.name }}</span>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</article>

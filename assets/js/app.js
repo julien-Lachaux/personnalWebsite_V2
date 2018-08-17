@@ -19,7 +19,6 @@ const app = {
             let valeur = $(input).val();
             formData[champ] = valeur;
         });
-        console.log(formData);
         return formData;
     }
 }

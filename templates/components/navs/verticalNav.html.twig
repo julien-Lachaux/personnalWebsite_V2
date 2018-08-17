@@ -1,30 +1,43 @@
 <nav class="sideBar">
-      <div class="sideNav">
+    <div class="sideNav">
         <ul class="sideNav-Links">
-            {% for nav in currentSection.navs %}
-              <li class="sideNav-Link">
-                <div class="link-txt" href="#{{ nav.link }}">{{ nav.displayText }}</div>
-                <i class="material-icons link-logo" data-descr="#{{ nav.iconColor }}" class="start material-icons">{{ nav.iconSource }}</i>
-              </li>
+            {% for section in sections %}
+                {% for nav in section.navs %}
+                    <li class="sideNav-Link">
+                        <div class="link-txt" href="/{{ nav.link }}">{{ nav.displayText }}</div>
+                        <i class="link-logo material-icons" data-descr="#{{ nav.iconColor }}">{{ nav.iconSource }}</i>
+                    </li>
+                {% endfor %}
             {% endfor %}
         </ul>
         <div class="sideNav-contact mobile-hidden">
-          <div class="separator"></div>
-          <div class="contact-title">Me contacter</div>
-          <div class="separator"></div>
-          <ul class="com-list">
-            <li><a href="../public/index.php?p=contact"><i class="material-icons">contacts</i>Formulaire de contact (24/7)</a></li>
-            <li><a href="javascript:copy('lachauxWebDev@gmail.com')"><i class="material-icons">contact_mail</i>{{ profile.email }}</a></li>
-            <li><a href="javascript:copy('06.66.81.40.59')"><i class="material-icons">contact_phone</i>{{ profile.tel }}</a></li>
-          </ul>
-          <div class="separator"></div>
-          <div class="social-icons">
-            <a href="{{ profile.linkedin }}" target="_blank" class="social-icon" id="linkedin"><img alt="logo de linkedin" src="TO_DO"></a>
-            <a href="{{ profile.freelanceWebsite }}" target="_blank" class="social-icon" id="hopwork"><img alt="logo de hopwork" src="TO_DO"></a>
-            <a href="{{ profile.github }}" target="_blank" class="social-icon" id="git-hub"><img alt="logo de git-hub" src="TO_DO"></a>
-          </div>
-          <div class="separator"></div>
-          <div class="copyright">CV développeur web full stack © 2017<br>Julien Lachaux - <a href="../public/index.php?p=legales">mentions légales</a></div>
+            <div class="separator"></div>
+            <div class="contact-title">Me contacter</div>
+            <div class="separator"></div>
+            <ul class="com-list">
+                <li>
+                    <a href="../public/index.php?p=contact">
+                        <i class="material-icons">contacts</i>Formulaire de contact (24/7)</a>
+                </li>
+                <li>
+                    <a href="javascript:copy('lachauxWebDev@gmail.com')">
+                        <i class="material-icons">contact_mail</i>{{ profile.email }}</a>
+                </li>
+                <li>
+                    <a href="javascript:copy('06.66.81.40.59')">
+                        <i class="material-icons">contact_phone</i>{{ profile.tel }}</a>
+                </li>
+            </ul>
+            <div class="separator"></div>
+            <div class="social-icons">
+                <a href="{{ profile.linkedin }}" target="_blank" class="social-icon" id="linkedin"><img alt="logo de linkedin" src="TO_DO"></a>
+                <a href="{{ profile.freelanceWebsite }}" target="_blank" class="social-icon" id="hopwork"><img alt="logo de hopwork" src="TO_DO"></a>
+                <a href="{{ profile.github }}" target="_blank" class="social-icon" id="git-hub"><img alt="logo de git-hub" src="TO_DO"></a>
+            </div>
+            <div class="separator"></div>
+            <div class="copyright">CV développeur web full stack © 2017<br>Julien Lachaux -
+                <a href="../public/index.php?p=legales">mentions légales</a>
+            </div>
         </div>
-      </div>
-    </nav>
+    </div>
+</nav>

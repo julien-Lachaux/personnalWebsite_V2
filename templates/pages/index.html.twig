@@ -1,55 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block navs %}
-  {% include 'components/navs/horizontalNav.html.twig' %}
   {% include 'components/navs/verticalNav.html.twig' %}
 {% endblock %}
 
 {% block body %}
-  <article class="webContent" id="welcome-panel">
-    <div class="card title-card" id="presentation">
-      <h1 class="card-title">Bienvenue Sur le site officiel de {{ profile.firstname }}{{ profile.lastname }}</h1>
-      <h2 class="card-subtitle">{{ profile.title }}</h2>
-    </div>
-    <div class="card title-card">
-      <span class="card-descr"><b>Disponible immédiatement :</b> mission freelance<br><br><b>Recherche pour Septembre :</b> CDD ou CDI</span>
-    </div>
-    <div class="card title-card">
-      <span class="card-title">Technologies</span>
-      <span class="card-subtitle">les outils qui j'utilise au quotidien</span>
-      <div class="separator"></div>
-      <div class="card-imgs-container">
-        {% for tool in tools %}
-          <a href="{{ tool.link }}" target="_blank" class="card-img">
-            <b class="card-img-title">{{ tool.family }}:</b>
-            <img alt="logo de {{ tool.name }}" src="{{ tool.picture }}">
-            <br>
-            <span class="card-img-subtitle">{{ tool.name }}</span>
-          </a>
-        {% endfor %}
-      </div>
-    </div>
-  </article>
-
-  <article class="webContent" id="favoris-panel">
-    <div class="card title-card" id="favori-title">
-      <span class="card-title">Mes coups de coeur du moment</span>    
-      <span class="card-subtitle">Les technologies qui ont su toucher mon coeur</span>
-    </div>
-    
-    {% for skillGroup in skills_groups %}
-      <div class="card title-card">
-        <span class="card-title">{{ skillGroup.name }}</span>
-        <span class="card-subtitle">{{ skillGroup.description }}</span>
-        <div class="card-imgs-container">
-          {% for favori in skillGroup.favoris %}
-            <a href="{{ favori.link }}" target="_blank" class="card-img">
-              <img alt="logo de {{ favori.name }}" src="{{ favori.picture }}">
-              <span><b>{{ favori.name }}</b></span>
-            </a>
-          {% endfor %}
-        </div>
-      </div>
-    {% endfor %}
-  </article>
 {% endblock %}
