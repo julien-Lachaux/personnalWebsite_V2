@@ -2,11 +2,29 @@
 // ─── Variables ───────────────────────────────────────────────────────────────────────
 //
 //
+// ─────────────────────────────────────────────────────────────── Charte Color -────
+//
+
+$color-primary: #00796b;            // primary
+$color-primary-light: #48a999;      // primary light
+$color-primary-dark: #004c40;       // primaire dark
+
+$color-secondary: #ffab00;          // accent
+$color-secondary-light: #ffdd4b;    // accent light
+$color-secondary-dark: #c67c00;     // accent dark
+
+$color-success: #00c853;            // success
+$color-warning: #ffd600;            // warning
+$color-error: #dd2c00;              // error
+
+$color-text: #000000;               // Text
+$color-text-over: #fff;             // Text over
+
+$color-background: #f5f5f6;         // background
+
+//
 // ───────────────────────────────────────────────────────────────────── Structur ──────
 //
-// body
-$body-background_color: #f5f5f6;
-
 // page structure
 $page-top: 0px;
 $page-width: calc(100% - 15em);
@@ -53,16 +71,3 @@ $popUp-top: 5em;
 // color
 $popUp-color: #b5c8ca;
 $popUp-background_color: #555d5e;
-
-//
-// ───────────────────────────────────────────────────────────────────── Sidebar -────
-//
-$sidebar-background_color: #00796b;
-$sidebarSeparator-color: #439889;
-$sidebarSection-textColor: #439889;
-$sidebarLink-textColor: #ffffff;
-$sidebarProfile-color: #ffa726;
-$sidebarProfile-textColor: #fff;
-$sidebarLogo-color: #439889;
-$sidebarLogoHover-color: #ffa726;
-$sidebarLogoActive-color: #ffa726;

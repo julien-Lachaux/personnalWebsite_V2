@@ -1,0 +1,61 @@
+.panel {
+    display: block;
+    width: 100%;
+    height: calc(100% - 15em);
+    top: 15em;
+
+    .panelTitle {
+        width: calc(100% - #{$scrollbar-width});
+        height: 15em;
+        background: $color-background;
+        display: flex;
+        position: fixed;
+        top: 0;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        z-index: $lvl-10;
+    
+        .title {
+            width: 80%;
+            font-size: 3em;
+            text-align: left;
+        }
+        .subtitle {
+            width: 80%;
+            font-size: 1.5em;
+            text-align: left;
+            color: $color-primary;
+        }
+        .separator {
+            width: 85%;
+            height: 1px;
+            background: $color-text;
+            position: absolute;
+            bottom: 0px;
+            opacity: .20;
+        }
+    }
+
+    .content {
+        display: block;
+        height: 100%;
+        padding-top: 17em;
+        overflow-y: scroll;
+        padding: 17em 10% 0 10%;
+
+        &::-webkit-scrollbar {
+            width: $scrollbar-width;
+            background: $scrollbar-background_color;
+        }
+        &::-webkit-scrollbar-thumb {	
+            background: $scrollbar_thumb-background_color;
+        }
+        &::-webkit-scrollbar-thumb:hover {	
+            background: $scrollbar_thumb-hover-background_color;
+        }
+        &::-webkit-scrollbar-thumb:active {	
+            background: $scrollbar_thumb-active-background_color;
+        }
+    }
+}

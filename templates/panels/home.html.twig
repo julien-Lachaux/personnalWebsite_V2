@@ -1,4 +1,7 @@
-<article class="webContent" id="home-panel">
+<article class="panel" id="home-panel">
+
+    {% include 'components/panels/panelTitle.html.twig' %}
+    
     <div class="card title-card" id="presentation">
         <h1 class="card-title">Bienvenue Sur le site officiel de
             {{ profile.firstname }}{{ profile.lastname }}</h1>

@@ -42,13 +42,14 @@
   right: 0em;
   position: fixed;
   z-index: 1000;
-  color: $sidebarLink-textColor;
-  background: $sidebar-background_color;
+  color: $color-text;
+  background: $color-background;
 
   .separator {
-    background: $sidebarSeparator-color !important;
+    background: $color-text !important;
+    opacity: .20;
     height: 1px;
-    width: 40%;
+    width: 60%;
     margin: 10px auto;
   }
 
@@ -64,19 +65,17 @@
         justify-content: center;
         width: 100%;
         height: 170px;
-        background: $sidebar-background_color;
 
         .profilePicture {
           border-radius: 100%;
           height: 150px;
           width: 150px;
-          background: $sidebarSeparator-color;
+          background: $color-primary-light;
         }
       }
       .profile-info {
         padding: 10px;
-        background: $sidebarProfile-color;
-        color: $sidebarProfile-textColor;
+        color: $color-text;
         .profile-name {
           text-align: center;
         }
@@ -91,7 +90,7 @@
     .sideNav-Links {
       position: absolute;
       width: 100%;
-      background: $sidebar-background_color;
+      background: $color-background;
       z-index: 1000;
       list-style: none;
       padding: 0;
@@ -111,7 +110,7 @@
           z-index: 10;
           line-height: 4em;
           position: absolute;
-          color: $sidebarLink-textColor;
+          color: $color-text;
           text-decoration: none;
         }
         
@@ -120,31 +119,27 @@
           top: 0.85em;
           font-size: 1.5em;
           position: absolute;
-          color: $sidebarLogo-color;
+          color: $color-primary;
           z-index: 9;
           transition: all 200ms ease-in-out;
         }
 
         &.iconActive {
-          background: $sidebarSeparator-color !important;
-          border-left: 5px solid $sidebarLogoHover-color;
+          background: $color-primary !important;
+          border-left: 5px solid $color-secondary;
           .link-txt {
-            color: $sidebarLink-textColor !important;
+            color: $color-text-over !important;
           }
           i.link-logo {
             transform: scale(2.5) !important;
-            color: $sidebarLogoActive-color !important;
+            color: $color-secondary !important;
           }
         }
         
         &:hover {
-          background: $sidebarSeparator-color;
-          border-left: 5px solid $sidebarLogoHover-color;
-          .link-txt {
-            color: $sidebarLink-textColor;
-          } 
+          border-left: 5px solid $color-secondary;
           i.link-logo {
-            color: $sidebarLogoHover-color !important;
+            color: $color-secondary !important;
           }
         }
       }
@@ -168,7 +163,7 @@
 
     .sideNav-contact {
       display: block;
-      color: $sidebarSeparator-color;
+      color: $color-primary-light;
       position: absolute;
       bottom: 0;
       width: 90%;
@@ -188,19 +183,19 @@
         font-size: 0.75em;
         text-align: left;
         cursor: pointer;
-        &:hover {background: $sidebarSeparator-color;}
-        &:hover a {color: $sidebarLogoHover-color;}
-        &:hover i {background: $sidebarLogoHover-color;}
+        &:hover {background: $color-primary-light;}
+        &:hover a {color: $color-secondary;}
+        &:hover i {background: $color-secondary;}
         a {
           display: block;
           text-decoration: none;
-          color: $sidebarLink-textColor;
+          color: $color-secondary;
           padding: 0.5em 0.25em;
           line-height: 2em;
         }
         i {
           text-align: center;
-          color: $sidebarSeparator-color;
+          color: $color-primary-light;
           margin: 0 0.5em 0 0;
           transform: translateY(0.30em) translateX(0.2em);
         }
@@ -225,7 +220,7 @@
       }
       
       .copyright a:hover {
-        color: #fff;
+        color: $color-secondary;
       }
     }
   }

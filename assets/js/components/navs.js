@@ -22,7 +22,7 @@
 var getAjaxPanel = function(panel, callback) {
   var url = '/ajax/' + panel;
   $.get(url, (response) => {
-    $('.webFlux').html(response);
+    $('.webContent').html(response);
     callback();
   });
 }

@@ -1,4 +1,7 @@
-<article class="webContent" id="experiences-panel">
+<article class="panel" id="experiences-panel">
+
+    {% include 'components/panels/panelTitle.html.twig' %}
+    
     <div class="experiences-container">
         {% for experience in experiences %}
             <div class="card timeline-card" data-descr="{{ experience.dateStart|date('d/m/Y') }} - {{ experience.dateEnd|date('d/m/Y') }}">

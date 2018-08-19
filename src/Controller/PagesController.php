@@ -58,6 +58,9 @@ class PagesController {
             ]
         ];
         $currentPanel = isset($panelMatching[$panel]) ? $panelMatching[$panel] : false;
+        $currentPanel['panel'] = [];
+        $currentPanel['panel']['title'] = 'demo';
+        $currentPanel['panel']['subtitle'] = 'test';
         return new response($twig->render("panels/{$panel}.html.twig", $currentPanel));
     }
 }

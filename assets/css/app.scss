@@ -14,15 +14,7 @@
 //
 @import "components/navs.scss";
 @import "components/cards.scss";
-
-//
-// ───────────────────────────────────────────────────────────────────── pages ───────
-//
-@import "pages/index.scss";
-@import "pages/cv.scss";
-@import "pages/portfolio.scss";
-@import "pages/projets.scss";
-@import "pages/demo.scss";
+@import "components/panels.scss";
 
 //
 // ───────────────────────────────────────────────────────────────────── Globals ─────
@@ -32,7 +24,7 @@
     margin: 0px;
     font-family: 'IBM Plex Sans', sans-serif;
     overflow: hidden;
-    background: $body-background_color;
+    background: $color-background;
   }
   
   .mainFlux {
@@ -58,27 +50,12 @@
     width: 100%;
     height: 100%;
     padding: 0;
-    overflow-x: hidden;
     text-align: center;
-    overflow-y: scroll;
-    background-color: $body-background_color;
+    background-color: $color-background;
     transform-origin: left;
     transform-style: flat;
     transition: all 0.5s ease-in-out;
     z-index: $lvl-5;
-    ::-webkit-scrollbar {
-      width: $scrollbar-width;
-      background: $scrollbar-background_color;
-    }
-    ::-webkit-scrollbar-thumb {	
-      background: $scrollbar_thumb-background_color;
-    }
-    ::-webkit-scrollbar-thumb:hover {	
-      background: $scrollbar_thumb-hover-background_color;
-    }
-    ::-webkit-scrollbar-thumb:active {	
-      background: $scrollbar_thumb-active-background_color;
-    }
   }
   .singleFlux {
     position: absolute;
