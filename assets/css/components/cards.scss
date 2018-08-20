@@ -1,3 +1,79 @@
+.cards-mosaic {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+
+  .card {
+    height: 10em;
+    width: 10em;
+    padding: 0;
+    overflow: hidden;
+    margin: 1em;
+
+    .card-head {
+      padding: 0.5em 1em 1em 1em;
+      height: 1.5em;
+      position: relative;
+
+      .card-title {
+        font-size: 1em;
+
+        span.highlighted {
+          color: #fff;
+          background: $color-primary;
+        }
+      }
+      .card-subtitle {
+        color: rgba(0, 0, 0, 0.68);
+        font-size: 0.75em;
+      }
+      .card-decoration {
+        position: absolute;
+        width: 5em;
+        height: 3em;
+        bottom: 0;
+        right: 0;
+
+        img {
+          height: auto;
+          width: 100%;
+        }
+      }
+    }
+
+    .card-body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1em 1em 1em 1em;
+      height: 5em;
+
+      .card-logo {
+        transform: translateY(-0.5em);
+
+        i {
+          color: #fff;
+          font-size: 3em;
+        }
+      }
+
+      .card-stars {
+        color: #fff;
+        font-size: 0.25em;
+        padding: 0;
+        position: absolute;
+        bottom: -1em;
+        left: 1em;
+      }
+    }
+
+    &.hide {
+      display: none;
+    }
+  }
+}
+
+
 /*
                ______________________________
               |==============================|

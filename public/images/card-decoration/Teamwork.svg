@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="300" viewBox="0 0 500 300">
+  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c140 79.160451, 2017/05/06-01:08:21        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""/>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?></metadata>
+<defs>
+    <style>
+      .cls-1, .cls-3, .cls-6 {
+        fill: none;
+      }
+
+      .cls-2, .cls-5 {
+        fill: #5abcf6;
+      }
+
+      .cls-2, .cls-3, .cls-5, .cls-6 {
+        stroke: #0277bd;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-width: 5px;
+      }
+
+      .cls-3, .cls-4, .cls-6, .cls-8 {
+        fill-rule: evenodd;
+      }
+
+      .cls-4 {
+        fill: #035c92;
+      }
+
+      .cls-5, .cls-6 {
+        stroke-width: 10px;
+      }
+
+      .cls-7, .cls-8 {
+        fill: #0277bd;
+      }
+    </style>
+  </defs>
+  <g id="teamwork">
+    <rect id="card_background" data-name="card background" class="cls-1" x="-500" width="1000" height="1000"/>
+    <g id="Groupe_1_copie_2" data-name="Groupe 1 copie 2">
+      <circle class="cls-2" cx="348.22" cy="64.859" r="46.66"/>
+      <path id="Ellipse_1_copie" data-name="Ellipse 1 copie" class="cls-3" d="M4678.4,18c13.86,0,25.1,20.98,25.1,46.861s-11.24,46.861-25.1,46.861-25.1-20.98-25.1-46.861S4664.54,18,4678.4,18Z" transform="translate(-4330)"/>
+      <path class="cls-4" d="M4666.78,117.915h22.88v20.754h-22.88V117.915Z" transform="translate(-4330)"/>
+    </g>
+    <g id="Groupe_1" data-name="Groupe 1">
+      <circle class="cls-5" cx="408.515" cy="168.172" r="73.485"/>
+      <path id="Ellipse_1_copie-2" data-name="Ellipse 1 copie" class="cls-6" d="M4738.78,94.629c21.85,0,39.55,32.928,39.55,73.546s-17.7,73.547-39.55,73.547-39.55-32.928-39.55-73.547S4716.94,94.629,4738.78,94.629Z" transform="translate(-4330)"/>
+      <path class="cls-4" d="M4720.47,251.411h36.08V284h-36.08V251.411Z" transform="translate(-4330)"/>
+    </g>
+    <g id="Groupe_1_copie" data-name="Groupe 1 copie">
+      <circle class="cls-2" cx="271.64" cy="152.953" r="46.64"/>
+      <path id="Ellipse_1_copie-3" data-name="Ellipse 1 copie" class="cls-3" d="M4601.83,106.079c13.86,0,25.09,20.981,25.09,46.862s-11.23,46.861-25.09,46.861-25.1-20.981-25.1-46.861S4587.97,106.079,4601.83,106.079Z" transform="translate(-4330)"/>
+      <path class="cls-4" d="M4590.21,206h22.88v20.753h-22.88V206Z" transform="translate(-4330)"/>
+    </g>
+    <rect class="cls-7" x="406" y="101" width="6" height="134"/>
+    <path id="Rectangle_5_copie_5" data-name="Rectangle 5 copie 5" class="cls-8" d="M4599.55,111h3.9v87h-3.9V111Z" transform="translate(-4330)"/>
+    <path id="Rectangle_5_copie_4" data-name="Rectangle 5 copie 4" class="cls-8" d="M4558,152.552h87v3.9h-87v-3.9Z" transform="translate(-4330)"/>
+    <path id="Rectangle_5_copie_3" data-name="Rectangle 5 copie 3" class="cls-8" d="M4676.55,23h3.9v87h-3.9V23Z" transform="translate(-4330)"/>
+    <path id="Rectangle_5_copie_2" data-name="Rectangle 5 copie 2" class="cls-8" d="M4633,63.552h87v3.9h-87v-3.9Z" transform="translate(-4330)"/>
+    <rect id="Rectangle_5_copie" data-name="Rectangle 5 copie" class="cls-7" x="342" y="165" width="134" height="6"/>
+  </g>
+</svg>

@@ -1,20 +1,49 @@
 <article class="panel" id="skills-panel">
 
     {% include 'components/panels/panelTitle.html.twig' %}
-    
+    <div class="panel-nav">
+        <ul class="filter">
+            <li><a href="All" class="active">All</a></li>
+            {% for skillGroup in skills_groups %}
+                <li><a href="{{ skillGroup.name }}">{{ skillGroup.name }}</a></li>
+            {% endfor %}
+        </ul>
+        <div class="search">
+            <input type="text" required>
+            <label>Search</label>
+            <i class="material-icons">search</i>
+        </div>
+    </div>
     <div class="content">
         <div class="skills-container">
-            {% for skillGroup in skills_groups %}
-                {% for skill in skillGroup.skills %}
-                <div class="card">
-                    <div class="card-logo">
-                    <i class="{{ skill.picture }}"></i>
-                    </div>
-                    <p>{{ skill.name }}</p>
-                    <p>{{ skill.level }}</p>
-                </div>
+            <div class="cards-mosaic">
+                {% for skillGroup in skills_groups %}
+                    {% for skill in skillGroup.skills | sortbyfield('name') %}
+                        <div class="card" data-search="{{ skill.name }}" data-filter="{{ skillGroup.name }}">
+                            <div class="card-head">
+                                <div class="card-title">{{ skill.name }}</div>
+                                <div class="card-subtitle">{{ skillGroup.name }}</div>
+                                <div class="card-decoration">
+                                    <img src="images/card-decoration/{{ skillGroup.name }}.svg">
+                                </div>
+                            </div>
+                            <div class="card-body" style="background: #{{ skillGroup.color }}">
+                                <div class="card-logo"><i class="{{ skill.picture }}"></i></div>
+                                <ul class="card-stars">
+                                    {% for i in 1..5 %}
+                                        {% if i <= skill.level %}
+                                            <i class="material-icons">star</i>
+                                        {% else %}
+                                            <i class="material-icons">star_border</i>
+                                        {% endif %}
+                                        
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    {% endfor %}
                 {% endfor %}
-            {% endfor %}
+            </div>
         </div>
     </div>
 </article>

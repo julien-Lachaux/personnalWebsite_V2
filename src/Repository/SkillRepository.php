@@ -26,7 +26,7 @@ class SkillRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('s')
             ->andWhere('s.displayed = 1')
-            ->orderBy('s.id', 'ASC')
+            ->orderBy('s.name', 'ASC')
             ->getQuery()
             ->getResult()
         ;

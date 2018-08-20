@@ -57,10 +57,13 @@ class PagesController {
                 'experiences' => $doctrine->getRepository(Experience::class)->findAll()
             ]
         ];
+        
         $currentPanel = isset($panelMatching[$panel]) ? $panelMatching[$panel] : false;
-        $currentPanel['panel'] = [];
-        $currentPanel['panel']['title'] = 'demo';
-        $currentPanel['panel']['subtitle'] = 'test';
+        $currentPanel['panel'] = [
+            'title' => 'Skills',
+            'subtitle' => 'A subtitle'
+        ];
+
         return new response($twig->render("panels/{$panel}.html.twig", $currentPanel));
     }
 }

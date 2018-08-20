@@ -19,11 +19,14 @@
               |______________________________|
 */
 
+const cards = require('./cards');
 var getAjaxPanel = function(panel, callback) {
   var url = '/ajax/' + panel;
   $.get(url, (response) => {
     $('.webContent').html(response);
     callback();
+    cards.activeFilter();
+    cards.activeSearch();
   });
 }
 

@@ -7,6 +7,7 @@
         "ext-iconv": "*",
         "itsjavi/bootstrap-colorpicker": "^3.0",
         "sensio/framework-extra-bundle": "^5.2",
+        "snilius/twig-sort-by-field": "^0.1.5",
         "symfony/asset": "^4.1",
         "symfony/console": "^4.1",
         "symfony/flex": "^1.0",
@@ -19,7 +20,8 @@
         "symfony/twig-bundle": "^4.1",
         "symfony/validator": "^4.1",
         "symfony/webpack-encore-pack": "^1.0",
-        "symfony/yaml": "^4.1"
+        "symfony/yaml": "^4.1",
+        "twig/extensions": "^1.5"
     },
     "require-dev": {
         "symfony/dotenv": "^4.1"

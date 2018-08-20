@@ -126,20 +126,18 @@
 
         &.iconActive {
           background: $color-primary !important;
-          border-left: 5px solid $color-secondary;
           .link-txt {
             color: $color-text-over !important;
           }
           i.link-logo {
             transform: scale(2.5) !important;
-            color: $color-secondary !important;
+            color: $color-primary-light !important;
           }
         }
         
         &:hover {
-          border-left: 5px solid $color-secondary;
           i.link-logo {
-            color: $color-secondary !important;
+            color: $color-primary-light !important;
           }
         }
       }
