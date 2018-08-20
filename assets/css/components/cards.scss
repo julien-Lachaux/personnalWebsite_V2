@@ -1,3 +1,101 @@
+// card default
+.card {
+  display: block;
+  position: relative;
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  border-radius: 0.3em;
+  margin: 1em;
+
+  .card-head {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 0.5em 1em 1em 1em;
+
+    .card-title {
+      font-size: 1.5em;
+      text-align: left;
+    }
+
+    .card-subtitle {
+      text-align: left;
+      color: rgba(0, 0, 0, 0.68);
+    }
+
+    .card-decoration {
+      position: absolute;
+        width: auto;
+        height: 100%;
+        bottom: 0;
+        right: 0;
+
+        img {
+          height: 100%;
+          width: auto;
+        }
+    }
+  }
+  .card-body {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 80%;
+
+    .card-imgs-container {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+
+      a {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        height: 10em;
+        width: 10em;
+        text-decoration: none;
+        z-index: $lvl-5;
+
+        span {
+          color: #000;
+        }
+        &:hover {
+          span {
+            color: $color-primary;
+            text-decoration: underline;
+          }
+          i {
+            color: $color-primary;
+          }
+        }
+      }
+      .card-decoration {
+        position: absolute;
+        width: auto;
+        height: 60%;
+        bottom: 1em;
+        right: 0;
+        z-index: $lvl-1;
+  
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+    }
+
+
+    .card-liseret {
+      width: 100%;
+      height: 1em;
+      position: relative;
+      bottom: 0;
+    }
+  }
+}
+
+// cards mosaic
 .cards-mosaic {
   display: flex;
   flex-flow: row wrap;
@@ -11,7 +109,6 @@
     margin: 1em;
 
     .card-head {
-      padding: 0.5em 1em 1em 1em;
       height: 1.5em;
       position: relative;
 
@@ -24,7 +121,6 @@
         }
       }
       .card-subtitle {
-        color: rgba(0, 0, 0, 0.68);
         font-size: 0.75em;
       }
       .card-decoration {
@@ -73,182 +169,7 @@
   }
 }
 
-
-/*
-               ______________________________
-              |==============================|
-              |           COMPONENT          |
-              |==============================|
-              |$                            $|
-              |$         ALERT-CARD         $|
-              |$                            $|
-              |==============================|
-              |          FILES-INFO          |
-              |==============================|
-              |    author : Julien Lachaux   |
-              |      date : 22-05-2017       |
-              |      type : CSS              |
-              |==============================|
-              |           CONTACT            |
-              |==============================|
-              |   lachauxWebDev@gmail.com    |
-              |______________________________|
-*/
-
-.alert-card {
-  background: rgba(0, 0, 0, 0.25) !important;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  border-radius: 0.3em;
-  padding: 2em;
-  min-width: 20em;
-  max-width: 50em;
-  margin: 0 auto 2em auto;
-  top: 15vh;
-  position: relative;
-  text-align: left;
-}
-
-.alert-card .card-logo {
-  width: 8em;
-  height: 8em;
-  border-radius: 50%;
-  margin: 0 1em 1em 0;
-  overflow: hidden;
-  position: relative;
-  left: 1em;
-  display: inline-block;
-}
-
-.alert-card .card-logo img {
-  width: 8em;
-  height: 8em;
-}
-
-.alert-card .card-title {
-  font-size: 1.15em;
-  color: #ffffff;
-  font-weight: 700;
-  display: inline-block;
-  position: absolute;
-  top: 3.5em;
-  left: 10em;
-}
-
-/*
-       __________________________
-      |                          |
-      |         version          |
-      |        responsive        |
-      |__________________________| 
-*/
-@media screen and (max-width: 1024px) {
-  .alert-card {
-    width: 100% !important;
-    padding: 0;
-    top: 5vh;
-    padding: 1em 0 !important;
-  }
-  
-  .alert-card .card-logo {
-    display: block;
-    margin: 1em auto;
-    left: auto;
-  }
-  
-  .alert-card .card-title {
-    display: block;
-    position: relative;
-    top: auto;
-    left: auto;
-    width: calc(100% - 1em);
-    text-align: center;
-    padding: 1em;
-  }
-}
-
-@media screen and (max-width: 425px) {
-}
-/*
-               ______________________________
-              |==============================|
-              |           COMPONENT          |
-              |==============================|
-              |$                            $|
-              |$            CARD            $|
-              |$                            $|
-              |==============================|
-              |          FILES-INFO          |
-              |==============================|
-              |    author : Julien Lachaux   |
-              |      date : 22-05-2017       |
-              |      type : CSS              |
-              |==============================|
-              |           CONTACT            |
-              |==============================|
-              |   lachauxWebDev@gmail.com    |
-              |______________________________|
-*/
-
-.card {
-  background: #fff;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  border-radius: 0.3em;
-  padding: 2em;
-  min-width: 10em;
-  // max-width: 50em;
-  margin: 0 auto 2em auto;
-  position: relative;
-  text-align: left;
-}
-
-.cards-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  min-height: 70vh;
-}
-
-.card .tags {
-  font-size: 1.2em;
-  list-style: none;
-  display: flex;
-  flex-flow: row wrap;
-  padding: 0;
-  cursor: default;
-  margin: 1em 0 0 0;
-}
-.card .tags .tag {
-  border-radius: 2em;
-  padding: 0.4em 1em;
-  font-size: 0.6em;
-  margin: 0.5em 0.5em;
-  color: white;
-  background: #588b61;
-  border: 0.1em solid #588b61;
-}
-
-.card .separator {
-  width: 50%;
-  margin: 2em auto;
-  height: 1px;
-  background: #677273;
-}
-
-.active .onLoadCard {
-  opacity: 0;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-}
-
-.active .onLoadCard.top {
-  transform: translateY(-75vh);
-  animation-name: webContentLoad-top;
-  animation-delay: 0.45s;
-}
-
+// Les animations
 @keyframes webContentLoad-top {
   from {
     opacity: 0;
@@ -259,13 +180,6 @@
     opacity: 1;
   }
 }
-
-.active .onLoadCard.bottom {
-  transform: translateY(75vh);
-  animation-name: webContentLoad-bottom;
-  animation-delay: 0.75s;
-}
-
 @keyframes webContentLoad-bottom {
   from {
     opacity: 0;
@@ -276,13 +190,6 @@
     opacity: 1;
   }
 }
-
-.active .onLoadCard.left {
-  transform: translateX(-100vw);
-  animation-name: webContentLoad-left;
-  animation-delay: 0.20s;
-}
-
 @keyframes webContentLoad-left {
   from {
     opacity: 0;
@@ -293,13 +200,6 @@
     opacity: 1;
   }
 }
-
-.active .onLoadCard.right {
-  transform: translateX(100vw);
-  animation-name: webContentLoad-right;
-  animation-delay: 0.20s;
-}
-
 @keyframes webContentLoad-right {
   from {
     opacity: 0;
@@ -311,1009 +211,29 @@
   }
 }
 
-/*
-       __________________________
-      |                          |
-      |         version          |
-      |        responsive        |
-      |__________________________| 
-*/
-@media screen and (max-width: 1024px) {
-}
-
-@media screen and (max-width: 425px) {
-  .card .tag {
-    font-size: 0.55em !important;
-    padding: 0.6em 1em;
-    color: white !important;
-    background: #588b61;
-    border: 0.1em solid #588b61 !important;
-  }
-}
-/*
-               ______________________________
-              |==============================|
-              |           COMPONENT          |
-              |==============================|
-              |$                            $|
-              |$          FORM-CARD         $|
-              |$                            $|
-              |==============================|
-              |          FILES-INFO          |
-              |==============================|
-              |    author : Julien Lachaux   |
-              |      date : 22-05-2017       |
-              |      type : CSS              |
-              |==============================|
-              |           CONTACT            |
-              |==============================|
-              |   lachauxWebDev@gmail.com    |
-              |______________________________|
-*/
-
-.form-card {
-  padding: 2em;
-  width: 23.5em;
-  height: 32em;
-  margin: 0 auto;
-}
-
-.form-card .card-title {
-  display: block;
-  color: #677273;
-  font-weight: 700;
-}
-
-.form-card input, .form-card textarea {
-  display: block;
-  margin: 2em 0;
-  width: 29.5em;
-  border: none;
-}
-
-.form-card input::-webkit-input-placeholder,
-.form-card textarea::-webkit-input-placeholder {
-  font: inherit;
-  color: #677273;
-  -webkit-transition: font-size 0.3s ease-in-out, visibility 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-  transition: font-size 0.3s ease-in-out, visibility 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out, visibility 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out, visibility 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-}
-
-.form-card input,
-.form-card textarea {
-  font: inherit;
-  font-size: 0.8em;
-  display: block;
-  border: none;
-  padding: 20px 0 10px;
-  border-bottom: solid 2px #91cfbd !important;
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 98%, #91cfbd 2%);
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 98%, #91cfbd 2%);
-  background-position: -400px 0;
-  background-size: 400px 100%;
-  background-repeat: no-repeat;
-  -webkit-transition: background 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-  transition: background 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-  resize: none;
-  overflow: hidden;
-}
-
-.form-card textarea {
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 99.5%, #91cfbd 0.5%);
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 99.5%, #91cfbd 0.5%);
-  background-position: -400px 0;
-  background-size: 400px 100%;
-  background-repeat: no-repeat;
-  -webkit-transition: background 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-  transition: background 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-}
-.form-card input:focus::-webkit-input-placeholder,
-.form-card textarea:focus::-webkit-input-placeholder {
-  color: #91cfbd;
-}
-.form-card input:focus, input:valid,
-.form-card textarea:focus,
-.form-card textarea:valid {
-  box-shadow: none;
-  outline: none;
-  background-position: 0 0;
-}
-.form-card input:focus::-webkit-input-placeholder, .form-card input:valid::-webkit-input-placeholder,
-.form-card textarea:focus::-webkit-input-placeholder,
-.form-card textarea:valid::-webkit-input-placeholder {
-  font-size: 0.8em;
-  -webkit-transform: translateY(-20px);
-  transform: translateY(-20px);
-  visibility: visible !important;
-  opacity: 1;
-}
-
-.form-card input.inputName {
-  display: inline-block;
-  width: 14.53em;
-  margin: 0.5em 0;
-}
-
-.form-card .submit {
-  width: 8em;
-  border-radius: 1em;
-  padding: 1em;
-  float: right;
-  transform: translateY(-1em);
-  background: #91cfbd;
-  color: white;
-}
-
-/*
-       __________________________
-      |                          |
-      |         version          |
-      |        responsive        |
-      |__________________________| 
-*/
-@media screen and (max-width: 1024px) {
-  .form-card {
-    margin: 0 auto;
-    width: 90%;
-    overflow-y: auto;
-    padding: 1em 5%;
-    height: auto;
-  }
-  .form-card input, .form-card textarea {
-    width: 100%;
-  }
-  
-  .form-card input.inputName {
-    width: 100%;
-  }
-}
-/*
-               ______________________________
-              |==============================|
-              |           COMPONENT          |
-              |==============================|
-              |$                            $|
-              |$          LIST-CARD         $|
-              |$                            $|
-              |==============================|
-              |          FILES-INFO          |
-              |==============================|
-              |    author : Julien Lachaux   |
-              |      date : 22-05-2017       |
-              |      type : CSS              |
-              |==============================|
-              |           CONTACT            |
-              |==============================|
-              |   lachauxWebDev@gmail.com    |
-              |______________________________|
-*/
-
-.list-card {
-  display: none;
-}
-
-.cards {
-  width: 100%;
-  background: #fff;
-  height: 40em;
-  border-radius: 0 1em 1em 1em;
-  overflow: hidden;
-}
-
-.selectors {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-content: flex-start;
-}
-
-.selector {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  width: 20%;
-  height: 3em;
-  margin: 0 1em 0 0;
-  background: rgba(0, 0, 0, 0.27);
-  color: white;
-  border-radius: 1em 1em 0 0;
-  transition: all 300ms ease-in-out;
-}
-
-.selector.active-selector {
-  background: #fff !important;
-  color: black;
-}
-
-.selector:hover {
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.27);
-}
-
-.list-card-selector .card-title {
-  margin: 0;
-  background: rgba(0, 0, 0, 0.25);
-  border-radius: 0 0 50% 50%;
-  transition: all 300ms ease-in-out;
-  font-size: 1.25em;
-  font-weight: 700;
-  text-align: center;
-  display: block;
-  color: white;
-  padding: 1em 0 0.2em 0;
-}
-
-.list-card .card-list {
-  color: #677273;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 1.1em;
-  text-align: center;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: stretch;
-  height: 18em;
-}
-
-.list-card .card-list .list-item {
-  padding: 0 1em;
-  font-size: 0.8em;
-  margin: 0;
-  width: 20%;
-}
-
-.list-card .card-list .list-item .title-logo {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  width: auto;
-  height: 13em;
-  position: relative;
-  padding: 4em 0 0 0;
-  margin: 0 0 4em 0;
-  background: #fff;
-  z-index: 5;
-  border-bottom: 2px solid #b5c8ca;
-}
-
-.list-card .card-list .list-item .title-logo img {
-  width: auto;
-  height: 10em;
-  padding: 0 0 3em 0;
-}
-
-.list-card .card-list .list-item .title {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 3.5em;
-  font-size: 1.5em;
-  margin: 0 0 1em 0;
-}
-
-.list-card .card-list .list-item .descr {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 0 2em 0;
-  font-family: 'IBM Plex Serif', serif;
-  z-index: 10;
-  display: block;
-  line-height: 1.5em;
-}
-
-.list-card .card-list .list-item .descr::before {
-  display: block;
-  text-align: center;
-  font-size: 1.25em;
-  color: #869596;
-  font-family: 'IBM Plex Sans', sans-serif;
-  margin: 0 0 1em 0;
-}
-
-.list-card .card-list .list-item .descr.framework::before { content: 'Frameworks :'; }
-.list-card .card-list .list-item .descr.library::before { content: 'Librairies :'; }
-.list-card .card-list .list-item .descr.preprocessor::before { content: 'Préprocesseurs :'; }
-.list-card .card-list .list-item .descr.norme::before { content: 'Normes :'; }
-.list-card .card-list .list-item .descr.modules::before { content: 'Modules :'; }
-.list-card .card-list .list-item .descr.language::before { content: 'Langages :'; }
-.list-card .card-list .list-item .descr.bdd::before { content: 'Base de données :'; }
-.list-card .card-list .list-item .descr.api::before { content: 'API :'; }
-.list-card .card-list .list-item .descr.method::before { content: 'Méthodologie :'; }
-.list-card .card-list .list-item .descr.design::before { content: 'Design :'; }
-.list-card .card-list .list-item .descr.communication::before { content: 'Communication :'; }
-.list-card .card-list .list-item .descr.os::before { content: 'Système d\'exploication :'; }
-.list-card .card-list .list-item .descr.mobile::before { content: 'Application mobile :'; }
-.list-card .card-list .list-item .descr.outils::before { content: 'Outils :'; }
-.list-card .card-list .list-item .descr.commande::before { content: 'Lignes de commande :'; }
-.list-card .card-list .list-item .descr.echelle::before { content: 'Travail en équipe :'; }
-.list-card .card-list .list-item .descr.mentora::before { content: 'Prise en charge débutant :'; }
-.list-card .card-list .list-item .descr.langue::before { content: 'Langues :'; }
-
-/* le system d'onglet */
-
-.list-cards-container {
-  flex-flow: column wrap;
-  justify-content: flex-start;
-  align-items: stretch;
-  width: 90%;
-  margin: 2em auto 0 auto;
-  border-radius: 1em;
-}
-
-@keyframes active-list {
-  from {
-    transform: translateY(-500px);
-  }
-  to {
-    transform: translateY(0px);
-  }
-}
-
-.list-card.active-list {
-  display: block;
-}
-
-.list-card.active-list .list-item .descr{
-  transform: translateY(-500px);
-  animation-name: active-list;
-  animation-delay: 1s;
+.active .onLoadCard {
+  opacity: 0;
   animation-duration: 1s;
-  animation-timing-function: ease-out;
   animation-fill-mode: forwards;
-}
-
-@keyframes active-logo {
-  from {
-    clip-path: inset(0px 0px 200px 0px);
-    transform: translateY(200px);
+  animation-timing-function: ease-in-out;
+  &.top {
+    transform: translateY(-75vh);
+    animation-name: webContentLoad-top;
+    animation-delay: 0.45s;
   }
-  to {
-    clip-path: inset(0 0);
-    transform: translateY(0em);
+  &.bottom {
+    transform: translateY(75vh);
+    animation-name: webContentLoad-bottom;
+    animation-delay: 0.75s;
   }
-}
-
-.list-card.active-list .list-item .title-logo img{
-  animation-name: active-logo;
-  animation-delay: 500ms;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-  clip-path: inset(0px 0px 200px 0px);
-  transform: translateY(200px);
-}
-
-/*
-       __________________________
-      |                          |
-      |         version          |
-      |        responsive        |
-      |__________________________| 
-*/
-@media screen and (max-width: 1024px) {
-  
-  .cards {
-    border-radius: 1em;
+  &.left {
+    transform: translateX(-100vw);
+    animation-name: webContentLoad-left;
+    animation-delay: 0.20s;
   }
-  
-  .selectors {
-    flex-flow: column nowrap;
-    align-items: flex-end;
-    position: absolute;
-    z-index: 1001;
-    width: 3em;
-    right: 0;
-    top: 10px;
+  &.right {
+    transform: translateX(100vw);
+    animation-name: webContentLoad-right;
+    animation-delay: 0.20s;
   }
-  
-  .selector {
-    width: 6em;
-    z-index: 1002;
-    transform-origin: center;
-    transform: rotateZ(90deg) translateY(-1.5em);
-    margin: 3em 0;
-    border-radius: 0 0 1em 1em;
-    position: relative;
-  }
-  
-  .selector.active-selector {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    background: #fff !important;
-    color: black;
-  }
-  
-  .card-list {
-    height: auto !important;
-  }
-  
-  .list-card {
-    width: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-  
-  .list-cards-container {
-    width: 100%;
-  }
-  
-  .cards {
-    height: auto;
-  }
-  
-  .list-card .card-title {
-    font-size: 1.5em;
-  }
-  
-  .list-card .card-list .list-item {
-    font-size: 1.25em;
-  }
-  
-  .list-card .card-list .list-item .title-logo {
-    width: 80%;
-    margin: 0 auto 2em auto;
-    padding: 0;
-  }
-  .list-card .card-list .list-item .title-logo img{
-    width: auto;
-    height: 5em;
-    padding: 0;
-  }
-  
-  .list-card.active-list .list-item .descr{
-    transform: translateY(0px);
-    animation-name: none;
-  }
-
-  .list-card.active-list .list-item .title-logo img{
-    animation-name: none;
-    clip-path: inset(0px 0px 0px 0px);
-    transform: none;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  
-  .list-card {
-    width: 100% !important;
-    margin: 1em 0 !important;
-  }
-  
-  .list-card .card-title {
-    font-size: 1.5em;
-  }
-
-  .list-card .card-list .list-item {
-    width: 100%;
-  }
-}
-/*
-               ______________________________
-              |==============================|
-              |           COMPONENT          |
-              |==============================|
-              |$                            $|
-              |$          MEDIA-CARD        $|
-              |$                            $|
-              |==============================|
-              |          FILES-INFO          |
-              |==============================|
-              |    author : Julien Lachaux   |
-              |      date : 22-05-2017       |
-              |      type : CSS              |
-              |==============================|
-              |           CONTACT            |
-              |==============================|
-              |   lachauxWebDev@gmail.com    |
-              |______________________________|
-*/
-
-.media-card {
-  width: 25%;
-  max-width: 100%;
-  height: 25em;
-  margin: 1em;
-}
-
-.media-card .card-media {
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-  align-items: center;
-  overflow: hidden;
-}
-
-.media-card .card-media .card-img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.media-card .card-title {
-  display: block;
-  margin: 1em 0;
-  font-size: 1.2em;
-}
-
-.media-card .card-descr {
-  text-align: justify;
-  font-family: 'IBM Plex Serif', serif;
-}
-
-/*
-       __________________________
-      |                          |
-      |         version          |
-      |        responsive        |
-      |__________________________| 
-*/
-@media screen and (max-width: 1024px) {
-  
-}
-
-@media screen and (max-width: 425px) {
-  .cards-container {
-    width: 100% !important;
-  }
-  .media-card {
-    width: 100%;
-    margin: 1em 0;
-  }
-  
-  .card-media {
-    width: 100% !important;
-    height: 10em !important;
-  }
-  
-  .card-media .card-img {
-    width: auto !important;
-    margin: 0 auto;
-    max-height: 10em !important;
-  }
-}
-/*
-               ______________________________
-              |==============================|
-              |           COMPONENT          |
-              |==============================|
-              |$                            $|
-              |$          TEXT-CARD         $|
-              |$                            $|
-              |==============================|
-              |          FILES-INFO          |
-              |==============================|
-              |    author : Julien Lachaux   |
-              |      date : 22-05-2017       |
-              |      type : CSS              |
-              |==============================|
-              |           CONTACT            |
-              |==============================|
-              |   lachauxWebDev@gmail.com    |
-              |______________________________|
-*/
-
-.text-card {
-  margin: 2em auto 0 auto;
-}
-
-.text-card .card-logo {
-  position: relative;
-  width: 8em;
-  height: 8em;
-  border-radius: 50%;
-  margin: 0 1em 2em 0;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  left: 1em;
-  background: #b5c8ca;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: flex-end;
-  overflow: hidden;
-}
-
-.text-card .card-logo img {
-  width: 8em;
-  height: 8em;
-  bottom: 0;
-}
-
-.text-card .card-title {
-  font-size: 1.25em;
-  color: #677273;
-  font-weight: 700;
-  display: inline-block;
-  position: absolute;
-  top: 4.5em;
-  left: 10em;
-}
-
-.text-card .card-subtitle {
-  display: block;
-  color: #677273;
-  font-size: 1em;
-}
-
-.text-card .card-descr {
-  font-family: 'IBM Plex Serif', serif;
-  font-size: 0.9em;
-  text-align: justify;
-  color: #677273;
-}
-
-/*
-       __________________________
-      |                          |
-      |         version          |
-      |        responsive        |
-      |__________________________| 
-*/
-@media screen and (max-width: 1024px) {
-  .text-card .card-logo, .text-card .card-logo img {
-    height: 6em;
-    width: 6em;
-  }
-  
-  .text-card .card-title {
-    top: 4em;
-    left: 8em;
-    font-size: 1.1em;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .text-card {
-    width: 90%;
-    padding: 2em 5%;
-  }
-}
-/*
-               ______________________________
-              |==============================|
-              |           COMPONENT          |
-              |==============================|
-              |$                            $|
-              |$         TIMELINE-CARD      $|
-              |$                            $|
-              |==============================|
-              |          FILES-INFO          |
-              |==============================|
-              |    author : Julien Lachaux   |
-              |      date : 22-05-2017       |
-              |      type : CSS              |
-              |==============================|
-              |           CONTACT            |
-              |==============================|
-              |   lachauxWebDev@gmail.com    |
-              |______________________________|
-*/
-
-.experiences-container {
-  display: flex;
-  flex-flow: column nowrap;
-  text-align: left;
-  margin: 1em auto 0 auto;
-}
-
-.timeline-card {
-  margin: 1em auto;
-  padding: 0 1em 1em 1em;
-  width: 35em;
-  transform: translateX(10em);
-}
-
-.timeline-card::before {
-  content: attr(data-descr);
-  position: absolute;
-  left: -20em;
-  top: 10.5em;
-  color: #fff;
-}
-
-.timeline-card::after {
-  content: '';
-  position: absolute;
-  left: -7em;
-  top: 8.5em;
-  width: 4em;
-  height: 4em;
-  border-radius: 50%;
-  border: 0.5em solid #fff;
-  color: #fff;
-}
-
-.timeline-card .card-title::after {
-  content: '';
-  position: absolute;
-  left: -2em;
-  top: 8.9em;
-  width: 2em;
-  height: 0.5em;
-  background: #fff;
-}
-
-.timeline-card .card-logo {
-  position: absolute;
-  width: 5em;
-  margin: 1em 0 0 1em;
-}
-
-.timeline-card .card-logo img {
-  width: 100%;
-}
-
-.timeline-card .card-title {
-  font-size: 1.2em;
-  font-weight: 700;
-  margin: 0 0 0 6em;
-  padding: 1em 0 0 0;
-  display: block;
-  color: #677273;
-}
-
-.timeline-card .card-subtitle {
-  margin: 0 0 0 7.2em;
-  display: block;
-  color: #677273;
-  font-family: 'IBM Plex Serif', serif;
-}
-
-.timeline-card .card-date {
-  display: none;
-  padding: 0 0 0 1em;
-  font-size: 0.8em;
-  color: #677273;
-  position: absolute;
-  right: 1.5em;
-  top: 1.5em;
-  font-family: 'IBM Plex Serif', serif;
-}
-
-.timeline-card .card-descr {
-  margin: 2em 1em 1em 1em;
-  line-height: 2em;
-  font-size: 0.9em;
-  list-style: none;
-  padding: 0;
-  font-family: 'IBM Plex Serif', serif;
-  color: #677273;
-}
-
-/*
-       __________________________
-      |                          |
-      |         version          |
-      |        responsive        |
-      |__________________________| 
-*/
-@media screen and (max-width: 1200px) {
-  .timeline-card {
-    width: 80%;
-    margin: 1em auto 4em auto;
-    transform: translateX(0);
-  }
-  
-  .timeline-card::before {
-    content: none;
-  }
-  
-  .timeline-card::after {
-    content: none;
-  }
-  
-  .timeline-card .card-title::after {
-    content: none;
-  }
-  
-  .timeline-card .card-title {
-    font-size: 1em;
-    margin: 1em 0 0 8em;
-  }
-  
-  .timeline-card .card-subtitle {
-    font-size: 0.8em;
-    margin: 1em 0 0 10em;
-  }
-  
-  .timeline-card .card-logo {
-    width: 7em;
-    margin: 1em 0 0 0em;
-  }
-  
-  .timeline-card .card-descr {
-    font-size: 0.8em;
-    margin-top: 3em;
-  }
-  
-  .timeline-card .card-date {
-    display: inline;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .timeline-card {
-    width: 90%;
-    padding: 2em 5% 1em 5%;
-    margin: 1em 0 2em 0;
-  }
-  
-  .timeline-card::before {
-    content: none;
-  }
-  
-  .timeline-card::after {
-    content: none;
-  }
-  
-  .timeline-card .card-title::after {
-    content: none;
-  }
-  
-  .timeline-card .card-title {
-    font-size: 1em;
-    margin: 1em 0 0 8em;
-  }
-  
-  .timeline-card .card-subtitle {
-    font-size: 0.8em;
-    margin: 1em 0 0 10em;
-  }
-  
-  .timeline-card .card-logo {
-    width: 7em;
-    margin: 1em 0 0 0em;
-  }
-  
-  .timeline-card .card-descr {
-    font-size: 0.8em;
-    margin-top: 3em;
-  }
-  
-  .timeline-card .card-date {
-    display: inline;
-  }
-}
-/*
-               ______________________________
-              |==============================|
-              |           COMPONENT          |
-              |==============================|
-              |$                            $|
-              |$          TITLE-CARD        $|
-              |$                            $|
-              |==============================|
-              |          FILES-INFO          |
-              |==============================|
-              |    author : Julien Lachaux   |
-              |      date : 22-05-2017       |
-              |      type : CSS              |
-              |==============================|
-              |           CONTACT            |
-              |==============================|
-              |   lachauxWebDev@gmail.com    |
-              |______________________________|
-*/
-
-.title-card {
-  margin:  2em auto 1em auto;
-  position: relative;
-}
-
-.title-card .card-title {
-  display: block;
-  color: #677273;
-  font-weight: 700;
-  margin: 0 0 -1em 0 !important;
-  text-align: center;
-  font-size: 1.5em;
-}
-
-.title-card .card-subtitle {
-  display: block;
-  text-align: center;
-  color: #677273;
-  font-size: 1em;
-  font-family: 'IBM Plex Serif', serif;
-}
-
-.title-card .card-descr {
-  display: block;
-  color: #677273;
-  font-size: 1em;
-  font-family: 'IBM Plex Serif', serif;
-}
-
-.title-card .card-imgs-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1em 0;
-}
-
-.title-card .card-img {
-  width: 10em;
-  height: 5em;
-  margin: 1em;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-}
-
-.title-card .card-img img {
-  min-width: 50%;
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.title-card .card-img:hover img {
-  transform: scale(1.2);
-}
-
-.title-card a {
-  color: #677273;
-  text-decoration: none !important;  
-}
-
-.title-card .card-img-title {
-  line-height: 3.5em;
-  
-}
-
-/*
-       __________________________
-      |                          |
-      |         version          |
-      |        responsive        |
-      |__________________________| 
-*/
-@media screen and (max-width: 1024px) {
-  .title-card .card-descr {
-    position: relative;
-    width: 100%;
-    right: auto;
-    top: auto;
-    text-align: center;
-    font-size: 0.8em;
-  }
-  
-  .title-card .card-title, .title-card .card-subtitle {
-    text-align: center;
-  }
-  
-  .title-card {
-    padding: 1em 5% !important;
-  }
-  
-  .title-card .card-imgs-container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  .title-card .card-img {
-    width: 8em;
-    height: 10em;
-    margin: 1em 0;
-  }
-  
-  .title-card .card-img img {
-    height: 5.5em;
-    width: 5.5em;
-  }
-}
-
-@media screen and (max-width: 425px) {
 }

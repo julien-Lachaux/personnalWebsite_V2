@@ -21,8 +21,8 @@
 .panel {
     display: block;
     width: 100%;
-    height: calc(100% - 15em);
-    top: 15em;
+    height: 100%;
+    box-sizing: border-box;
 
     .panelTitle {
         width: calc(100% - #{$scrollbar-width});
@@ -150,11 +150,12 @@
     }
 
     .content {
+        box-sizing: border-box;
         display: block;
         height: 100%;
         padding-top: 17em;
         overflow-y: scroll;
-        padding: 17em 10% 0 10%;
+        padding: 17em 10% 2em 10%;
 
         &::-webkit-scrollbar {
             width: $scrollbar-width;
