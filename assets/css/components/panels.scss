@@ -1,3 +1,23 @@
+@keyframes appearFromTop {
+    from {
+      opacity: 0;
+      transform: translateY(-75vh);
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+@keyframes appearFromRight {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
 .panel {
     display: block;
     width: 100%;
@@ -15,6 +35,15 @@
         justify-content: center;
         align-items: center;
         z-index: $lvl-9;
+
+        // animation onload
+        opacity: 0;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        transform: translateY(-75vh);
+        animation-name: appearFromTop;
+        animation-delay: 1.2s;
     
         .title {
             width: 80%;
@@ -46,6 +75,15 @@
         width: 80%;
         color: black;
         z-index: $lvl-10;
+
+        // animation onload
+        opacity: 0;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        transform: translateX(100%);
+        animation-name: appearFromRight;
+        animation-delay: 1s;
 
         .filter {
             display: flex;

@@ -1,22 +1,3 @@
-function randomInt(mini, maxi)
-{
-     var nb = mini + (maxi+1-mini)*Math.random();
-     return Math.floor(nb);
-}
-Array.prototype.shuffle = function(n)
-{
-     if(!n)
-          n = this.length;
-     if(n > 1)
-     {
-          var i = randomInt(0, n-1);
-          var tmp = this[i];
-          this[i] = this[n-1];
-          this[n-1] = tmp;
-          this.shuffle(n-1);
-     }
-}
-
 const cards = {
     activeFilter() {
         if ($('.panel-nav').length) {
@@ -30,14 +11,9 @@ const cards = {
             for(let i = 1; i <= cardsArray.length; i++) {
                 position.push(i);
             }
-            console.log(position);
             position.shuffle();
-            console.log(position);
             cardsArray.each((index, filteredCard) => {
-                $(filteredCard).css('order', position[index])
-                if($(filteredCard).hasClass('onLoadCard')) {
-                    $(filteredCard).removeClass('onLoadCard');
-                }
+                $(filteredCard).css('order', position[index]);
             });
         }
     },

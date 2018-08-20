@@ -80,7 +80,7 @@ var afficherSection = function(ciblePath){
   var CheminComplet = document.location.href;
   var cibleID = ciblePath.substring(1);
   var hash = CheminComplet.substring(CheminComplet.lastIndexOf( "/" ) + 1);
-  var currentPanel = document.querySelector('.webContent');
+  var currentPanel = document.querySelector('.panel');
   var currentBtn = document.querySelector('div.link-txt[href="/' + hash + '"]').parentNode;
   var currentIcon = currentBtn.querySelector('.link-logo');
   var cibleBtn = document.querySelector('div.link-txt[href="/' + cibleID + '"]').parentNode;
@@ -128,6 +128,12 @@ function activeCardAnimation() {
   var webContents = document.querySelectorAll('.webContent');
   var poi = 0;
   var lor;
+  setTimeout(() => {
+    var cards = document.querySelectorAll('.card.onLoadCard');
+    for (let i = 0; i < cards.length; i++) {
+      cards[i].classList.remove('onLoadCard');
+    }
+  }, 2500);
   for(var u = 0; u < webContents.length; u++) {
     lor  = 0;
     var cards = webContents[u].querySelectorAll('.card');
@@ -148,6 +154,7 @@ function activeCardAnimation() {
     } else {
      for(var i = 0; i < cards.length; i++) {
         cards[i].classList.add('onLoadCard');
+        console.log('anim ON');
        if(lor === 0) {
         cards[i].classList.add('top');
        } else if(lor == (cards.length - 1)) {

@@ -45,24 +45,36 @@ class PagesController {
         $panelMatching = [
             'home' => [
                 'profile' => $doctrine->getRepository(Profile::class)->getProfile()[0],
-                'tools' => $doctrine->getRepository(Tool::class)->getDisplayed()
+                'tools' => $doctrine->getRepository(Tool::class)->getDisplayed(),
+                'panel' => [
+                    'title' => 'Welcome',
+                    'subtitle' => 'My developer\'s skills'
+                ]
             ],
             'skills' => [
                 'skills_groups' => $doctrine->getRepository(SkillGroup::class)->findAll(),
+                'panel' => [
+                    'title' => 'Skills',
+                    'subtitle' => 'My developer\'s skills'
+                ]
             ],
             'favoris' => [
-                'skills_groups' => $doctrine->getRepository(SkillGroup::class)->findAll()
+                'skills_groups' => $doctrine->getRepository(SkillGroup::class)->findAll(),
+                'panel' => [
+                    'title' => 'Favoris',
+                    'subtitle' => 'My favorite\'s technologies'
+                ]
             ],
             'experiences' => [
-                'experiences' => $doctrine->getRepository(Experience::class)->findAll()
+                'experiences' => $doctrine->getRepository(Experience::class)->findAll(),
+                'panel' => [
+                    'title' => 'Experiences',
+                    'subtitle' => 'My profesional\'s experiences'
+                ]
             ]
         ];
         
         $currentPanel = isset($panelMatching[$panel]) ? $panelMatching[$panel] : false;
-        $currentPanel['panel'] = [
-            'title' => 'Skills',
-            'subtitle' => 'A subtitle'
-        ];
 
         return new response($twig->render("panels/{$panel}.html.twig", $currentPanel));
     }

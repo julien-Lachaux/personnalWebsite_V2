@@ -26,9 +26,13 @@ Encore
     //
     // ─────────────────────────────────────────────────────────── LES SCRIPTS JS ─────
     //
+    // standard site
     .addEntry('js/app', './assets/js/app.js')
+    .addEntry('js/utils', './assets/js/utils.js')
     .addEntry('js/components/navs', './assets/js/components/navs.js')
     .addEntry('js/components/cards', './assets/js/components/cards.js')
+
+    // admin
     .addEntry('js/admin/pages/skills', './assets/js/admin/pages/skills.js')
 
     //
