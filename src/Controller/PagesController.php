@@ -42,13 +42,14 @@ class PagesController {
      */
     public function panel ($panel, Request $request, Environment $twig, RegistryInterface $doctrine) {
         // panel
+        $profile = $doctrine->getRepository(Profile::class)->getProfile()[0];
         $panelMatching = [
             'home' => [
-                'profile' => $doctrine->getRepository(Profile::class)->getProfile()[0],
+                'profile' => $profile,
                 'tools' => $doctrine->getRepository(Tool::class)->getDisplayed(),
                 'panel' => [
-                    'title' => 'Welcome',
-                    'subtitle' => 'My developer\'s skills'
+                    'title' => $profile->getTitle(),
+                    'subtitle' => 'Site officiel de ' . $profile->getFirstname() . ' ' . $profile->getLastname()
                 ]
             ],
             'skills' => [

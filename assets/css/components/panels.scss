@@ -170,5 +170,17 @@
         &::-webkit-scrollbar-thumb:active {	
             background: $scrollbar_thumb-active-background_color;
         }
+
+        .section-title {
+            text-align: left;
+            font-size: 2em;
+            margin: 1em 0 0 0.5em;
+        }
+        .section-subtitle {
+            text-align: left;
+            font-size: 1em;
+            margin: 0.25em 0 1em 1em;
+            color: $color-primary;
+        }
     }
 }

@@ -2,30 +2,48 @@
 
     {% include 'components/panels/panelTitle.html.twig' %}
     
-    <div class="card title-card" id="presentation">
-        <h1 class="card-title">Bienvenue Sur le site officiel de
-            {{ profile.firstname }}{{ profile.lastname }}</h1>
-        <h2 class="card-subtitle">{{ profile.title }}</h2>
-    </div>
-    <div class="card title-card">
-        <span class="card-descr">
-            <b>Disponible immédiatement :</b>
-            mission freelance<br><br>
-            <b>Recherche pour Septembre :</b>
-            CDD ou CDI</span>
-    </div>
-    <div class="card title-card">
-        <span class="card-title">Technologies</span>
-        <span class="card-subtitle">les outils qui j'utilise au quotidien</span>
-        <div class="separator"></div>
-        <div class="card-imgs-container">
+    <div class="content">
+
+        <div class="cards-mosaic">
+            <div class="card grow auto">
+                <div class="card-head">
+                    <div class="card-title">Description</div>
+                </div>
+                <div class="card-body">
+                    {{ profile.description }}
+                </div>
+            </div>
+            <div class="card bigger">
+                <div class="card-head colored-success">
+                    <div class="card-title">Disponible <i class="material-icons">insert_invitation</i></div>
+                </div>
+                <div class="card-body">
+                    <p>
+                        Disponible pour mission freelance uniquement
+                        <br>
+                        <br>
+                        <b>Tarif : 450€ / jour</b>
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="section-title">Technologies</div>
+        <div class="section-subtitle">les outils qui j'utilise au quotidien</div>
+        <div class="cards-mosaic">
             {% for tool in tools %}
-                <a href="{{ tool.link }}" target="_blank" class="card-img">
-                    <b class="card-img-title">{{ tool.family }}:</b>
-                    <img alt="logo de {{ tool.name }}" src="{{ tool.picture }}">
-                    <br>
-                    <span class="card-img-subtitle">{{ tool.name }}</span>
-                </a>
+                <div class="card">
+                    <div class="card-head top limit-padding">
+                        <div class="card-title">{{ tool.name }}</div>
+                        <div class="card-decoration top">
+                            <img src="images/card-decoration/demo.svg">
+                        </div>
+                    </div>
+                    <div class="card-body full-height">
+                        <div class="card-logo"><img src="{{ tool.picture }}"></div>
+                        <div class="card-subtitle">{{ tool.family }}</div>
+                    </div>
+                </div>
             {% endfor %}
         </div>
     </div>

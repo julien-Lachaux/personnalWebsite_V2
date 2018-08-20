@@ -15,14 +15,14 @@
             <i class="material-icons">search</i>
         </div>
     </div>
-    
+
     <div class="content">
         <div class="skills-container">
             <div class="cards-mosaic">
                 {% for skillGroup in skills_groups %}
                     {% for skill in skillGroup.skills | sortbyfield('name') %}
                         <div class="card" data-search="{{ skill.name }}" data-filter="{{ skillGroup.name }}">
-                            <div class="card-head">
+                            <div class="card-head limit-padding-top">
                                 <div class="card-title">{{ skill.name }}</div>
                                 <div class="card-subtitle">{{ skillGroup.name }}</div>
                                 <div class="card-decoration">
