@@ -1,0 +1,11 @@
+<div class="headerPage-decoration">
+{{ panel.headerPage|raw }}
+</div>
+<div class="decorationPage-decoration">
+    <img src="images/decorations/decorationPage/decorationPage-{{ panel.color }}.svg" alt="panel page decoration">
+</div>
+{% if panel.footer == true %}
+    <div class="footerPage-decoration">
+        <img src="images/decorations/footerPage/footerPage-home.svg" alt="panel page decoration">
+    </div>
+{% endif %}

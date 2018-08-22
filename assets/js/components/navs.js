@@ -20,6 +20,7 @@
 */
 
 const cards = require('./cards');
+const panels = require('./panels')
 var getAjaxPanel = function(panel, callback) {
   var url = '/ajax/' + panel;
   $.get(url, (response) => {
@@ -27,6 +28,7 @@ var getAjaxPanel = function(panel, callback) {
     callback();
     cards.activeFilter();
     cards.activeSearch();
+    panels.animate();
   });
 }
 

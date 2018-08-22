@@ -5,6 +5,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Finder\Finder;
 use Twig\Environment;
 use App\Entity\Profile;
 use App\Entity\Section;
@@ -14,7 +15,7 @@ use App\Entity\SkillGroup;
 use App\Entity\Tool;
  use App\Entity\Favori;
  use App\Entity\Experience;
-
+ 
 class PagesController {
     /**
      * index
@@ -43,34 +44,56 @@ class PagesController {
     public function panel ($panel, Request $request, Environment $twig, RegistryInterface $doctrine) {
         // panel
         $profile = $doctrine->getRepository(Profile::class)->getProfile()[0];
+        $finder = new Finder();
+        $finder->files()->in(__DIR__ . '/../../public/images/decorations/headerPage');
+        $panelDecorations = [];
+        foreach ($finder as $file) {
+            $start = strrpos($file->getFileName(), '-') + 1;
+            $extension = strrpos($file->getFileName(), '.');
+            $end = $extension - $start;
+            $color = substr($file->getFileName(), $start, $end);
+            $panelDecorations[$color] = $file->getContents();
+        }
         $panelMatching = [
             'home' => [
                 'profile' => $profile,
                 'tools' => $doctrine->getRepository(Tool::class)->getDisplayed(),
                 'panel' => [
                     'title' => $profile->getTitle(),
-                    'subtitle' => 'Site officiel de ' . $profile->getFirstname() . ' ' . $profile->getLastname()
+                    'subtitle' => 'Site officiel de ' . $profile->getFirstname() . ' ' . $profile->getLastname(),
+                    'color' => 'home',
+                    'footer' => true,
+                    'headerPage' => $panelDecorations['home']
                 ]
             ],
             'skills' => [
                 'skills_groups' => $doctrine->getRepository(SkillGroup::class)->findAll(),
                 'panel' => [
                     'title' => 'Skills',
-                    'subtitle' => 'My developer\'s skills'
+                    'subtitle' => 'My developer\'s skills',
+                    'color' => 'vert',
+                    'footer' => true,
+                    'headerPage' => $panelDecorations['vert']
                 ]
             ],
             'favoris' => [
                 'skills_groups' => $doctrine->getRepository(SkillGroup::class)->findAll(),
                 'panel' => [
                     'title' => 'Favoris',
-                    'subtitle' => 'My favorite\'s technologies'
+                    'subtitle' => 'My favorite\'s technologies',
+                    'color' => 'rouge',
+                    'footer' => true,
+                    'headerPage' => $panelDecorations['rouge']
                 ]
             ],
             'experiences' => [
                 'experiences' => $doctrine->getRepository(Experience::class)->findAll(),
                 'panel' => [
                     'title' => 'Experiences',
-                    'subtitle' => 'My profesional\'s experiences'
+                    'subtitle' => 'My profesional\'s experiences',
+                    'color' => 'orange',
+                    'footer' => true,
+                    'headerPage' => $panelDecorations['orange']
                 ]
             ]
         ];

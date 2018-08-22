@@ -31,6 +31,7 @@ Encore
     .addEntry('js/utils', './assets/js/utils.js')
     .addEntry('js/components/navs', './assets/js/components/navs.js')
     .addEntry('js/components/cards', './assets/js/components/cards.js')
+    .addEntry('js/components/panels', './assets/js/components/panels.js')
 
     // admin
     .addEntry('js/admin/pages/skills', './assets/js/admin/pages/skills.js')

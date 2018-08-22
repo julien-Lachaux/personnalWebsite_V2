@@ -24,6 +24,43 @@
     height: 100%;
     box-sizing: border-box;
 
+    .headerPage-decoration {
+        z-index: $lvl-10;
+        position: absolute;
+        right: $scrollbar-width;
+        top: 0;
+        height: 15em;
+
+        svg {
+            width: auto;
+            height: 100%;
+        }
+    }
+
+    .decorationPage-decoration {
+        z-index: $lvl-10;
+        position: absolute;
+        top: 8em;
+        left: 3em;
+
+        img {
+            width: auto;
+            height: 100%;
+        }
+    }
+
+    .footerPage-decoration {
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        height: 15em;
+
+        img {
+            width: auto;
+            height: 100%;
+        }
+    }
+
     .panelTitle {
         width: calc(100% - #{$scrollbar-width});
         height: 15em;
