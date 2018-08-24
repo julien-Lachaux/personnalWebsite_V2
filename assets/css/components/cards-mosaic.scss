@@ -1,0 +1,146 @@
+// cards mosaic
+.cards-mosaic {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+  
+    .card {
+      height: 10em;
+      width: 10em;
+      padding: 0;
+      overflow: hidden;
+      margin: 1em;
+  
+      &.grow {
+        flex-grow: 2;
+  
+        .card-head {
+          padding: 1em;
+  
+          .card-title {
+            font-size: 1.5em;
+            color: $color-primary;
+          }
+        }
+      }
+  
+      &.bigger {
+        width: 15em;
+        height: 15em;
+  
+        .card-body {
+          height: calc(100% - 6em);
+  
+          p {
+            margin: 0;
+          }
+        }
+      }
+  
+      &.auto {
+        height: auto;
+        min-height: 10em;
+  
+        .card-body {
+          height: auto;
+          text-align: left;
+          line-height: 200%;
+        }
+      }
+  
+      .card-head {
+        height: 1.5em;
+        position: relative;
+  
+        .card-title {
+          font-size: 1em;
+  
+          span.highlighted {
+            color: #fff;
+            background: $color-primary;
+          }
+        }
+        .card-subtitle {
+          font-size: 0.75em;
+        }
+        .card-decoration {
+          position: absolute;
+          width: 5em;
+          height: 3em;
+          bottom: 0;
+          right: 0;
+  
+          img {
+            height: auto;
+            width: 100%;
+          }
+  
+          &.top {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            border-top: 0.5em solid $color-primary;
+  
+            img {
+              height: auto;
+              width: 40%;
+              position: relative;
+              top: 0;
+              right: -30%;
+            }
+          }
+        }
+        &.top {
+          .card-title {
+            width: 80%;
+          }
+          .card-subtitle {
+            width: 90%;
+          }
+        }
+      }
+  
+      .card-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1em 1em 1em 1em;
+        height: 5em;
+  
+        .card-logo {
+          transform: translateY(-0.5em);
+  
+          i {
+            color: #fff;
+            font-size: 3em;
+          }
+          img {
+            width: 50%;
+            height: auto;
+          }
+        }
+  
+        .card-stars {
+          color: #fff;
+          font-size: 0.25em;
+          padding: 0;
+          position: absolute;
+          bottom: -1em;
+          left: 1em;
+        }
+  
+        .card-subtitle {
+          position: absolute;
+          bottom: 1em;
+          right: 1em;
+          color: $color-primary;
+          font-size: 0.75em;
+        }
+      }
+  
+      &.hide {
+        display: none;
+      }
+    }
+  }

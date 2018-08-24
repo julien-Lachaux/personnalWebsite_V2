@@ -1,0 +1,28 @@
+// TEXT COLOR
+.home-text { color: $home !important; }
+.bleu-text { color: $bleu !important; }
+.vert-text { color: $vert !important; }
+.orange-text { color: $orange !important; }
+.rouge-text { color: $rouge !important; }
+.violet-text { color: $violet !important; }
+.gris-text { color: $gris !important; }
+
+// BACKGROUND COLOR
+.home-background { background: $home !important; }
+.bleu-background { background: $bleu !important; }
+.vert-background { background: $vert !important; }
+.orange-background { background: $orange !important; }
+.rouge-background { background: $rouge !important; }
+.violet-background { background: $violet !important; }
+.gris-background { background: $gris !important; }
+
+// HIDDEN
+.hidden { visibility: hidden !important; }
+.desktop-hidden { display: none !important; }
+.mobile-hidden { display: block !important; }
+
+// HIDDEN -- RESPONSIVE
+@media screen and (max-width: 1024px) {
+    .mobile-hidden { display: none !important; }
+    .desktop-hidden { display: flex !important; }
+}

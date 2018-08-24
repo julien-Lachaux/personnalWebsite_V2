@@ -54,6 +54,16 @@ class PagesController {
             $color = substr($file->getFileName(), $start, $end);
             $panelDecorations[$color] = $file->getContents();
         }
+        $xps = $doctrine->getRepository(Experience::class)->findAll();
+        $i = 0;
+        $color = ['bleu', 'violet', 'vert', 'orange', 'rouge', 'gris'];
+        foreach ($xps as $xp) {
+            $xp->color = $color[$i];
+            if($i === 5) {
+                $i = 0;
+            }
+            $i++;
+        }
         $panelMatching = [
             'home' => [
                 'profile' => $profile,

@@ -1,27 +1,141 @@
+import { app } from './../app'
+import { navs } from './navs'
+import { cards } from './cards'
+import { animations } from './animations'
+
 const SVG = require('svg.js')
-const panels = {
+
+export const panels = {
+    afficherSection(ciblePath) {
+        var CheminComplet = document.location.href
+        var cibleID = ciblePath.substring(1)
+        var hash = CheminComplet.substring(CheminComplet.lastIndexOf("/") + 1)
+        var currentPanel = document.querySelector('.panel')
+        var currentBtn = document.querySelector('div.link-txt[href="/' + hash + '"]').parentNode
+        var currentIcon = currentBtn.querySelector('.link-logo')
+        var cibleBtn = document.querySelector('div.link-txt[href="/' + cibleID + '"]').parentNode
+    
+        currentPanel.style.transform = 'translateX(100%)'
+        currentBtn.classList.remove('iconActive')
+        cibleBtn.classList.add('iconActive')
+    
+        panels.getAjaxPanel(cibleID, () => {
+          var boutons = document.querySelectorAll('.sideNav-Link')
+          var cible = document.querySelector('#' + cibleID + '-panel')
+          var CheminComplet = document.location.href
+          var urlParams = CheminComplet.split('/').slice(3)
+          cards.activeAnimation()
+          if (urlParams.length === 1) {
+            var stateObj = {
+              foo: cibleID
+            }
+            history.pushState(stateObj, cibleID, ciblePath)
+          } else if (urlParams.length === 2) {
+            var stateObj = {
+              foo: cibleID
+            }
+            history.pushState(stateObj, cibleID, '/' + urlParams[0] + ciblePath)
+          }
+    
+          cible.style.transform = 'translateX(100%)'
+          setTimeout(() => {
+            cible.classList.add('active')
+            cible.style.transform = 'translateX(0)'
+          }, 100)
+    
+          var boutons = document.querySelectorAll('.sideNav-Link')
+    
+          for (var i = 0; i < boutons.length; i++) {
+            if ((boutons[i].querySelector('.link-txt').getAttribute('href')) === '/' + cibleID) {
+              var icon = boutons[i].querySelector('.link-logo')
+            }
+          }
+        })
+      },
+
+      getAjaxPanel(panel, callback) {
+        var url = '/ajax/' + panel;
+        app.get(url, (response) => {
+            $('.webContent').html(response);
+            callback();
+            cards.activeFilter();
+            cards.activeSearch();
+            panels.animate();
+        });
+      },
+
     animate() {
-        let draw = SVG('headerPage')
-
-        // test
-        let test = draw.select('polygon.test')
-        test.animate(8000, '-').rotate(360).loop()
-
-        // rotation
-        let rotatesPath = draw.select('path.rotates')
-        rotatesPath.animate(50000, '-').rotate(-360).loop()
-        let rotatesPolygon = draw.select('polygon.rotates')
-        rotatesPolygon.animate(50000, '-').rotate(-360).loop()
-
-        // fade out
-        let fadeOutPath = draw.select('path.fadeOut')
-        fadeOutPath.animate(10000, '<>').attr({
-            opacity: 0
-        }).move(-0.5, -0.5).loop()
-        let fadeOutPolygon = draw.select('polygon.fadeOut')
-        fadeOutPolygon.animate(10000, '<>').attr({
-            opacity: 0
-        }).move(100, 100).loop()
+        // récupération de la forme cible
+        let draw = SVG.adopt(document.querySelector('#headerPage'))
+        
+        if (draw) {
+            // rotation
+            let rotatesPath = draw.select('path.rotates')
+            let rotatesPolygon = draw.select('polygon.rotates')
+            animations.rotate(rotatesPath, 10000, '-')
+            animations.rotate(rotatesPolygon, 5000, '-')
+    
+            // aller retour
+            let inOut = draw.select('path.inOut')
+            animations.easeInOut(inOut, [
+                {
+                    duration: 5000,
+                    ease: '<>',
+                    delay: 2000
+                },
+                {
+                    duration: 5000,
+                    ease: '<>',
+                    delay: 2000,
+                    move: {
+                        x: -50,
+                        y: 20
+                    }
+                },
+                {
+                    duration: 5000,
+                    ease: '<>',
+                    delay: 2000,
+                    move: {
+                        x: 50,
+                        y: -20
+                    }
+                },
+                {
+                    duration: 5000,
+                    ease: '<>',
+                    delay: 2000,
+                    move: {
+                        x: 70,
+                        y: 70
+                    }
+                },
+                {
+                    duration: 5000,
+                    ease: '<>',
+                    delay: 2000,
+                    move: {
+                        x: -70,
+                        y: -70
+                    }
+                }
+            ])
+    
+            // fade out
+            let headerPage = document.querySelector('#headerPage')
+            let particulesCalque = document.createElement('div')
+    
+            particulesCalque.setAttribute('id', 'particulesCalque')
+            headerPage.parentNode.parentNode.prepend(particulesCalque)
+    
+            let particules = SVG('particulesCalque')
+            let particule = particules.circle(100).addClass('particule').fill('#27AAE1')
+            
+            particule.move(1650, 50)
+            particule.addTo(particules)
+            animations.fadeOut(particule, 3000, '<>', -500, 100)
+            // animations.fadeOut(fadeOutPath, 3000, '<>')
+            // animations.fadeOut(fadeOutPolygon, 3000, '<>')
+        }
     }
 }
-module.exports = panels

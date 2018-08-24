@@ -5,20 +5,31 @@
     
     <div class="content">
         <div class="experiences-container">
-            {% for experience in experiences %}
-                <div class="card timeline-card" data-descr="{{ experience.dateStart|date('d/m/Y') }} - {{ experience.dateEnd|date('d/m/Y') }}">
-                    <div class="card-logo">
-                        <img alt="logo de {{ experience.company }}" src="{{ experience.logo }}">
+            <div class="cards-gallery">
+                {% for experience in experiences %}
+                    <div class="card" data-descr="{{ experience.dateStart|date('d/m/Y') }} - {{ experience.dateEnd|date('d/m/Y') }}">
+                        <div class="card-header">
+                            <div class="card-title">{{ experience.company }}</div>
+                            <div class="date">{{ experience.dateStart|date('d-M-Y') }} - {{ experience.dateEnd|date('d-M-Y') }}</div>
+                            <div class="card-subtitle {{ experience.color }}-text">{{ experience.job }}</div>
+                        </div>
+                        <div class="card-descr">
+                            <p>
+                                {{ experience.description|raw }}
+                            </p>
+                        </div>
+                        <div class="card-decorations">
+                            <div class="topLeft-decoration">
+                                <img class="logo-decoration" src="images/decorations/logoCard/logoCard-{{ experience.color }}.svg" alt="">
+                                <img class="logo" src="{{ experience.logo }}" alt="logo de {{ experience.company }}" >
+                            </div>
+                            <div class="bottomRight-decoration">
+                                <img src="images/decorations/decorationCard/decorationCard-{{ experience.color }}.svg" alt="">
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-title">{{ experience.company }}</div>
-                    <div class="card-subtitle">{{ experience.job }}</div>
-                    <div class="card-date hidden-mobile">{{ experience.dateStart|date('d-M-Y') }} - {{ experience.dateEnd|date('d-M-Y') }}</div>
-                    <p class="card-descr">
-                        {{ experience.description }}
-                    </p>
-                    <ul class="tags"></ul>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 </article>

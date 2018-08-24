@@ -1,0 +1,75 @@
+.headerPage-decoration {
+    z-index: $lvl-8;
+    position: absolute;
+    right: $scrollbar-width;
+    top: 10px;
+    height: 17em;
+    overflow: visible;
+
+    svg {
+        z-index: $lvl-10;
+        width: auto;
+        height: 100%;
+    }
+}
+
+.decorationPage-decoration {
+    z-index: $lvl-7;
+    position: absolute;
+    top: 8em;
+    left: 0;
+
+    img {
+        width: auto;
+        height: 5em;
+    }
+}
+
+.footerPage-decoration {
+    z-index: $lvl-2;
+    position: absolute;
+    bottom: -10px;
+    left: 10px;
+    height: 30%;
+
+    img {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.barTop-decoration {
+    z-index: $lvl-7;
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    left: -$scrollbar-width;
+}
+
+.barRight-decoration {
+    z-index: $lvl-7;
+    position: absolute;
+    width: 10px;
+    height: 5em;
+    opacity: .80;
+    right: $scrollbar-width;
+}
+
+.barLeft-decoration {
+    z-index: $lvl-1;
+    position: absolute;
+    width: 10px;
+    height: 20em;
+    bottom: 10px;
+    left: 0;
+    opacity: .80;
+}
+
+.barBottom-decoration {
+    z-index: $lvl-1;
+    position: absolute;
+    width: 12em;
+    height: 10px;
+    bottom: 0;
+    left: 0;
+}

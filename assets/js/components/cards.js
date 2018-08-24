@@ -1,4 +1,4 @@
-const cards = {
+export const cards = {
     activeFilter() {
         if ($('.panel-nav').length) {
             $('.panel-nav .filter a').each((index, filterBtn) => {
@@ -94,7 +94,54 @@ const cards = {
                 }
             });
         }
+    },
+
+    activeAnimation() {
+        // OnLoad animation for card
+        var webContents = document.querySelectorAll('.webContent');
+        var poi = 0;
+        var lor;
+        setTimeout(() => {
+            var cards = document.querySelectorAll('.card.onLoadCard');
+            for (let i = 0; i < cards.length; i++) {
+                cards[i].classList.remove('onLoadCard');
+            }
+        }, 2500);
+        for (var u = 0; u < webContents.length; u++) {
+            lor = 0;
+            var cards = webContents[u].querySelectorAll('.card');
+            if ((poi % 2) === 0) {
+                for (let i = 0; i < cards.length; i++) {
+                    cards[i].classList.add('onLoadCard');
+                    if (lor === 0) {
+                        cards[i].classList.add('top');
+                    } else if (lor == (cards.length - 1)) {
+                        cards[i].classList.add('bottom');
+                    } else if ((lor % 2) === 0) {
+                        cards[i].classList.add('left');
+                    } else {
+                        cards[i].classList.add('right');
+                    }
+                    lor++;
+                }
+            } else {
+                for (let i = 0; i < cards.length; i++) {
+                    cards[i].classList.add('onLoadCard');
+                    console.log('anim ON');
+                    if (lor === 0) {
+                        cards[i].classList.add('top');
+                    } else if (lor == (cards.length - 1)) {
+                        cards[i].classList.add('bottom');
+                    } else if ((lor % 2) === 0) {
+                        cards[i].classList.add('right');
+                    } else {
+                        cards[i].classList.add('left');
+                    }
+                    lor++;
+                }
+            }
+            poi++;
+    
+        }
     }
 }
-
-module.exports = cards;

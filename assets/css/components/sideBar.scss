@@ -67,12 +67,20 @@
         height: 170px;
         margin-bottom: 1em;
 
-        .profilePicture {
+        .profilePicture-circle {
           z-index: $lvl-2;
           border-radius: 100%;
-          height: 120px;
-          width: 120px;
           background: $color-primary-light;
+          width: 120px;
+          height: 120px;
+          overflow: hidden;
+
+          
+          .profilePicture {
+            height: auto;
+            width: 120px;
+            top: -100px;
+          }
         }
         .profilePicture-decoration {
           z-index: $lvl-1;

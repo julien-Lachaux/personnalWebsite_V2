@@ -1,0 +1,11 @@
+#particulesCalque {
+    z-index: $lvl-9 !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+.particule {
+    z-index: $lvl-1 !important;
+}

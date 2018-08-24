@@ -1,0 +1,70 @@
+// Keyframes
+@keyframes webContentLoad-top {
+    from {
+      opacity: 0;
+      transform: translateY(-75vh);
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+@keyframes webContentLoad-bottom {
+from {
+    opacity: 0;
+    transform: translateY(75vh);
+}
+to {
+    transform: translateY(0);
+    opacity: 1;
+}
+}
+@keyframes webContentLoad-left {
+from {
+    opacity: 0;
+    transform: translateX(-100vw);
+}
+to {
+    transform: translateX(0);
+    opacity: 1;
+}
+}
+@keyframes webContentLoad-right {
+from {
+    opacity: 0;
+    transform: translateX(100vw);
+}
+to {
+    transform: translateX(0);
+    opacity: 1;
+}
+}
+
+// class
+.active .onLoadCard {
+    opacity: 0;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+
+    &.top {
+        transform: translateY(-75vh);
+        animation-name: webContentLoad-top;
+        animation-delay: 0.45s;
+    }
+    &.bottom {
+        transform: translateY(75vh);
+        animation-name: webContentLoad-bottom;
+        animation-delay: 0.75s;
+    }
+    &.left {
+        transform: translateX(-100vw);
+        animation-name: webContentLoad-left;
+        animation-delay: 0.20s;
+    }
+    &.right {
+        transform: translateX(100vw);
+        animation-name: webContentLoad-right;
+        animation-delay: 0.20s;
+    }
+}

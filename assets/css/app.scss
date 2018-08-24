@@ -8,150 +8,21 @@
 @import "imports/variables.scss";
 @import "imports/functions.scss";
 @import "imports/mixins.scss";
-@import "imports/colors.scss";
+@import "imports/class.scss";
 
 //
 // ────────────────────────────────────────────────────────────────── Components ─────
 //
-@import "components/navs.scss";
-@import "components/cards.scss";
+@import "components/layout.scss";
+@import "components/sideBar.scss";
+@import "components/card.scss";
+@import "components/cards-mosaic.scss";
+@import "components/cards-gallery.scss";
 @import "components/panels.scss";
+@import "components/decorations.scss";
 
 //
-// ───────────────────────────────────────────────────────────────────── Globals ─────
+// ────────────────────────────────────────────────────────────────── Animations ─────
 //
-  body {
-    padding: 0px;
-    margin: 0px;
-    font-family: 'IBM Plex Sans', sans-serif;
-    overflow: hidden;
-    background: $color-background;
-  }
-  
-  .mainFlux {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    overflow: hidden;
-  }
-  
-  .webFlux {
-    height: calc(100% - #{$page-top});
-    width: $page-width;
-    position: relative;
-    top: $page-top;
-  }
-
-  .active {z-index: $lvl-10 !important;}
-  .inactive {z-index: $lvl-8 !important;}
-  
-  .webContent {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    text-align: center;
-    background-color: $color-background;
-    transform-origin: left;
-    transform-style: flat;
-    transition: all 0.5s ease-in-out;
-    z-index: $lvl-5;
-  }
-  .singleFlux {
-    position: absolute;
-    top: $page-top;
-    height: calc(100vh - #{$page-top});
-    width: 100%;
-  }
-  
-  .singleContent {
-    height: 100%;
-    width: 100%;
-    padding: 2em 0 0 0;
-    overflow-y: scroll;
-    background-image: url("/public/assets/img/cv/backgrounds/pattern_contact.jpeg");
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    ::-webkit-scrollbar {
-      width: $scrollbar-width;
-      background: $scrollbar-background_color;
-    }
-    ::-webkit-scrollbar-thumb {	
-      background: $scrollbar_thumb-background_color;
-    }
-    ::-webkit-scrollbar-thumb:hover {	
-      background: $scrollbar_thumb-hover-background_color;
-    }
-    ::-webkit-scrollbar-thumb:active {	
-      background: $scrollbar_thumb-active-background_color;
-    }
-  }
-
-  .hidden { visibility: hidden !important; }
-  
-  .desktop-hidden { display: none !important; }
-  
-  .mobile-hidden { display: block !important; }
-  
-//
-// ───────────────────────────────────────────────────────────────────── PopUp ─────
-//
-  
-  /* default */
-  .popUp-wrap {
-    position: absolute;
-    width: $page-width;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-  }
-  
-  @keyframes popOut {
-    from{
-      opacity: 1
-    }
-    to{
-      opacity: 0;
-      display: none;
-    }
-  }
-  
-  .popUp {
-    z-index: $lvl-alert;
-    position: absolute;
-    text-align: center;
-    line-height: 3em;
-    top: $popUp-top;
-    padding: 1em 1.5em;
-    color: $popUp-color;
-    background: $popUp-background_color;
-    border-radius: 0.3em;
-    animation-name: popOut;
-    animation-delay: 2s;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-  }
-
-//
-// ───────────────────────────────────────────────────────────────────── Responsive ─────
-//
-  @media screen and (max-width: 1024px) {
-    
-    .webFlux {
-      width: 100%;
-    }
-    
-    .webContent {
-      height: calc(100vh - 7em) !important;
-      padding: 2em 0;
-    }
-  
-    .mobile-hidden { display: none !important; }
-    
-    .desktop-hidden {
-      display: flex !important;
-    }
-  }
+@import "animations/onLoad.scss";
+@import "animations/particules.scss";

@@ -24,44 +24,8 @@
     height: 100%;
     box-sizing: border-box;
 
-    .headerPage-decoration {
-        z-index: $lvl-10;
-        position: absolute;
-        right: $scrollbar-width;
-        top: 0;
-        height: 15em;
-
-        svg {
-            width: auto;
-            height: 100%;
-        }
-    }
-
-    .decorationPage-decoration {
-        z-index: $lvl-10;
-        position: absolute;
-        top: 8em;
-        left: 3em;
-
-        img {
-            width: auto;
-            height: 100%;
-        }
-    }
-
-    .footerPage-decoration {
-        position: absolute;
-        bottom: -10px;
-        left: 0;
-        height: 15em;
-
-        img {
-            width: auto;
-            height: 100%;
-        }
-    }
-
     .panelTitle {
+        z-index: $lvl-6;
         width: calc(100% - #{$scrollbar-width});
         height: 15em;
         background: $color-background;
@@ -71,7 +35,6 @@
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
-        z-index: $lvl-9;
 
         // animation onload
         opacity: 0;
@@ -187,10 +150,13 @@
     }
 
     .content {
+        z-index: $lvl-5;
+        position: relative;
         box-sizing: border-box;
         display: block;
         height: 100%;
         padding-top: 17em;
+        overflow-x: hidden;
         overflow-y: scroll;
         padding: 17em 10% 2em 10%;
 

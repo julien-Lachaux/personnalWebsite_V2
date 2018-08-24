@@ -1,8 +1,7 @@
-function randomInt(mini, maxi)
-{
-     var nb = mini + (maxi+1-mini)*Math.random();
-     return Math.floor(nb);
-}
+import { app } from './app'
+import { cards } from './components/cards'
+import { panels } from './components/panels'
+
 Array.prototype.shuffle = function(n)
 {
      if(!n)
@@ -15,4 +14,14 @@ Array.prototype.shuffle = function(n)
           this[n-1] = tmp;
           this.shuffle(n-1);
      }
+}
+
+export function randomInt(mini, maxi)
+{
+     var nb = mini + (maxi+1-mini)*Math.random();
+     return Math.floor(nb);
+}
+  
+export function copy(text) {
+    window.clipboardData.setData("Text", text);
 }
