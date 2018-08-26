@@ -48,17 +48,31 @@ class PagesController {
         $panelData = $doctrine->getRepository(Panel::class)->getByNavUrl($panel);
 
         // decorations
+        // headerPage
         $finder = new Finder();
         $finder->in(__DIR__ . '/../../public/images/decorations/headerPage/')->name('headerPage-' . $panelData->getColorTheme()->getName() . '.svg');
-        foreach ($finder as $file) {
-            $panelData->headerPage = $file->getContents();
-        }
+        foreach ($finder as $file) { $panelData->headerPage = $file->getContents(); }
+
+        // decorationPage
+        $finder = new Finder();
+        $finder->in(__DIR__ . '/../../public/images/decorations/decorationPage/')->name('decorationPage-' . $panelData->getColorTheme()->getName() . '.svg');
+        foreach ($finder as $file) { $panelData->decorationPage = $file->getContents(); }
 
         // experiences color system
         $experiences = $doctrine->getRepository(Experience::class)->findAll();
         $i = 0;
         $color = ['bleu', 'violet', 'vert', 'orange', 'rouge', 'gris'];
+        // decorationPage
         foreach ($experiences as $xp) {
+            // decoration Card
+            $finder = new Finder();
+            $finder->in(__DIR__ . '/../../public/images/decorations/decorationCard/')->name('decorationCard-' . $color[$i] . '.svg');
+            foreach ($finder as $file) { $xp->decorationCard = $file->getContents(); }
+
+            // logoCard
+            $finder = new Finder();
+            $finder->in(__DIR__ . '/../../public/images/decorations/logoCard/')->name('logoCard-' . $color[$i] . '.svg');
+            foreach ($finder as $file) { $xp->logoCard = $file->getContents(); }
             $xp->color = $color[$i];
             if($i === 5) {
                 $i = 0;

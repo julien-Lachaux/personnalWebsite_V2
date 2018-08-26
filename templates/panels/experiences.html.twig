@@ -32,11 +32,11 @@
                         </aside>
                         <div class="card-decorations">
                             <div class="topLeft-decoration">
-                                <img class="logo-decoration" src="images/decorations/logoCard/logoCard-{{ experience.color }}.svg" alt="">
+                                {{ experience.logoCard|raw }}
                                 <img class="logo" src="{{ experience.logo }}" alt="logo de {{ experience.company }}" >
                             </div>
                             <div class="bottomRight-decoration">
-                                <img src="images/decorations/decorationCard/decorationCard-{{ experience.color }}.svg" alt="">
+                                {{ experience.decorationCard|raw }}
                             </div>
                         </div>
                     </div>
