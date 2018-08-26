@@ -17,12 +17,14 @@ export const navs = {
       })
       boutons[i].addEventListener('mouseover', function(e) {
         if(!this.classList.contains('iconActive') && (!window.matchMedia('(max-width: 1024px)').matches)) {
-          var icon = this.querySelector('.link-logo')
+          var icon = $(this).find('.link-logo')
+          icon.css('color', icon.attr('data-color'))
         }
       })
       boutons[i].addEventListener('mouseout', function(e) {
         if(!this.classList.contains('iconActive') && (!window.matchMedia('(max-width: 1024px)').matches)) {
-          var icon = this.querySelector('.link-logo')
+          var icon = $(this).find('.link-logo')
+          icon.css('color', '#fff')
         }
       })
     }

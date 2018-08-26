@@ -14,10 +14,13 @@ export const panels = {
         var currentBtn = document.querySelector('div.link-txt[href="/' + hash + '"]').parentNode
         var currentIcon = currentBtn.querySelector('.link-logo')
         var cibleBtn = document.querySelector('div.link-txt[href="/' + cibleID + '"]').parentNode
+        var cibleIcon = cibleBtn.querySelector('.link-logo')
     
         currentPanel.style.transform = 'translateX(100%)'
         currentBtn.classList.remove('iconActive')
+        currentIcon.style.color = '#fff';
         cibleBtn.classList.add('iconActive')
+        cibleIcon.style.color = cibleIcon.getAttribute('data-color');
     
         panels.getAjaxPanel(cibleID, () => {
           var boutons = document.querySelectorAll('.sideNav-Link')
@@ -122,18 +125,11 @@ export const panels = {
             ])
     
             // fade out
-            let headerPage = document.querySelector('#headerPage')
-            let particulesCalque = document.createElement('div')
     
-            particulesCalque.setAttribute('id', 'particulesCalque')
-            headerPage.parentNode.parentNode.prepend(particulesCalque)
-    
-            let particules = SVG('particulesCalque')
-            let particule = particules.circle(100).addClass('particule').fill('#27AAE1')
+            let particule = draw.circle(10).addClass('particule').fill('#27AAE1').back()
             
-            particule.move(1650, 50)
-            particule.addTo(particules)
-            animations.fadeOut(particule, 3000, '<>', -500, 100)
+            particule.move(250, 50)
+            animations.fadeOut(particule, 3000, '<>', -250, 25)
             // animations.fadeOut(fadeOutPath, 3000, '<>')
             // animations.fadeOut(fadeOutPolygon, 3000, '<>')
         }

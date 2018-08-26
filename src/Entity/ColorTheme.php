@@ -79,36 +79,36 @@ class ColorTheme
         return $this;
     }
 
-    public function getPrimaryColor(): ?string
+    public function getColor(): ?string
     {
         return $this->color;
     }
 
-    public function setPrimaryColor(string $color): self
+    public function setColor(string $color): self
     {
         $this->color = $color;
 
         return $this;
     }
 
-    public function getPrimaryColorLight(): ?string
+    public function getColorLight(): ?string
     {
         return $this->colorLight;
     }
 
-    public function setPrimaryColorLight(string $colorLight): self
+    public function setColorLight(string $colorLight): self
     {
         $this->colorLight = $colorLight;
 
         return $this;
     }
 
-    public function getPrimaryColorDark(): ?string
+    public function getColorDark(): ?string
     {
         return $this->colorDark;
     }
 
-    public function setPrimaryColorDark(string $colorDark): self
+    public function setColorDark(string $colorDark): self
     {
         $this->colorDark = $colorDark;
 

@@ -127,7 +127,6 @@ export const cards = {
             } else {
                 for (let i = 0; i < cards.length; i++) {
                     cards[i].classList.add('onLoadCard');
-                    console.log('anim ON');
                     if (lor === 0) {
                         cards[i].classList.add('top');
                     } else if (lor == (cards.length - 1)) {

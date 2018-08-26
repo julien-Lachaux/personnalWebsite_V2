@@ -13,6 +13,7 @@ navs.activeEvent()
 // activation du boutons correspondant a la page actuel
 let departBtn = document.querySelector('div.link-txt[href="/' + hash + '"]').parentNode
 departBtn.classList.add('iconActive')
+departBtn.querySelector('.link-logo').style.color = departBtn.querySelector('.link-logo').getAttribute('data-color')
 
 // chargement de la page demandé par l'utilisateur au premier chargement de la page
 panels.getAjaxPanel(hash, () => {
