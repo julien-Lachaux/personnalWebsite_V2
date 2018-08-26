@@ -15,11 +15,12 @@
         <div class="separator"></div>
         <ul class="sideNav-Links">
             {% for panel in panels %}
-                <li class="sideNav-Link" data-name="{{ panel.navText }}">
-                    <div class="link-txt" href="/{{ panel.navUrl }}"></div>
-                    <i class="link-logo material-icons" data-color="{{ panel.colorTheme.colorLight }}">{{ panel.navIcon }}</i>
-                    <img class="nav-decoration" src="images/decorations/navBtn/navBtn.svg">
-                    <img class="nav-decoration-active" src="images/decorations/navBtn/navBtn-active.svg">
+                <li class="sideNav-Link">
+                    <div class="link-txt" href="/{{ panel.navUrl }}">{{ panel.navText }}</div>
+                    <i class="link-logo material-icons" data-color="{% if panel.colorTheme.name == 'home' %}{{ panel.colorTheme.colorLight }}{% else %}{{ panel.colorTheme.color }}{% endif %}">{{ panel.navIcon }}</i>
+                    {{ navBtn.default|raw }}
+                    {{ navBtn.active|raw }}
+                    {{ navBtn.activeBackground|raw }}
                 </li>
             {% endfor %}
         </ul>

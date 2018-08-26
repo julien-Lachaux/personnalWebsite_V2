@@ -15,12 +15,14 @@ export const panels = {
         var currentIcon = currentBtn.querySelector('.link-logo')
         var cibleBtn = document.querySelector('div.link-txt[href="/' + cibleID + '"]').parentNode
         var cibleIcon = cibleBtn.querySelector('.link-logo')
-    
+        
         currentPanel.style.transform = 'translateX(100%)'
         currentBtn.classList.remove('iconActive')
         currentIcon.style.color = '#fff';
         cibleBtn.classList.add('iconActive')
-        cibleIcon.style.color = cibleIcon.getAttribute('data-color');
+
+        var cibleBtnBackground = $(cibleBtn).find('.nav-decoration-active-background polygon')
+        cibleBtnBackground.attr('fill', cibleIcon.getAttribute('data-color'));
     
         panels.getAjaxPanel(cibleID, () => {
           var boutons = document.querySelectorAll('.sideNav-Link')

@@ -28,9 +28,19 @@ class PagesController {
         $profile = $doctrine->getRepository(Profile::class)->getProfile();
         $panels = $doctrine->getRepository(Panel::class)->getDisplayed();
 
+        $panelController = new PanelsController();
+        $navBtn = $panelController->getSvg('navBtn', 'default');
+        $navBtnActive = $panelController->getSvg('navBtn', 'active');
+        $navBtnActiveBackground = $panelController->getSvg('navBtn', 'active-background');
+
         return new response($twig->render('pages/index.html.twig', [
             'profile' => $profile[0],
-            'panels' => $panels
+            'panels' => $panels,
+            'navBtn' => [
+                'default' => $navBtn,
+                'active' => $navBtnActive,
+                'activeBackground' => $navBtnActiveBackground,
+            ]
         ]));
     }
 

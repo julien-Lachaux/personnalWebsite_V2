@@ -14,17 +14,25 @@ export const navs = {
       boutons[i].addEventListener('click', function(e) {
         var link = this.querySelector('.link-txt').getAttribute('href')
         panels.afficherSection(link)
+        let navText = $(this).find('.link-txt')
+        navText.css('background-color', '')
+        let navbackgroundShadow = $(this).find('.navBtn-background-shadow')
+        navbackgroundShadow.attr( 'fill', '#006160')
       })
       boutons[i].addEventListener('mouseover', function(e) {
         if(!this.classList.contains('iconActive') && (!window.matchMedia('(max-width: 1024px)').matches)) {
-          var icon = $(this).find('.link-logo')
-          icon.css('color', icon.attr('data-color'))
+          let navText = $(this).find('.link-txt')
+          navText.css('background-color', '#00A79D')
+          let navbackgroundShadow = $(this).find('.navBtn-background-shadow')
+          navbackgroundShadow.attr( 'fill', '#00A79D')
         }
       })
       boutons[i].addEventListener('mouseout', function(e) {
         if(!this.classList.contains('iconActive') && (!window.matchMedia('(max-width: 1024px)').matches)) {
-          var icon = $(this).find('.link-logo')
-          icon.css('color', '#fff')
+          let navText = $(this).find('.link-txt')
+          navText.css('background-color', '')
+          let navbackgroundShadow = $(this).find('.navBtn-background-shadow')
+          navbackgroundShadow.attr( 'fill', '#006160')
         }
       })
     }
