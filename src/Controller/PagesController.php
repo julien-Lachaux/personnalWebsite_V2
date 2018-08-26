@@ -8,13 +8,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Finder\Finder;
 use Twig\Environment;
 use App\Entity\Profile;
-use App\Entity\Section;
-use App\Entity\Nav;
+use App\Entity\Panel;
 use App\Entity\Skill;
 use App\Entity\SkillGroup;
 use App\Entity\Tool;
- use App\Entity\Favori;
- use App\Entity\Experience;
+use App\Entity\Favori;
+use App\Entity\Experience;
  
 class PagesController {
     /**
@@ -26,11 +25,11 @@ class PagesController {
      */
     public function index (Request $request, Environment $twig, RegistryInterface $doctrine) {
         $profile = $doctrine->getRepository(Profile::class)->getProfile();
-        $sections = $doctrine->getRepository(Section::class)->getDisplayed();
+        $panels = $doctrine->getRepository(Panel::class)->getDisplayed();
 
         return new response($twig->render('pages/index.html.twig', [
             'profile' => $profile[0],
-            'sections' => $sections
+            'panels' => $panels
         ]));
     }
 
@@ -42,73 +41,52 @@ class PagesController {
      * @return void
      */
     public function panel ($panel, Request $request, Environment $twig, RegistryInterface $doctrine) {
-        // panel
+        // profile
         $profile = $doctrine->getRepository(Profile::class)->getProfile()[0];
+
+        // panel data
+        $panelData = $doctrine->getRepository(Panel::class)->getByNavUrl($panel);
+
+        // decorations
         $finder = new Finder();
-        $finder->files()->in(__DIR__ . '/../../public/images/decorations/headerPage');
-        $panelDecorations = [];
+        $finder->in(__DIR__ . '/../../public/images/decorations/headerPage/')->name('headerPage-' . $panelData->getColorTheme()->getName() . '.svg');
         foreach ($finder as $file) {
-            $start = strrpos($file->getFileName(), '-') + 1;
-            $extension = strrpos($file->getFileName(), '.');
-            $end = $extension - $start;
-            $color = substr($file->getFileName(), $start, $end);
-            $panelDecorations[$color] = $file->getContents();
+            $panelData->headerPage = $file->getContents();
         }
-        $xps = $doctrine->getRepository(Experience::class)->findAll();
+
+        // experiences color system
+        $experiences = $doctrine->getRepository(Experience::class)->findAll();
         $i = 0;
         $color = ['bleu', 'violet', 'vert', 'orange', 'rouge', 'gris'];
-        foreach ($xps as $xp) {
+        foreach ($experiences as $xp) {
             $xp->color = $color[$i];
             if($i === 5) {
                 $i = 0;
             }
             $i++;
         }
+
         $panelMatching = [
             'home' => [
                 'profile' => $profile,
-                'tools' => $doctrine->getRepository(Tool::class)->getDisplayed(),
-                'panel' => [
-                    'title' => $profile->getTitle(),
-                    'subtitle' => 'Site officiel de ' . $profile->getFirstname() . ' ' . $profile->getLastname(),
-                    'color' => 'home',
-                    'footer' => true,
-                    'headerPage' => $panelDecorations['home']
-                ]
+                'tools' => $doctrine->getRepository(Tool::class)->getDisplayed()
             ],
             'skills' => [
-                'skills_groups' => $doctrine->getRepository(SkillGroup::class)->findAll(),
-                'panel' => [
-                    'title' => 'Skills',
-                    'subtitle' => 'My developer\'s skills',
-                    'color' => 'vert',
-                    'footer' => true,
-                    'headerPage' => $panelDecorations['vert']
-                ]
+                'skills_groups' => $doctrine->getRepository(SkillGroup::class)->findAll()
             ],
             'favoris' => [
-                'skills_groups' => $doctrine->getRepository(SkillGroup::class)->findAll(),
-                'panel' => [
-                    'title' => 'Favoris',
-                    'subtitle' => 'My favorite\'s technologies',
-                    'color' => 'rouge',
-                    'footer' => true,
-                    'headerPage' => $panelDecorations['rouge']
-                ]
+                'skills_groups' => $doctrine->getRepository(SkillGroup::class)->findAll()
             ],
             'experiences' => [
-                'experiences' => $doctrine->getRepository(Experience::class)->findAll(),
-                'panel' => [
-                    'title' => 'Experiences',
-                    'subtitle' => 'My profesional\'s experiences',
-                    'color' => 'orange',
-                    'footer' => true,
-                    'headerPage' => $panelDecorations['orange']
-                ]
+                'experiences' => $experiences
             ]
         ];
         
         $currentPanel = isset($panelMatching[$panel]) ? $panelMatching[$panel] : false;
+
+        if ($currentPanel !== false) {
+            $currentPanel['panel'] = $panelData;
+        }
 
         return new response($twig->render("panels/{$panel}.html.twig", $currentPanel));
     }

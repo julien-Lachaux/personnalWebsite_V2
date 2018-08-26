@@ -14,13 +14,11 @@
         </div>
         <div class="separator"></div>
         <ul class="sideNav-Links">
-            {% for section in sections %}
-                {% for nav in section.navs %}
-                    <li class="sideNav-Link">
-                        <div class="link-txt" href="/{{ nav.link }}">{{ nav.displayText }}</div>
-                        <i class="link-logo material-icons" data-descr="#{{ nav.iconColor }}">{{ nav.iconSource }}</i>
-                    </li>
-                {% endfor %}
+            {% for panel in panels %}
+                <li class="sideNav-Link">
+                    <div class="link-txt" href="/{{ panel.navUrl }}">{{ panel.navText }}</div>
+                    <i class="link-logo material-icons">{{ panel.navIcon }}</i>
+                </li>
             {% endfor %}
         </ul>
         <div class="sideNav-contact mobile-hidden">

@@ -8,14 +8,18 @@ parameters:
 doctrine:
     dbal:
         # configure these for your database server
+        dbname: personnalWebsite
+        host: 127.0.0.1
+        port: 3306
+        user: root
+        password: mysqlroot
         driver: 'pdo_mysql'
-        server_version: '5.7'
+        server_version: '8.0'
         charset: utf8mb4
         default_table_options:
             charset: utf8mb4
             collate: utf8mb4_unicode_ci
 
-        url: '%env(resolve:DATABASE_URL)%'
         mapping_types:
             enum: string
     orm:
