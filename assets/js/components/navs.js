@@ -14,7 +14,6 @@ export const navs = {
         let navbackgroundShadow = bouton.find('.navBtn-background-shadow')
         let navText = bouton.find('.link-txt')
         let link = navText.attr('href')
-
         
         navbackgroundShadow.attr( 'fill', '#006160')
         navText.css('background-color', '')

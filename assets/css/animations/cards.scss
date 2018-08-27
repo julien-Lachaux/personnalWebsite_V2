@@ -1,5 +1,5 @@
 // Keyframes
-@keyframes webContentLoad-top {
+@keyframes cardsLoad-top {
     from {
       opacity: 0;
       transform: translateY(-75vh);
@@ -9,7 +9,7 @@
       opacity: 1;
     }
 }
-@keyframes webContentLoad-bottom {
+@keyframes cardsLoad-bottom {
 from {
     opacity: 0;
     transform: translateY(75vh);
@@ -19,7 +19,7 @@ to {
     opacity: 1;
 }
 }
-@keyframes webContentLoad-left {
+@keyframes cardsLoad-left {
 from {
     opacity: 0;
     transform: translateX(-100vw);
@@ -29,7 +29,7 @@ to {
     opacity: 1;
 }
 }
-@keyframes webContentLoad-right {
+@keyframes cardsLoad-right {
 from {
     opacity: 0;
     transform: translateX(100vw);
@@ -49,22 +49,22 @@ to {
 
     &.top {
         transform: translateY(-75vh);
-        animation-name: webContentLoad-top;
-        animation-delay: 0.45s;
+        animation-name: cardsLoad-top;
+        animation-delay: 2.45s;
     }
     &.bottom {
         transform: translateY(75vh);
-        animation-name: webContentLoad-bottom;
-        animation-delay: 0.75s;
+        animation-name: cardsLoad-bottom;
+        animation-delay: 2.75s;
     }
     &.left {
         transform: translateX(-100vw);
-        animation-name: webContentLoad-left;
-        animation-delay: 0.20s;
+        animation-name: cardsLoad-left;
+        animation-delay: 2.20s;
     }
     &.right {
         transform: translateX(100vw);
-        animation-name: webContentLoad-right;
-        animation-delay: 0.20s;
+        animation-name: cardsLoad-right;
+        animation-delay: 2.20s;
     }
 }

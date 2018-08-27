@@ -23,7 +23,10 @@ departBtnBackground.attr('fill', departIcon.getAttribute('data-color'));
 // chargement de la page demandé par l'utilisateur au premier chargement de la page
 panels.getAjaxPanel(hash, () => {
   let depart = document.querySelector('#' + saltyHash)
+
   cards.activeAnimation()
+  panels.activeAnimation()
+  
   depart.style.transform = 'translateX(100%)'
   setTimeout(() => {
     depart.classList.add('active')

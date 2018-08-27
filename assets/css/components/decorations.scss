@@ -18,6 +18,7 @@
     position: absolute;
     top: 8em;
     left: 0;
+    overflow: hidden;
 
     img {
         width: auto;
@@ -28,9 +29,8 @@
 .barTop-decoration {
     z-index: $lvl-7;
     position: absolute;
-    width: 100%;
+    width: calc(100% - #{$scrollbar-width});
     height: 10px;
-    left: -$scrollbar-width;
 }
 
 .barRight-decoration {

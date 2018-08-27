@@ -1,0 +1,53 @@
+.headerPage-decoration .appear {
+    animation: headerPageDecorationAppear 4s forwards;
+    animation-delay: 4s;
+}
+
+@keyframes headerPageDecorationAppear {
+    from {
+        transform: translateX(110%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.headerPage-decoration .disappear {
+    animation: headerPageDecorationDisappear 4s forwards;
+}
+
+@keyframes headerPageDecorationDisappear {
+    from {
+        right: 0;
+    }
+    to {
+        right: -100%;
+    }
+}
+
+.decorationPage-decoration .appear {
+    animation: decorationPageDecorationAppear 2s forwards;
+    animation-delay: 8s;
+}
+
+@keyframes decorationPageDecorationAppear {
+    from {
+        transform: translateX(-110%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.decorationPage-decoration .disappear {
+    animation: decorationPageDecorationDisappear 4s forwards;
+}
+
+@keyframes decorationPageDecorationDisappear {
+    from {
+        right: 0;
+    }
+    to {
+        right: -100%;
+    }
+}

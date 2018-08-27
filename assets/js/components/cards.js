@@ -106,7 +106,7 @@ export const cards = {
             for (let i = 0; i < cards.length; i++) {
                 cards[i].classList.remove('onLoadCard');
             }
-        }, 2500);
+        }, 5000);
         for (var u = 0; u < webContents.length; u++) {
             lor = 0;
             var cards = webContents[u].querySelectorAll('.card');
