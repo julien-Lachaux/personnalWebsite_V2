@@ -7,54 +7,55 @@ const SVG = require('svg.js')
 
 export const panels = {
     afficherSection(ciblePath) {
-        var CheminComplet = document.location.href
-        var cibleID = ciblePath.substring(1)
-        var hash = CheminComplet.substring(CheminComplet.lastIndexOf("/") + 1)
-        var currentPanel = document.querySelector('.panel')
-        var currentBtn = document.querySelector('div.link-txt[href="/' + hash + '"]').parentNode
-        var currentIcon = currentBtn.querySelector('.link-logo')
-        var cibleBtn = document.querySelector('div.link-txt[href="/' + cibleID + '"]').parentNode
-        var cibleIcon = cibleBtn.querySelector('.link-logo')
+        let CheminComplet = document.location.href
+        let cibleID = ciblePath.substring(1)
+        let hash = CheminComplet.substring(CheminComplet.lastIndexOf("/") + 1)
+        let currentPanel = $('.panel')
+        let currentBtn = $('div.link-txt[href="/' + hash + '"]').parent()
+        let currentIcon = currentBtn.find('.link-logo')
+        let cibleBtn = $('div.link-txt[href="/' + cibleID + '"]').parent()
+        let cibleIcon = cibleBtn.find('.link-logo')
+        let navbackgroundShadow = currentBtn.find('.navBtn-background-shadow')
+        let cibleBtnBackground = $(cibleBtn).find('.nav-decoration-active-background polygon')
         
-        currentPanel.style.transform = 'translateX(100%)'
-        currentBtn.classList.remove('iconActive')
-        currentIcon.style.color = '#fff';
-        cibleBtn.classList.add('iconActive')
+        navbackgroundShadow.attr( 'fill', '#006160')
+        currentBtn.find('.link-txt').css('background-color', '')
+        
+        currentPanel.css('transform', 'translateX(100%)')
+        currentBtn.removeClass('iconActive')
 
-        var cibleBtnBackground = $(cibleBtn).find('.nav-decoration-active-background polygon')
-        cibleBtnBackground.attr('fill', cibleIcon.getAttribute('data-color'));
+        setTimeout(() => {
+            currentIcon.css('color', '#fff');
+            cibleBtn.addClass('iconActive')
+          }, 1000)
+
+        cibleBtnBackground.attr('fill', cibleIcon.attr('data-color'));
     
         panels.getAjaxPanel(cibleID, () => {
-          var boutons = document.querySelectorAll('.sideNav-Link')
-          var cible = document.querySelector('#' + cibleID + '-panel')
-          var CheminComplet = document.location.href
-          var urlParams = CheminComplet.split('/').slice(3)
+          let cible = $('#' + cibleID + '-panel')
+          let CheminComplet = document.location.href
+          let urlParams = CheminComplet.split('/').slice(3)
+
           cards.activeAnimation()
+
           if (urlParams.length === 1) {
-            var stateObj = {
+            let stateObj = {
               foo: cibleID
             }
             history.pushState(stateObj, cibleID, ciblePath)
           } else if (urlParams.length === 2) {
-            var stateObj = {
+            let stateObj = {
               foo: cibleID
             }
             history.pushState(stateObj, cibleID, '/' + urlParams[0] + ciblePath)
           }
     
-          cible.style.transform = 'translateX(100%)'
+          cible.css('transform', 'translateX(100%)')
           setTimeout(() => {
-            cible.classList.add('active')
-            cible.style.transform = 'translateX(0)'
-          }, 100)
-    
-          var boutons = document.querySelectorAll('.sideNav-Link')
-    
-          for (var i = 0; i < boutons.length; i++) {
-            if ((boutons[i].querySelector('.link-txt').getAttribute('href')) === '/' + cibleID) {
-              var icon = boutons[i].querySelector('.link-logo')
-            }
-          }
+            cible.addClass('active')
+            cible.css('transform', 'translateX(0)')
+          }, 1000)
+
         })
       },
 

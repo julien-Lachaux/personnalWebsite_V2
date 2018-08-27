@@ -13,9 +13,12 @@ navs.activeEvent()
 // activation du boutons correspondant a la page actuel
 let departBtn = document.querySelector('div.link-txt[href="/' + hash + '"]').parentNode
 let departIcon = departBtn.querySelector('.link-logo')
-departBtn.classList.add('iconActive')
-var departBtnBackground = $(departBtn).find('.nav-decoration-active-background polygon')
-        departBtnBackground.attr('fill', departIcon.getAttribute('data-color'));
+let departBtnBackground = $(departBtn).find('.nav-decoration-active-background polygon')
+
+setTimeout(() => {
+  departBtn.classList.add('iconActive')
+}, 3000)
+departBtnBackground.attr('fill', departIcon.getAttribute('data-color'));
 
 // chargement de la page demandé par l'utilisateur au premier chargement de la page
 panels.getAjaxPanel(hash, () => {
