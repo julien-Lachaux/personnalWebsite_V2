@@ -3,6 +3,14 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
+
+    &.five-raw .card {
+      width: calc(20% - 2em);
+    }
+
+    &.align-center {
+      justify-content: center;
+    }
   
     .card {
       height: 10em;
@@ -28,8 +36,21 @@
         width: 15em;
         height: 15em;
   
+        .card-head {
+          padding: 1.5em 1em 1em 1em;
+
+          .card-decoration.top img {
+            width: 35%;
+            right: -35%;
+          }
+        }
+
         .card-body {
           height: calc(100% - 6em);
+
+          .card-logo {
+            transform: translateY(-1em);
+          }
   
           p {
             margin: 0;
@@ -61,7 +82,7 @@
           }
         }
         .card-subtitle {
-          font-size: 0.75em;
+          font-size: 0.65em;
         }
         .card-decoration {
           position: absolute;
@@ -78,15 +99,15 @@
           &.top {
             width: 100%;
             height: 100%;
-            top: 0;
+            top: 0em;
             right: 0;
-            border-top: 0.5em solid $color-primary;
+            border-top: 0.5em solid $color-primary-dark;
   
             img {
               height: auto;
               width: 40%;
               position: relative;
-              top: 0;
+              top: -.5em;
               right: -30%;
             }
           }

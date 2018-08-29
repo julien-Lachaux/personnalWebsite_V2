@@ -1,0 +1,13 @@
+.cards-group {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    .card {
+        width: 45%;
+
+        .card-head {
+            height: auto;
+        }
+    }
+}

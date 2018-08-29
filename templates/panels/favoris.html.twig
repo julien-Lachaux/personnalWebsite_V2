@@ -4,30 +4,31 @@
     {% include 'components/panels/panelTitle.html.twig' %}
     
     <div class="content">
-
-        {% for skillGroup in skills_groups %}
-            <div class="card group-card">
-                <div class="card-head limit-padding-top">
-                    <div class="card-title">{{ skillGroup.name }}</div>
-                    <div class="card-subtitle">{{ skillGroup.description }}</div>
-                </div>
-                <div class="card-body">
-                    <div class="card-imgs-container">
-                        {% for favori in skillGroup.favoris %}
-                            <a href="{{ favori.link }}" target="_blank" class="card-img">
-                                <i class="{{ favori.picture }}" style="font-size: 3em;"></i>
-                                <span>
-                                    <b>{{ favori.name }}</b>
-                                </span>
-                            </a>
-                        {% endfor %}
-                        <div class="card-decoration">
-                            <img src="images/card-decoration/logoCard-{{ skillGroup.name }}.svg">
+        <div class="cards-group">
+            {% for skillGroup in skills_groups %}
+                <div class="card">
+                    <div class="card-head limit-padding-top">
+                        <div class="card-liseret" style="background: #{{ skillGroup.color }}"></div>
+                        <div class="card-title" style="color: #{{ skillGroup.color }}">{{ skillGroup.name }}</div>
+                        <div class="card-subtitle">{{ skillGroup.description }}</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-imgs-container">
+                            {% for favori in skillGroup.favoris %}
+                                <a href="{{ favori.link }}" target="_blank" class="card-img">
+                                    <i class="{{ favori.picture }}" style="font-size: 3em;"></i>
+                                    <span>
+                                        <b>{{ favori.name }}</b>
+                                    </span>
+                                </a>
+                            {% endfor %}
+                            <div class="card-decoration">
+                                <img src="images/card-decoration/logoCard-{{ skillGroup.name }}.svg">
+                            </div>
                         </div>
                     </div>
-                    <div class="card-liseret" style="background: #{{ skillGroup.color }}"></div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 </article>

@@ -70,9 +70,11 @@ class PagesController {
         switch ($panelName) {
 
             case 'home':
+            $topSkills = $doctrine->getRepository(Skill::class)->getTopSkills(10);
                 $currentPanel = [
                     'profile' => $profile,
-                    'tools' => $doctrine->getRepository(Tool::class)->getDisplayed()
+                    'tools' => $doctrine->getRepository(Tool::class)->getDisplayed(),
+                    'topSkills' => $topSkills
                 ];
                 break;
 

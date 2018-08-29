@@ -6,6 +6,8 @@
 .rouge-text { color: $rouge !important; }
 .violet-text { color: $violet !important; }
 .gris-text { color: $gris !important; }
+.white-text { color: #fff !important; }
+.black-text { color: #000 !important; }
 
 // BACKGROUND COLOR
 .home-background { background: $home !important; }
@@ -20,6 +22,10 @@
 .hidden { visibility: hidden !important; }
 .desktop-hidden { display: none !important; }
 .mobile-hidden { display: block !important; }
+
+// font
+.font-mono { font-family: $fontMono; }
+.font-serif { font-family: $fontContent; }
 
 // HIDDEN -- RESPONSIVE
 @media screen and (max-width: 1024px) {

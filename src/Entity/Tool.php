@@ -38,6 +38,11 @@ class Tool
     private $family;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $decoration;
+
+    /**
      * @ORM\Column(type="boolean")
      */
     private $displayed;
@@ -103,6 +108,18 @@ class Tool
     public function setDisplayed(int $displayed): self
     {
         $this->displayed = $displayed;
+
+        return $this;
+    }
+
+    public function getDecoration(): ?string
+    {
+        return $this->decoration;
+    }
+
+    public function setDecoration(string $decoration): self
+    {
+        $this->decoration = $decoration;
 
         return $this;
     }

@@ -47,7 +47,7 @@
     
         .title {
             width: 80%;
-            font-size: 3em;
+            font-size: 2.5em;
             text-align: left;
         }
         .subtitle {
@@ -179,13 +179,18 @@
         .section-title {
             text-align: left;
             font-size: 2em;
-            margin: 1em 0 0 0.5em;
+            margin: 0 0 0 .5em;
+            color: $color-primary;
+
+            &.margin-top {
+                margin: 1em 0 0 .5em;
+            }
         }
         .section-subtitle {
             text-align: left;
             font-size: 1em;
             margin: 0.25em 0 1em 1em;
-            color: $color-primary;
+            opacity: .68;
         }
     }
 }

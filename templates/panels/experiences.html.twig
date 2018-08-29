@@ -10,8 +10,8 @@
                     <div class="card" data-descr="{{ experience.dateStart|date('d/m/Y') }} - {{ experience.dateEnd|date('d/m/Y') }}">
                         <div class="card-header">
                             <div class="card-title">{{ experience.company }}</div>
-                            <div class="date">{{ experience.dateStart|date('d-M-Y') }} - {{ experience.dateEnd|date('d-M-Y') }}</div>
-                            <div class="card-subtitle {{ experience.color }}-text">{{ experience.job }}</div>
+                            <div class="card-subtitle font-mono {{ experience.color }}-text">{{ experience.job }}</div>
+                            <div class="date font-mono">{{ experience.dateStart|date('d-M-Y') }} - {{ experience.dateEnd|date('d-M-Y') }}</div>
                         </div>
                         <article class="card-body">
                             <p>

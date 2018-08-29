@@ -32,6 +32,20 @@ class SkillRepository extends ServiceEntityRepository
         ;
     }
 
+    /**
+     * @return Skill array of Skill objects
+     */
+    public function getTopSkills($nbr)
+    {
+        return $this->createQueryBuilder('s')
+            ->andWhere('s.displayed = 1')
+            ->orderBy('s.level', 'DESC')
+            ->setMaxResults($nbr)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     /*
     public function findOneBySomeField($value): ?Skill
     {

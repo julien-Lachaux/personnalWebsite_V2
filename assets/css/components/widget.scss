@@ -1,0 +1,15 @@
+.widget {
+position: relative;
+
+    &.presentation {
+        padding: 1em;
+
+        .widget-body {
+            font-size: 1em;
+            text-align: left;
+            font-weight: 300;
+            line-height: 2em;
+            font-family: $fontContent;
+        }
+    }
+}

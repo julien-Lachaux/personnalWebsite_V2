@@ -5,44 +5,56 @@
     
     <div class="content">
 
-        <div class="cards-mosaic">
-            <div class="card grow auto">
-                <div class="card-head">
-                    <div class="card-title">Description</div>
-                </div>
-                <div class="card-body">
-                    {{ profile.description }}
-                </div>
-            </div>
-            <div class="card bigger">
-                <div class="card-head colored-success">
-                    <div class="card-title">Disponible <i class="material-icons">insert_invitation</i></div>
-                </div>
-                <div class="card-body">
-                    <p>
-                        Disponible pour mission freelance uniquement
-                        <br>
-                        <br>
-                        <b>Tarif : 450€ / jour</b>
-                        <br>
-                    </p>
-                </div>
+        <div class="section-title">Description</div>
+        <div class="widget presentation">
+            <div class="widget-body">
+                {{ profile.description }}
             </div>
         </div>
-        <div class="section-title">Technologies</div>
+
+        <div class="section-title margin-top bleu-text">TOP 10</div>
+        <div class="section-subtitle">Mes meilleurs compétences</div>
+        <div class="cards-mosaic">
+            {% for skill in topSkills %}
+                <div class="card" data-search="{{ skill.name }}" data-filter="{{ skill.group.name }}">
+                    <div class="card-head limit-padding-top">
+                        <div class="card-title">{{ skill.name }}</div>
+                        <div class="card-subtitle">{{ skill.group.name }}</div>
+                        <div class="card-decoration">
+                            <img src="images/card-decoration/logoCard-{{ skill.group.name }}.svg">
+                        </div>
+                    </div>
+                    <div class="card-body" style="background: #{{ skill.group.color }}">
+                        <div class="card-logo"><i class="{{ skill.picture }}"></i></div>
+                        <ul class="card-stars">
+                            {% for i in 1..5 %}
+                                {% if i <= skill.level %}
+                                    <i class="material-icons">star</i>
+                                {% else %}
+                                    <i class="material-icons">star_border</i>
+                                {% endif %}
+                                
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="section-title margin-top">Technologies</div>
         <div class="section-subtitle">les outils qui j'utilise au quotidien</div>
         <div class="cards-mosaic">
             {% for tool in tools %}
-                <div class="card">
-                    <div class="card-head top limit-padding">
+                <div class="card bigger">
+                    <div class="card-head">
                         <div class="card-title">{{ tool.name }}</div>
                         <div class="card-decoration top">
-                            <img src="images/card-decoration/demo.svg">
+                            <img src="images/decorations/decorationTool/{{ tool.decoration }}.svg">
                         </div>
                     </div>
-                    <div class="card-body full-height">
+                    <div class="card-body">
                         <div class="card-logo"><img src="{{ tool.picture }}"></div>
-                        <div class="card-subtitle">{{ tool.family }}</div>
+                        <div class="card-subtitle font-mono">{{ tool.family }}</div>
                     </div>
                 </div>
             {% endfor %}
