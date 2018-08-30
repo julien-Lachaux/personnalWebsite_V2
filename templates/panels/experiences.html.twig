@@ -21,10 +21,10 @@
                         <aside class="card-tags">
                             <ul class="tags">
                                 {% for tag in experience.tags %}
-                                    <li class="tag">
+                                    <li class="tag {{ experience.color }}">
                                         <div class="hexagon">
                                             <i class="{{ tag.picture }}"></i>
-                                            <div>{{ tag.name }}</div>
+                                            <div class="font-mono">{{ tag.name }}</div>
                                         </div>
                                     </li>
                                 {% endfor %}

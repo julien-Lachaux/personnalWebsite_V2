@@ -98,7 +98,7 @@
         margin: 0;
         padding: 0;
         position: absolute;
-        top: 3em;
+        top: 2em;
         right: 3em;
         width: 20em;
 
@@ -141,9 +141,42 @@
               -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
               transform: translateX(50%) rotate(-60deg) skewY(30deg);
             }
-            &:nth-child(2n+0) .hexagon { background: $color-primary-dark; }
-            &:nth-child(2n+4) .hexagon { background: $color-primary-light !important; }
-            &:nth-child(2n+1) .hexagon { background: $color-primary; }
+            &.bleu {
+              &:nth-child(2n+0) .hexagon { background: $color-primary-dark; }
+              &:nth-child(2n+4) .hexagon { background: $color-primary-light; }
+              &:nth-child(2n+1) .hexagon { background: $color-primary; }
+
+              .hexagon:hover {
+                background: lighten($bleu, 20%) !important;
+              }
+            }
+            &.violet {
+              &:nth-child(2n+0) .hexagon { background: darken($violet, 20%); }
+              &:nth-child(2n+4) .hexagon { background: lighten($violet, 10%); }
+              &:nth-child(2n+1) .hexagon { background: darken($violet, 10%); }
+
+              .hexagon:hover {
+                background: lighten($violet, 20%) !important;
+              }
+            }
+            &.vert {
+              &:nth-child(2n+0) .hexagon { background: darken($vert, 20%); }
+              &:nth-child(2n+4) .hexagon { background: lighten($vert, 10%); }
+              &:nth-child(2n+1) .hexagon { background: $vert; }
+
+              .hexagon:hover {
+                background: lighten($vert, 20%) !important;
+              }
+            }
+            &.orange {
+              &:nth-child(2n+0) .hexagon { background: darken($orange, 20%); }
+              &:nth-child(2n+4) .hexagon { background: lighten($orange, 10%); }
+              &:nth-child(2n+1) .hexagon { background: $orange; }
+
+              .hexagon:hover {
+                background: lighten($orange, 20%) !important;
+              }
+            }
 
             .hexagon {
               position: absolute;
@@ -162,10 +195,7 @@
               overflow: hidden;
               color: #fff;
               
-              &:hover { 
-                background: lighten($color-primary-light, 10%) !important;
-                cursor: pointer;
-              }
+              &:hover { cursor: pointer; }
 
               i {
                 position: relative;
@@ -175,7 +205,8 @@
 
               div {
                 position: relative;
-                font-size: 1em;
+                top: .4em;
+                font-size: .6em;
               }
             }
           }
