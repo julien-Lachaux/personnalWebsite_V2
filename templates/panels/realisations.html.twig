@@ -8,7 +8,7 @@
         <div class="section-title">Productions Graphique</div>
         <div class="section-subtitle">Du fond d'écran au logo en passant par des éléments de décorations de site web</div>
         <div class="images-mosaic">
-            {% for graphic in graphics %}
+            {% for graphic in realisations.graphics %}
             <div class="image">
                 <div class="image-cover"><i class="material-icons">zoom_in</i></div>
                 <img src="images/realisations/graphics/{{ graphic.path }}">
@@ -19,22 +19,24 @@
         <div class="section-subtitle">Programmes & Sites Web</div>
 
         <div class="realisations-list">
-            <div class="realisation">
-                <div class="realisationShowcase">
-                    <div class="macbook">
-                        <div class="showcase" style="background-image: url('images/realisations/graphics/urbanTrip--green.jpg')"></div>
-                        <img src="images/realisations/responsiveShowcase/macbook.png">
+            {% for realisation in realisations.web %}
+                <div class="realisation">
+                    <div class="realisationShowcase">
+                        <div class="macbook">
+                            <div class="showcase" style="background-image: url('images/realisations/responsiveShowcase/laptop/{{ realisation.imgLaptop }}')"></div>
+                            <img src="images/realisations/responsiveShowcase/macbook.png">
+                        </div>
+                        <div class="iphone">
+                            <div class="showcase" style="background-image: url('images/realisations/responsiveShowcase/phone/{{ realisation.imgPhone }}')"></div>
+                            <img src="images/realisations/responsiveShowcase/iphone.png">
+                        </div>
                     </div>
-                    <div class="iphone">
-                        <div class="showcase" style="background-image: url('images/realisations/graphics/brouk.jpg')"></div>
-                        <img src="images/realisations/responsiveShowcase/iphone.png">
+                    <div class="realisationInfo">
+                        <div class="realisationTitle">{{ realisation.title }}</div>
+                        <div class="realisationDescription">{{ realisation.description }}</div>
                     </div>
-                </div>
-                <div class="realisationInfo">
-                    <div class="realisationTitle">Un titre</div>
-                    <div class="realisationDescription">Du fond d'écran au logo en passant par des éléments de dDu fond d'écran au logo en passant par des éléments de dDu fond d'écran au logo en passant par des éléments de dDu fond d'écran au logo en passant par des éléments de dDu fond d'écran au logo en passant par des éléments de dDu fond d'écran au logo en passant par des éléments de dDu fond d'écran au logo en passant par des éléments de dDu fond d'écran au logo en passant par des éléments de dDu fond d'écran au logo en passant par des éléments de dDu fond d'écran au logo en passant par des éléments de dDu fond d'écran au logo en passant par des éléments de dDu fond d'écran au logo en passant par des éléments de d</div>
-                </div>
-            </div>
+                </div>    
+            {% endfor %}
         </div>
     </div>
 </article>
