@@ -1,15 +1,8 @@
-import {
-    app
-} from './../app'
-import {
-    navs
-} from './navs'
-import {
-    cards
-} from './cards'
-import {
-    animations
-} from './animations'
+import { app } from './../app'
+import { navs } from './navs'
+import { cards } from './cards'
+import { animations } from './animations'
+import { imagesMosaic } from './imagesMosaic'
 
 const SVG = require('svg.js')
 
@@ -46,6 +39,9 @@ export const panels = {
 
             cards.activeAnimation()
             panels.activeAnimation()
+            
+            imagesMosaic.activeHover()
+            imagesMosaic.activeClick()
 
             if (urlParams.length === 1) {
                 let stateObj = {
@@ -83,7 +79,7 @@ export const panels = {
         let headerPage = $('.headerPage-decoration svg')
         headerPage.addClass('appear')
         headerPage.css('transform', 'translateX(110%)')
-        
+
         let decorationPage = $('.decorationPage-decoration svg')
         decorationPage.addClass('appear')
         decorationPage.css('transform', 'translateX(-110%)')

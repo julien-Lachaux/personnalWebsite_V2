@@ -12,7 +12,7 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        <s class="mainFlux">
+        <div class="mainFlux">
             {% block navs %}{% endblock %}
 
             <section class="webFlux">
@@ -21,7 +21,7 @@
                 </div>
             </section>
         </div>
-
+        <div class="coverFlux"></div>
         {% block javascripts %}{% endblock %}
         <script src="{{ asset('build/js/init.js') }}"></script>
     </body>

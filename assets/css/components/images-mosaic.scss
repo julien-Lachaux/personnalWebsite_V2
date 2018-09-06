@@ -3,16 +3,78 @@
     flex-flow: column wrap;
     align-content: flex-start;
     width: 100%;
-    height: 50%;
+    height: 100%;
 
     div {
         display: inline-block;
+        position: relative;
         width: 15em;
         margin: .5em;
 
         img {
             width: 100%;
             height: auto;
+        }
+
+        .image-cover {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            margin: 0;
+            height: calc(100% - .25em);
+            width: 100%;
+            background: $color-primary;
+            opacity: 0;
+            
+            i {
+                color: #fff;
+                font-size: 3em;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.image-preview {
+    z-index: $lvl-alert;
+    position: relative;
+    display: block;
+    width: 80%;
+    height: 80%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@keyframes coverFluxIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.coverFlux {
+    height: 100%;
+    width: 100%;
+    z-index: $lvl-alert;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background: #000000de;
+    opacity: 0;
+
+    &.visible {
+        animation: coverFluxIn ease-out 500ms forwards;
+
+        &:hover {
+            cursor: pointer;
         }
     }
 }

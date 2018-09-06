@@ -3,6 +3,7 @@ import { app } from './app'
 import { cards } from './components/cards'
 import { panels } from './components/panels'
 import { navs } from './components/navs'
+import { imagesMosaic } from './components/imagesMosaic'
 
 const hash = app.getCurrentPage()
 const saltyHash = (hash + '-panel')
@@ -26,6 +27,10 @@ panels.getAjaxPanel(hash, () => {
 
   cards.activeAnimation()
   panels.activeAnimation()
+  imagesMosaic.activeHover()
+  imagesMosaic.activeClick()
+
+  $('.coverFlux').click(imagesMosaic.hidePreview)
   
   depart.style.transform = 'translateX(100%)'
   setTimeout(() => {
