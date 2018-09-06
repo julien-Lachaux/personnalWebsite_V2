@@ -15,6 +15,7 @@ use App\Entity\Tool;
 use App\Entity\Favori;
 use App\Entity\Experience;
 use App\Controller\PanelsController;
+use App\Controller\RealisationsController;
  
 class PagesController {
     /**
@@ -70,7 +71,7 @@ class PagesController {
         switch ($panelName) {
 
             case 'home':
-            $topSkills = $doctrine->getRepository(Skill::class)->getTopSkills(10);
+                $topSkills = $doctrine->getRepository(Skill::class)->getTopSkills(10);
                 $currentPanel = [
                     'profile' => $profile,
                     'tools' => $doctrine->getRepository(Tool::class)->getDisplayed(),
@@ -110,6 +111,15 @@ class PagesController {
 
                 $currentPanel = [
                     'experiences' =>$experiences
+                ];
+                break;
+
+            case 'realisations':
+                $realisations = new RealisationsController();
+                $graphics = $realisations->getGraphicsProducts();
+
+                $currentPanel = [
+                    'graphics' =>$graphics
                 ];
                 break;
 

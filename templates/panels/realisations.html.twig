@@ -1,0 +1,15 @@
+<article class="panel" id="realisations-panel">
+
+    {% include 'components/panels/panelDecoration.html.twig' %}
+    {% include 'components/panels/panelTitle.html.twig' %}
+    
+    <div class="content">
+        <div class="images-mosaic">
+            {% for graphic in graphics %}
+            <div>
+                <img src="images/realisations/graphics/{{ graphic.path }}">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</article>
