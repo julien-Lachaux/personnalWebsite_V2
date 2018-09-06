@@ -40,6 +40,35 @@ body {
     width: 100%;
   }
 
+  @keyframes coverFluxIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.coverFlux {
+    height: 100%;
+    width: 100%;
+    z-index: $lvl-alert;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background: #000000de;
+    opacity: 0;
+
+    &.visible {
+        animation: coverFluxIn ease-out 250ms forwards;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
 //
 // ───────────────────────────────────────────────────────────────────── Responsive ─────
 //
