@@ -54,10 +54,9 @@
       }
   
       .card-header {
-        display: inline-block;
         position: relative;
         height: 8em;
-        width: 100%;
+        width: calc(100% - 30em);
         text-align: left;
         padding: 2em 1em 1em 12em;
         box-sizing: border-box;
@@ -86,8 +85,9 @@
         padding: 0;
         
         p {
-          margin: 0;
           display: block;
+          margin: 0;
+          padding: 3em 0;
           font-size: 0.85em;
           text-align: left;
         }
@@ -145,37 +145,21 @@
               &:nth-child(2n+0) .hexagon { background: $color-primary-dark; }
               &:nth-child(2n+4) .hexagon { background: $color-primary-light; }
               &:nth-child(2n+1) .hexagon { background: $color-primary; }
-
-              .hexagon:hover {
-                background: lighten($bleu, 20%) !important;
-              }
             }
             &.violet {
               &:nth-child(2n+0) .hexagon { background: darken($violet, 20%); }
               &:nth-child(2n+4) .hexagon { background: lighten($violet, 10%); }
               &:nth-child(2n+1) .hexagon { background: darken($violet, 10%); }
-
-              .hexagon:hover {
-                background: lighten($violet, 20%) !important;
-              }
             }
             &.vert {
               &:nth-child(2n+0) .hexagon { background: darken($vert, 20%); }
               &:nth-child(2n+4) .hexagon { background: lighten($vert, 10%); }
               &:nth-child(2n+1) .hexagon { background: $vert; }
-
-              .hexagon:hover {
-                background: lighten($vert, 20%) !important;
-              }
             }
             &.orange {
               &:nth-child(2n+0) .hexagon { background: darken($orange, 20%); }
               &:nth-child(2n+4) .hexagon { background: lighten($orange, 10%); }
               &:nth-child(2n+1) .hexagon { background: $orange; }
-
-              .hexagon:hover {
-                background: lighten($orange, 20%) !important;
-              }
             }
 
             .hexagon {
@@ -194,8 +178,6 @@
               transform: skewY(-30deg) rotate(60deg);
               overflow: hidden;
               color: #fff;
-              
-              &:hover { cursor: pointer; }
 
               i {
                 position: relative;
