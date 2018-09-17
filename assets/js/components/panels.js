@@ -37,7 +37,10 @@ export const panels = {
             let CheminComplet = document.location.href
             let urlParams = CheminComplet.split('/').slice(3)
 
-            cards.activeAnimation()
+            animations.activeOnLoadAnimationFor('card')
+            animations.activeOnLoadAnimationFor('widget')
+            animations.activeOnLoadAnimationFor('section-title')
+            animations.activeOnLoadAnimationFor('section-subtitle')
             panels.activeAnimation()
             
             imagesMosaic.activeHover()

@@ -18,6 +18,34 @@ export const animations = {
                 element.animate(step.duration, step.ease, step.delay).dmove(step.move.x, step.move.y)
             })
         })
+    },
+
+    activeOnLoadAnimationFor(elementClassName) {
+        
+        setTimeout(() => {
+            var elements = document.querySelectorAll('.' + elementClassName + '.onLoadElement');
+            for (let i = 0; i < elements.length; i++) {
+                elements[i].classList.remove('onLoadElement');
+            }
+        }, 5000);
+        
+        // OnLoad animation for element
+        var lor = 0;
+        var elements = document.querySelectorAll('.' + elementClassName);
+
+        for (let i = 0; i < elements.length; i++) {
+            elements[i].classList.add('onLoadElement');
+            if (lor === 0) {
+                elements[i].classList.add('top');
+            } else if (lor == (elements.length - 1)) {
+                elements[i].classList.add('bottom');
+            } else if ((lor % 2) === 0) {
+                elements[i].classList.add('left');
+            } else {
+                elements[i].classList.add('right');
+            }
+            lor++;
+        }
     }
 
 }

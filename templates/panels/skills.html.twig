@@ -10,7 +10,7 @@
                 <li><a href="{{ skillGroup.name }}">{{ skillGroup.name }}</a></li>
             {% endfor %}
         </ul>
-        <div class="search">
+        <div class="search mobile-hidden">
             <input type="text" required>
             <label>Search</label>
             <i class="material-icons">search</i>
@@ -47,6 +47,11 @@
                     {% endfor %}
                 {% endfor %}
             </div>
+        </div>
+        <div class="contactMe">
+            <div class="contactMe-decorationLeft">{{ contactMe.decorationLeft|raw }}</div>
+            <span class="contactMe-text">Contactez moi !</span>
+            <div class="contactMe-decorationRight">{{ contactMe.decorationRight|raw }}</div>
         </div>
     </div>
 </article>

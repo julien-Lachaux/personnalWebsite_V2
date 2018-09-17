@@ -1,5 +1,7 @@
 <div class="panelTitle">
-    <div class="title">{{ panel.title|raw }}</div>
-    <div class="subtitle {{ panel.colorTheme.name }}-text">{{ panel.subtitle }}</div>
+    <div class="mobile-background {{ panel.colorTheme.name }}-background">
+        <div class="title">{{ panel.title|raw }}</div>
+        <div class="subtitle {{ panel.colorTheme.name }}-text">{{ panel.subtitle }}</div>
+    </div>
     <div class="separator"></div>
 </div>

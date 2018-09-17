@@ -13,3 +13,18 @@ position: relative;
         }
     }
 }
+
+//
+// ───────────────────────────────────────────────────────────────────── Responsive ─────
+//
+@media screen and (max-width: 1250px) {
+    .widget {
+        
+            &.presentation {
+        
+                .widget-body {
+                    font-size: .8em;
+                }
+            }
+        }
+}

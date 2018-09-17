@@ -69,21 +69,44 @@ body {
     }
 }
 
+.contactMe {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 3em 0;
+
+    .contactMe-text {
+        font-family: $fontMono;
+        margin: 0 1em;
+    }
+
+    .contactMe-decorationLeft {
+        width: 5em;
+    }
+    
+    .contactMe-decorationRight {
+        width: 5em;
+        transform: scaleX(-1);
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        .contactMe-text {
+            color: $color-primary
+        }
+    }
+}
+
 //
 // ───────────────────────────────────────────────────────────────────── Responsive ─────
 //
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1250px) {
     
     .webFlux {
         width: 100%;
+        height: 100%;
     }
-
-    .webContent {
-        height: calc(100vh - 7em) !important;
-        padding: 2em 0;
-    }
-
-    .mobile-hidden { display: none !important; }
-
-    .desktop-hidden { display: flex !important; }
 }

@@ -2,7 +2,7 @@
 <div class="barRight-decoration {{ panel.colorTheme.name }}-background"></div>
 
     {% if panel.decorations.headerPage is defined and panel.decorations.headerPage == true %}
-        <div class="headerPage-decoration">{{ panel.headerPage|raw }}</div>
+        <div class="headerPage-decoration medium-hidden">{{ panel.headerPage|raw }}</div>
     {% endif %}
     
     {% if panel.decorations.decorationPage is defined and panel.decorations.decorationPage == true %}

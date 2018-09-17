@@ -1,7 +1,4 @@
-// nav link text
-.link-txt {
-    animation: linkTextAppear 4s forwards;
-}
+
 @keyframes linkTextAppear {
     0% {
         width: 0px;
@@ -60,10 +57,7 @@
     }
 }
 
-// nav link decoration
-.nav-decoration {
-    animation: navDecorationAppear 4s forwards;
-}
+
 @keyframes navDecorationAppear {
     0% {
         right: 150%;
@@ -81,11 +75,29 @@
         opacity: 0;
     }
 }
-
-// nav link logo
-i.link-logo {
-    animation: linkLogoAppear 4s forwards;
+@keyframes navDecorationAppearMobile {
+    0% {
+        bottom: -7em;
+        right: 1em;
+    }
+    100% {
+        bottom: 0em;
+        right: 1em;
+    }
 }
+@keyframes navDecorationToggleMobile {
+    0% {
+        bottom: 0em;
+        right: 1em;
+    }
+    100% {
+        bottom: -7em;
+        opacity: 0;
+        right: 1em;
+    }
+}
+
+
 @keyframes linkLogoAppear {
     0% {
         right: 150%;
@@ -110,5 +122,88 @@ i.link-logo {
         right: 3.65em;
         bottom: 0.7em;
         opacity: 1;
+    }
+}
+@keyframes linkLogoAppearMobile {
+    0% {
+        bottom: -7em;
+        right: 1.4em;
+    }
+    100% {
+        bottom: 3em;
+        right: 1.4em;
+    }
+}
+@keyframes linkLogoToggleMobile {
+    0% {
+        bottom: 3em;
+        right: 1.4em;
+    }
+    25% {
+        bottom: -7em;
+        opacity: 0;
+        right: 1.4em;
+    }
+    50% {
+        bottom: 3.8em;
+        opacity: 0;
+        right: 1.3em;
+    }
+    100% {
+        bottom: 3.8em;
+        opacity: 1;
+        right: 1.3em;
+    }
+}
+
+@media screen and (min-width: 1251px) {
+    
+    .sideNav-Link {
+        // nav link text
+        .link-txt {
+            animation: linkTextAppear 4s forwards;
+        }
+            // nav link decoration
+        .nav-decoration {
+            animation: navDecorationAppear 4s forwards;
+        }
+            // nav link logo
+        i.link-logo {
+            animation: linkLogoAppear 4s forwards;
+        }
+        
+        &.active {
+            .link-txt {
+                animation: linkTextToggle 2s forwards;
+              }
+        
+              .link-logo {
+                transform: scale(1.5);
+                animation: linkLogoToggle 2s forwards;
+              }
+              .nav-decoration {
+                animation: navDecorationToggle 2s forwards;
+              }
+        }
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .nav-decoration {
+        animation: navDecorationAppearMobile 4s forwards !important;
+    }
+    i.link-logo {
+        animation: linkLogoAppearMobile 4s forwards !important;
+    }
+
+    .sideNav-Link  {
+        &.iconActive {
+            .link-logo {
+                animation: linkLogoToggleMobile 2s forwards !important;
+            }
+            .nav-decoration {
+                animation: navDecorationToggleMobile 2s forwards !important;
+            }
+        }
     }
 }

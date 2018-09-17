@@ -21,14 +21,18 @@
 // HIDDEN
 .hidden { visibility: hidden !important; }
 .desktop-hidden { display: none !important; }
-.mobile-hidden { display: block !important; }
+.mobile-hidden { display: block; }
 
 // font
 .font-mono { font-family: $fontMono; }
 .font-serif { font-family: $fontContent; }
 
 // HIDDEN -- RESPONSIVE
-@media screen and (max-width: 1024px) {
-    .mobile-hidden { display: none !important; }
+@media screen and (max-width: 1250px) {
+    .medium-hidden { display: none !important; }
     .desktop-hidden { display: flex !important; }
+}
+
+@media screen and (max-width: 758px) {
+    .mobile-hidden { display: none !important; }
 }

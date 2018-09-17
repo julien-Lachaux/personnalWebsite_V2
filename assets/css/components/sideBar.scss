@@ -166,18 +166,6 @@
         }
 
         &.iconActive {
-
-          .link-txt {
-            animation: linkTextToggle 2s forwards;
-          }
-
-          .link-logo {
-            transform: scale(1.5);
-            animation: linkLogoToggle 2s forwards;
-          }
-          .nav-decoration {
-            animation: navDecorationToggle 2s forwards;
-          }
   
           .nav-decoration-active {
             right: 0;
@@ -299,113 +287,63 @@
       |        responsive        |
       |__________________________| 
 */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1250px) {
   .sideBar {
     width: 100%;
-    height: 4em;
+    height: 7em;
     top: auto;
     left: 0;
     right: auto;
     bottom: 0;
+    box-shadow: 0px 0px 110px 70px rgba(245,245,246,1);
   }
-  
+
+  .nav-decoration-active {
+    display: none;
+  }
+  .nav-decoration-active-background {
+    bottom: -7em;
+    right: 1em;
+  }
   .sideNav {
     height: 4em !important;
   }
   
   .sideNav-Links {
     display: flex;
-  }
-  
-  .sideNav-Link {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  .sideNav-Link i.link-logo{
-    display: block;
-    right: auto !important;
-    top: 0.5em !important;
-    width: 100%;
-    text-align: center;
-  }
-  
-  .sideNav-Link img.link-logo{
-    display: block;
-    right: auto !important;
-    top: 0.5em !important;
-    width: 100%;
-    text-align: center;
-  }
+    flex-flow: row nowrap;
+    justify-content: center;
 
-  .sideNav .sideNav-Link.iconActive img.link-logo {
-    transform: scale(1.5) rotate(25deg) !important;
-    opacity: 0.5;
-  }
+    .sideNav-Link {
+      width: 8em !important;
 
-  .sideNav .sideNav-Link.iconActive i.link-logo {
-    transform: scale(4) rotate(25deg) !important;
-    opacity: 0.5;
+      &.iconActive {
+        .nav-decoration-active-background {
+          right: 1em !important;
+          bottom: 0 !important;
+        }
+      }
+    }
   }
-  
-  .sideNav .sideNav-Link:hover {
-    background: #555d5e;
-  }
+}
 
-  .sideNav .sideNav-Link:hover .link-txt {
-    color: #b5c8ca;
+@media screen and (max-width: 758px) {
+  .sideBar {
+    height: 4em;
   }
+  .sideNav {
+    height: 4em !important;
+  }
+  .sideNav-Links {
+    padding: 0 0 0 1.2em !important;
 
-  .sideNav .sideNav-Link:hover img.link-logo {
-    transform: none;
-    opacity: 1;
-  }
+    .sideNav-Link {
+      height: 4em !important;
+      margin: 0 !important;
 
-  .sideNav .sideNav-Link:hover i.link-logo {
-    transform: none;
-    opacity: 1;
-  }
-  
-  .mainNav .sideNav-contact {
-    display: block !important;
-    position: absolute;
-    bottom: 1em;
-    left: 10%;
-    width: 80%;
-    padding: 0;
-  }
-  
-  .sideNav-contact .separator {
-    margin: 0.25em auto;
-  }
-  
-  .sideNav-contact .contact-title {
-    font-size: 0.8em;
-  }
-
-  .sideNav-contact .com-list li {
-    min-width: 275px;
-    width: 50%;
-    color: white;
-    border-radius: 0.5em;
-    line-height: 1.5em;
-    margin: 0.25em auto;
-    font-size: 0.7em;
-    padding: 0 0 0 4em;
-    text-align: left;
-  }
-  
-  .sideNav-contact .social-icons {
-    margin: 0;
-  }
-
-  .sideNav-contact .com-list i {
-    display: inline-block;
-    position: absolute;
-    text-align: left;
-    transform: translateX(-1.5em);
-    color: #fff;
+      i {
+        font-size: 1.8em !important;
+      }
+    }
   }
 }

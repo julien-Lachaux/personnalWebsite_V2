@@ -35,13 +35,18 @@
                                 {{ experience.logoCard|raw }}
                                 <img class="logo" src="{{ experience.logo }}" alt="logo de {{ experience.company }}" >
                             </div>
-                            <div class="bottomRight-decoration">
+                            <div class="bottomRight-decoration mobile-hidden">
                                 {{ experience.decorationCard|raw }}
                             </div>
                         </div>
                     </div>
                 {% endfor %}
             </div>
+        </div>
+        <div class="contactMe">
+            <div class="contactMe-decorationLeft">{{ contactMe.decorationLeft|raw }}</div>
+            <span class="contactMe-text">Contactez moi !</span>
+            <div class="contactMe-decorationRight">{{ contactMe.decorationRight|raw }}</div>
         </div>
     </div>
 </article>

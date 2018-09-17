@@ -61,6 +61,10 @@ class PagesController {
         $panel = $doctrine->getRepository(Panel::class)->getByNavUrl($panelName);
         $panelColor = $panel->getColorTheme()->getName();
         $panelDecorations = $panel->getDecorations();
+        $contactMe = [
+            "decorationLeft" => $panelController->getSvg('decorationPage', $panel->getColorTheme()->getName()),
+            "decorationRight" => $panelController->getSvg('decorationPage', $panel->getColorTheme()->getName())
+        ];
 
         foreach ($panelDecorations as $decoration => $active) {
             if ($active) {
@@ -135,6 +139,7 @@ class PagesController {
 
         if ($currentPanel !== false) {
             $currentPanel['panel'] = $panel;
+            $currentPanel['contactMe'] = $contactMe;
         }
 
         return new response($twig->render("panels/{$panelName}.html.twig", $currentPanel));

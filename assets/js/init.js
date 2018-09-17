@@ -3,6 +3,7 @@ import { app } from './app'
 import { cards } from './components/cards'
 import { panels } from './components/panels'
 import { navs } from './components/navs'
+import { animations } from './components/animations'
 import { imagesMosaic } from './components/imagesMosaic'
 
 const hash = app.getCurrentPage()
@@ -25,7 +26,11 @@ departBtnBackground.attr('fill', departIcon.getAttribute('data-color'));
 panels.getAjaxPanel(hash, () => {
   let depart = document.querySelector('#' + saltyHash)
 
-  cards.activeAnimation()
+  animations.activeOnLoadAnimationFor('card')
+  animations.activeOnLoadAnimationFor('widget')
+  animations.activeOnLoadAnimationFor('section-title')
+  animations.activeOnLoadAnimationFor('section-subtitle')
+
   panels.activeAnimation()
   imagesMosaic.activeHover()
   imagesMosaic.activeClick()

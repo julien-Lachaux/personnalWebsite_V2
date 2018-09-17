@@ -23,7 +23,7 @@ export const navs = {
 
       // event on mouse over
       bouton.mouseover( () => {
-        if(!bouton.hasClass('iconActive') && (!window.matchMedia('(max-width: 1024px)').matches)) {
+        if(!bouton.hasClass('iconActive') && (!window.matchMedia('(max-width: 1250px)').matches)) {
           let navText = bouton.find('.link-txt')
           let navbackgroundShadow = bouton.find('.navBtn-background-shadow')
 
@@ -34,7 +34,7 @@ export const navs = {
 
       // event on mouse out
       bouton.mouseout( () => {
-        if(!bouton.hasClass('iconActive') && (!window.matchMedia('(max-width: 1024px)').matches)) {
+        if(!bouton.hasClass('iconActive') && (!window.matchMedia('(max-width: 1250px)').matches)) {
           let navText = bouton.find('.link-txt')
           let navbackgroundShadow = bouton.find('.navBtn-background-shadow')
 
