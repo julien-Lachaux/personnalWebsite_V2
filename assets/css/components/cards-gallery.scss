@@ -130,6 +130,8 @@
                     -ms-transform: rotate(-60deg) skewY(30deg);
                     transform: rotate(-60deg) skewY(30deg);
                     overflow: hidden;
+                    overflow-x: hidden;
+                    overflow-y: hidden;
                     visibility: hidden;
 
                     * {
@@ -231,6 +233,8 @@
                         -ms-transform: skewY(-30deg) rotate(60deg);
                         transform: skewY(-30deg) rotate(60deg);
                         overflow: hidden;
+                        overflow-x: hidden;
+                        overflow-y: hidden;
                         color: #fff;
 
                         i {

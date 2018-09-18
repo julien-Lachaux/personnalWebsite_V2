@@ -17,6 +17,8 @@
       width: 10em;
       padding: 0;
       overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: hidden;
       margin: 1em;
   
       &.grow {

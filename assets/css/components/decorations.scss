@@ -19,6 +19,8 @@
     top: 8em;
     left: 0;
     overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
 
     img {
         width: auto;

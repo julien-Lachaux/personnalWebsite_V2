@@ -74,6 +74,8 @@
           width: 120px;
           height: 120px;
           overflow: hidden;
+          overflow-x: hidden;
+          overflow-y: hidden;
 
           
           .profilePicture {
@@ -115,6 +117,8 @@
       padding: 0;
       margin: 0;
       overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: hidden;
 
       .sideNav-Link {
         width: 100%;
