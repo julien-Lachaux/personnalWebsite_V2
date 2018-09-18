@@ -126,9 +126,7 @@
                     padding: 0 0 32.16760145166612% 0;
                     transform: rotate(-60deg) skewY(30deg);
                     
-                    overflow-x: hidden;
-                    overflow-y: hidden;
-                    -webkit-overflow-scrolling: touch;
+                    overflow: hidden;
                     visibility: hidden;
 
                     * {
