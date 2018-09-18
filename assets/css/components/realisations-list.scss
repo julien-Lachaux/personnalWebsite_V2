@@ -76,13 +76,19 @@
             align-items: center;
             
             .realisationShowcase {
-                width: 30em;
+                width: 80%;
+
+                .iphone {
+                    width: 20%;
+                    top: 1em;
+                    left: 65%;
+                }
             }
     
             .realisationInfo {
                 width: 100%;
                 text-align: center;
-                margin: 1em 0;
+                margin: 3em 0 1em 0;
             }
         
         }
