@@ -46,6 +46,8 @@ export const panels = {
             imagesMosaic.activeHover()
             imagesMosaic.activeClick()
 
+            panels.resizeIframe()
+
             if (urlParams.length === 1) {
                 let stateObj = {
                     foo: cibleID
@@ -143,6 +145,22 @@ export const panels = {
                     }
                 }
             ])
+        }
+    },
+
+    /**
+     * resizeIframe
+     */
+    resizeIframe() {
+        let iframes = $('iframe')
+        if (iframes.length > 0) {
+            iframes.each((index, element) => {
+                let iframe = $(element)
+                let container = iframe.parent()
+                let scaleRatio = container[0].offsetWidth / iframe[0].offsetWidth;
+                
+                iframe.css('transform', 'scale(' + scaleRatio + ')')
+            })
         }
     }
 }

@@ -82,6 +82,8 @@ body {
     justify-content: center;
     align-items: center;
     margin: 3em 0;
+    position: absolute;
+    left: 0;
 
     .contactMe-text {
         font-family: $fontMono;

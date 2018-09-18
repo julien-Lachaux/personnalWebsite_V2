@@ -24,11 +24,15 @@
                 <div class="realisation">
                     <div class="realisationShowcase">
                         <div class="macbook">
-                            <div class="showcase" style="background-image: url('images/realisations/responsiveShowcase/laptop/{{ realisation.imgLaptop }}')"></div>
+                            <div class="preview">
+                                <iframe src="http://{{ realisation.preview }}" frameborder="0"></iframe>
+                            </div>
                             <img src="images/realisations/responsiveShowcase/macbook.png">
                         </div>
                         <div class="iphone">
-                            <div class="showcase" style="background-image: url('images/realisations/responsiveShowcase/phone/{{ realisation.imgPhone }}')"></div>
+                            <div class="preview">
+                                <iframe src="http://{{ realisation.preview }}" frameborder="0"></iframe>
+                            </div>
                             <img src="images/realisations/responsiveShowcase/iphone.png">
                         </div>
                     </div>

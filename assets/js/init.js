@@ -25,16 +25,20 @@ departBtnBackground.attr('fill', departIcon.getAttribute('data-color'));
 // chargement de la page demandé par l'utilisateur au premier chargement de la page
 panels.getAjaxPanel(hash, () => {
   let depart = document.querySelector('#' + saltyHash)
-
+  
   animations.activeOnLoadAnimationFor('card')
   animations.activeOnLoadAnimationFor('widget')
   animations.activeOnLoadAnimationFor('section-title')
   animations.activeOnLoadAnimationFor('section-subtitle')
-
+  
   panels.activeAnimation()
   imagesMosaic.activeHover()
   imagesMosaic.activeClick()
-
+  panels.resizeIframe()
+  window.onresize = function(){panels.resizeIframe();}
+  
+  
+  
   $('.coverFlux').click(imagesMosaic.hidePreview)
   
   depart.style.transform = 'translateX(100%)'

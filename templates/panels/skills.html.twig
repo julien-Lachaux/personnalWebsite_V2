@@ -3,7 +3,7 @@
     {% include 'components/panels/panelDecoration.html.twig' %}
     {% include 'components/panels/panelTitle.html.twig' %}
     
-    <div class="panel-nav {{ panel.colorTheme.name }}-background">
+    <div class="panel-nav dark-{{ panel.colorTheme.name }}-background">
         <ul class="filter">
             <li><a href="All" class="active">All</a></li>
             {% for skillGroup in skills_groups %}

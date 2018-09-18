@@ -11,12 +11,19 @@
 
 // BACKGROUND COLOR
 .home-background { background: $home !important; }
+.dark-home-background { background: darken($home, 10%) !important; }
 .bleu-background { background: $bleu !important; }
+.dark-bleu-background { background: darken($bleu, 10%) !important; }
 .vert-background { background: $vert !important; }
+.dark-vert-background { background: darken($vert, 10%) !important; }
 .orange-background { background: $orange !important; }
+.dark-orange-background { background: darken($orange, 10%) !important; }
 .rouge-background { background: $rouge !important; }
+.dark-rouge-background { background: darken($rouge, 10%) !important; }
 .violet-background { background: $violet !important; }
+.dark-violet-background { background: darken($violet, 10%) !important; }
 .gris-background { background: $gris !important; }
+.dark-gris-background { background: darken($gris, 10%) !important; }
 
 // HIDDEN
 .hidden { visibility: hidden !important; }
