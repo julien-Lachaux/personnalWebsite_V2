@@ -36,8 +36,12 @@
         "xmlhttprequest": "^1.8.0"
     },
     "browserslist": [
-        "> 2%",
+        "> 0.5%",
+        "last 10 versions",
         "ios >= 6",
-        "android >= 4"
+        "android >= 4",
+        "Firefox ESR",
+        "not dead",
+        "ie > 6"
     ]
 }
