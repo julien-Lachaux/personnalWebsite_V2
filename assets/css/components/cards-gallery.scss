@@ -126,6 +126,7 @@
                     padding: 0 0 32.16760145166612% 0;
                     transform: rotate(-60deg) skewY(30deg);
                     
+                    -webkit-overflow-scrolling: auto !important;
                     overflow: hidden !important;
                     visibility: hidden !important;
 
@@ -225,6 +226,7 @@
                         
                         position: absolute;
                         overflow: hidden !important;
+                        -webkit-overflow-scrolling: auto !important;
                         color: #fff;
 
                         i {
