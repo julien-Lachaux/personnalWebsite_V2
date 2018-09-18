@@ -369,6 +369,10 @@
                 &:nth-child(6n+6), {
                     margin: 1% !important;
                 }
+
+                &:nth-child(6n+5) {
+                    margin: 0 5% !important;
+                }
             }
 
             .hexagon {
