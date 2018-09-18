@@ -1,9 +1,9 @@
 
 ###> symfony/framework-bundle ###
-/.env
-/public/bundles/
-/var/
-/vendor/
+.env
+public/bundles/
+var/
+vendor/
 ###< symfony/framework-bundle ###
 
 ###> symfony/webpack-encore-pack ###
@@ -14,7 +14,7 @@ yarn-error.log
 ###< symfony/webpack-encore-pack ###
 
 ## Perso
-/config/packages/doctrine.yaml
+config/packages/doctrine.yaml
 *.lock
 .DS_Store
 *.DS_Store
