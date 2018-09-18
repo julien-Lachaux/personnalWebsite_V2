@@ -352,11 +352,22 @@
             margin: 0 0 3em 0;
             width: 15em;
             .tag {
+                &:nth-child(2) {
+                    margin: 0 5% !important;
+                }
+
+                &:nth-child(3n+2) {
+                    margin: 0 5% !important;
+                }
+
+                &:nth-child(6n+4) {
+                    margin: 5% !important;
+                }
+
                 &:nth-child(6n+4),
                 &:nth-child(6n+5),
-                &:nth-child(6n+6) {
-                    margin-top: inherit !important;
-                    margin-bottom: inherit !important;
+                &:nth-child(6n+6), {
+                    margin: 1% !important;
                 }
             }
 
