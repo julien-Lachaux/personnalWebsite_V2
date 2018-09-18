@@ -165,6 +165,7 @@
         overflow-y: scroll;
         padding: 17em 10% 2em 10%;
         scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
 
         &::-webkit-scrollbar {
             width: $scrollbar-width;
