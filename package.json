@@ -36,7 +36,7 @@
         "xmlhttprequest": "^1.8.0"
     },
     "browserslist": [
-        "last 4 versions",
+        "> 2%",
         "ios >= 6",
         "android >= 4"
     ]
