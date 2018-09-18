@@ -105,12 +105,14 @@
             top: 2em;
             right: 3em;
             width: 20em;
+            -webkit-overflow-scrolling: auto !important;
 
             .tags {
                 position: relative;
                 margin: 0;
                 padding: 0;
                 height: 100%;
+                -webkit-overflow-scrolling: auto !important;
 
                 &:after {
                     content: "";
