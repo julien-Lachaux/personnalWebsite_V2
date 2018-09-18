@@ -127,6 +127,7 @@
                     transform: rotate(-60deg) skewY(30deg);
                     
                     overflow: hidden;
+                    clip-depth: 2;
                     visibility: hidden;
 
                     * {
