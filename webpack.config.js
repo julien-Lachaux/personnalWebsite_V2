@@ -62,6 +62,12 @@ Encore
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
 
+    .enablePostCssLoader((options) => {
+        options.config = {
+            path: 'config/postcss.config.js'
+        };
+    })
+
     // uncomment if you're having problems with a jQuery plugin
      .autoProvidejQuery()
 ;
