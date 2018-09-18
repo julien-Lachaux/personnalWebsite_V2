@@ -180,6 +180,15 @@
   .cards-mosaic {
       .card {
         margin: .5em !important;
+
+        &.bigger {
+          width: 10em;
+          height: 10em;
+
+          .card-subtitle {
+            font-size: .6em;
+          }
+        }
       }
   }
 }
