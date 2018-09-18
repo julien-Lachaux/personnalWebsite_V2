@@ -22,7 +22,7 @@
                             <ul class="tags">
                                 {% for tag in experience.tags %}
                                     <li class="tag {{ experience.color }}">
-                                        <div class="hexagon">
+                                        <div class="hexagon" style="overflow: hidden;">
                                             <i class="{{ tag.picture }}"></i>
                                             <div class="font-mono">{{ tag.name }}</div>
                                         </div>
