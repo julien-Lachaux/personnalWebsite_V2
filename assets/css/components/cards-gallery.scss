@@ -126,9 +126,8 @@
                     padding: 0 0 32.16760145166612% 0;
                     transform: rotate(-60deg) skewY(30deg);
                     
-                    overflow: hidden;
-                    clip-depth: 2;
-                    visibility: hidden;
+                    overflow: hidden !important;
+                    visibility: hidden !important;
 
                     * {
                         visibility: visible;
@@ -224,9 +223,8 @@
                         -ms-transform: skewY(-30deg) rotate(60deg);
                         transform: skewY(-30deg) rotate(60deg);
                         
-                        position: fixed;
-                        overflow-x: hidden;
-                        overflow-y: hidden;
+                        position: absolute;
+                        overflow: hidden !important;
                         color: #fff;
 
                         i {
