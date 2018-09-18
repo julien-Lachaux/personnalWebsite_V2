@@ -175,3 +175,11 @@
       justify-content: center !important;
   }
 }
+
+@media screen and (max-width: 758px) {
+  .cards-mosaic {
+      .card {
+        margin: .5em !important;
+      }
+  }
+}
