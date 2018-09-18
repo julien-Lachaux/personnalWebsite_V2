@@ -158,21 +158,20 @@
 
 @media screen and (min-width: 1251px) {
     
+    .nav-decoration {
+        animation: navDecorationAppear 4s forwards;
+    }
+        // nav link logo
+    i.link-logo {
+        animation: linkLogoAppear 4s forwards;
+    }
     .sideNav-Link {
         // nav link text
         .link-txt {
             animation: linkTextAppear 4s forwards;
         }
-            // nav link decoration
-        .nav-decoration {
-            animation: navDecorationAppear 4s forwards;
-        }
-            // nav link logo
-        i.link-logo {
-            animation: linkLogoAppear 4s forwards;
-        }
         
-        &.active {
+        &.iconActive {
             .link-txt {
                 animation: linkTextToggle 2s forwards;
               }
