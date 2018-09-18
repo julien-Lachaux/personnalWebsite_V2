@@ -41,7 +41,8 @@
         "ios >= 6",
         "android >= 4",
         "Firefox ESR",
-        "not dead",
-        "ie > 6"
+        "ie > 6",
+        "ChromeAndroid > 3",
+        "and_chr > 3"
     ]
 }
