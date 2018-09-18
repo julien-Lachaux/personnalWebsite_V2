@@ -67,3 +67,24 @@
     
     }
 }
+
+@media screen and (max-width: 758px) {
+    .realisations-list {
+        .realisation {
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            
+            .realisationShowcase {
+                width: 30em;
+            }
+    
+            .realisationInfo {
+                width: 100%;
+                text-align: center;
+                margin: 1em 0;
+            }
+        
+        }
+    }
+}

@@ -27,6 +27,9 @@
 .font-mono { font-family: $fontMono; }
 .font-serif { font-family: $fontContent; }
 
+// text
+.text-center { text-align: center !important; }
+
 // HIDDEN -- RESPONSIVE
 @media screen and (max-width: 1250px) {
     .medium-hidden { display: none !important; }

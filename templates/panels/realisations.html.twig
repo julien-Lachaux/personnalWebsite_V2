@@ -5,8 +5,8 @@
     
     <div class="content">
 
-        <div class="section-title">Productions Graphique</div>
-        <div class="section-subtitle">Du fond d'écran au logo en passant par des éléments de décorations de site web</div>
+        <div class="section-title text-center">Productions Graphique</div>
+        <div class="section-subtitle text-center">Du fond d'écran au logo en passant par des éléments de décorations de site web</div>
         <div class="images-mosaic">
             {% for graphic in realisations.graphics %}
             <div class="image">
@@ -15,9 +15,10 @@
             </div>
             {% endfor %}
         </div>
-        <div class="section-title">Développement Web</div>
-        <div class="section-subtitle">Programmes & Sites Web</div>
-
+        <div class="separator"></div>
+        <div class="section-title text-center">Développement Web</div>
+        <div class="section-subtitle text-center">Programmes & Sites Web</div>
+        <div class="separator"></div>
         <div class="realisations-list">
             {% for realisation in realisations.web %}
                 <div class="realisation">
@@ -35,7 +36,8 @@
                         <div class="realisationTitle">{{ realisation.title }}</div>
                         <div class="realisationDescription">{{ realisation.description }}</div>
                     </div>
-                </div>    
+                </div>  
+                <div class="separator"></div>  
             {% endfor %}
         </div>
         <div class="contactMe">
