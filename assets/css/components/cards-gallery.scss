@@ -148,7 +148,7 @@
 
                     &:nth-child(6n+4),
                     &:nth-child(6n+5),
-                    &:nth-child(6n+6) {
+                    &:nth-child(6n+6), {
                         margin-top: -6.9285714285%;
                         margin-bottom: -6.9285714285%;
                         transform: translateX(50%) rotate(-60deg) skewY(30deg);
@@ -351,6 +351,14 @@
             padding: 0 0 3em 0;
             margin: 0 0 3em 0;
             width: 15em;
+            .tag {
+                &:nth-child(6n+4),
+                &:nth-child(6n+5),
+                &:nth-child(6n+6) {
+                    margin-top: inherit !important;
+                    margin-bottom: inherit !important;
+                }
+            }
 
             .hexagon {
                         
