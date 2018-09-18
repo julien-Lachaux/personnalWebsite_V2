@@ -37,6 +37,7 @@
     },
     "browserslist": [
         "last 4 versions",
-        "ios >= 6"
+        "ios >= 6",
+        "android >= 4"
     ]
 }
