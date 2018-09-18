@@ -1,10 +1,10 @@
-<div class="barTop-decoration {{ panel.colorTheme.name }}-background"></div>
-<div class="barRight-decoration {{ panel.colorTheme.name }}-background"></div>
+<div class="barTop-decoration {{ panel.colorTheme.name }}-background medium-hidden"></div>
+<div class="barRight-decoration {{ panel.colorTheme.name }}-background medium-hidden"></div>
 
     {% if panel.decorations.headerPage is defined and panel.decorations.headerPage == true %}
         <div class="headerPage-decoration medium-hidden">{{ panel.headerPage|raw }}</div>
     {% endif %}
     
     {% if panel.decorations.decorationPage is defined and panel.decorations.decorationPage == true %}
-        <div class="decorationPage-decoration">{{ panel.decorationPage|raw }}</div>
+        <div class="decorationPage-decoration mobile-hidden">{{ panel.decorationPage|raw }}</div>
     {% endif %}

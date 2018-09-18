@@ -203,6 +203,9 @@
 // ───────────────────────────────────────────────────────────────────── Responsive ─────
 //
 @media screen and (min-width: 1251px) {
+    .panel-nav {
+        background: none !important;
+    }
     .mobile-background {
         background: none !important;
     }
@@ -268,19 +271,51 @@
 @media screen and (max-width: 758px) {
     .panel {
 
-        .decorationPage-decoration {
-            top: 7em;
-            left: 50%;
-            width: 5em;
-            transform: translateX(-50%);
+        .panelTitle {
+            height: 5em;
+
+            .mobile-background {
+                height: 5em;
+
+                .title {
+                    margin: .5em 0 0 0;
+                    font-size: 1.2em;
+                }
+                .subtitle {
+                    margin: .7em 0 0 0;
+                    font-size: 1em;
+                }
+            }
+
+            .separator {
+                bottom: 2.4em !important;
+                background: #fff !important;
+            }
         }
 
         .panel-nav {
-            width: 80% !important;
+            width: calc(100% - #{$scrollbar-width}) !important;
+            height: 2em !important;
+            top: 5em !important;
+            left: 0 !important;
 
             .filter {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
                 width: 100%;
+                
+                a {
+                    color: #fff !important;
+
+                    &:hover { color: $color-primary-light !important; }
+                    &.active { color: $color-primary !important; }
+                }
             }
+        }
+
+        .content {
+            padding: 8em 0 10em!important;
         }
     }
 }
