@@ -13,7 +13,8 @@
         "dev-server": "encore dev-server",
         "dev": "encore dev",
         "watch": "encore dev --watch",
-        "build": "encore production"
+        "build": "encore production",
+        "deploy": "git pull && npm run build"
     },
     "dependencies": {
         "bootstrap-colorpicker": "^3.0.3",
