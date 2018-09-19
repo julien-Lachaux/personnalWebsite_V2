@@ -44,6 +44,7 @@
   z-index: 1000;
   color: $color-text;
   background: $color-background;
+  overflow-y: scroll;
 
   .separator {
     background: $color-text !important;
