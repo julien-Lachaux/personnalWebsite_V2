@@ -302,7 +302,7 @@
         }
 
         .panel-nav {
-            width: calc(100% - #{$scrollbar-width}) !important;
+            width: 100% !important;
             height: 2em !important;
             top: 5em !important;
             left: 0 !important;
