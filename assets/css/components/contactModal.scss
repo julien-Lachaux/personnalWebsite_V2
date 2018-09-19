@@ -88,6 +88,7 @@
             flex-flow: row nowrap;
             justify-content: space-around;
             margin: 2% 0 2% 0;
+            text-align: center;
     
             img {
                 border-radius: 50%;
@@ -138,6 +139,36 @@
 
         &:hover {
             cursor: pointer;
+        }
+    }
+}
+
+//
+// ───────────────────────────────────────────────────────────────────── Responsive ─────
+//
+@media screen and (max-width: 758px) {
+    .contactModal {
+        flex-flow: row wrap;
+        
+        .profile {
+            font-size: .6em;
+            width: 100% !important;
+            height: 50%;
+    
+            .name, .disponibilites, .job, .tel, .mail {
+                width: 70% !important;
+            }
+        }
+        
+        .contact {
+            width: 100% !important;
+            height: 50%;
+        }
+    
+        .separator {
+            height: 1px !important;
+            width: 60% !important;
+            transform: translateX(-50%) !important;
         }
     }
 }
