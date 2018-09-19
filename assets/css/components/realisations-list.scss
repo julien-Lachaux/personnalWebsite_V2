@@ -108,6 +108,22 @@
                 font-size: .8em;
                 opacity: .68;
             }
+
+            .realisationPreview, .realisationGithub {
+                padding: .5em 0;
+
+                i {
+                    font-size: 1.5em;
+                    position: relative;
+                    top: .25em;
+                    margin: 0 1em 0 0;
+                }
+            }
+
+            a {
+                color: $color-primary;
+                text-decoration: none;
+            }
         }
     
     }

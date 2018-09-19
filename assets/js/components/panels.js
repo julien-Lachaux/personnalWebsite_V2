@@ -42,6 +42,7 @@ export const panels = {
             animations.activeOnLoadAnimationFor('section-title')
             animations.activeOnLoadAnimationFor('section-subtitle')
             panels.activeAnimation()
+            panels.activeContactModalBtn()
             
             imagesMosaic.activeHover()
             imagesMosaic.activeClick()
@@ -161,6 +162,24 @@ export const panels = {
                 
                 iframe.css('transform', 'scale(' + scaleRatio + ')')
             })
+        }
+    },
+
+    activeContactModalBtn(exitOk = true) {
+        let openModal = $('.contactMe')
+        openModal.click(panels.toggleContactModal)
+        if (exitOk === false) {
+            let exitModal = $('.exitBtn')
+            exitModal.click(panels.toggleContactModal)
+        }
+    },
+
+    toggleContactModal() {
+        let modal = $('.contactModal')
+        if (modal.hasClass('active')) {
+            modal.removeClass('active')
+        } else {
+            modal.addClass('active')
         }
     }
 }

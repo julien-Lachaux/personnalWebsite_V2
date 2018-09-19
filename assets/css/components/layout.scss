@@ -92,19 +92,22 @@ body {
 
     .contactMe-decorationLeft {
         width: 5em;
+        position: relative;
+        
+        svg {
+            width: 100%;
+        }
     }
-    
-    .contactMe-decorationRight {
-        width: 5em;
-        transform: scaleX(-1);
+
+    i {
+        position: absolute;
+        font-size: 1.5em;
+        top: 1.25em;
+        left: 1.25em;
     }
 
     &:hover {
         cursor: pointer;
-
-        .contactMe-text {
-            color: $color-primary
-        }
     }
 }
 

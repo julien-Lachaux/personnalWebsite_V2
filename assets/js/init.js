@@ -35,6 +35,7 @@ panels.getAjaxPanel(hash, () => {
   imagesMosaic.activeHover()
   imagesMosaic.activeClick()
   panels.resizeIframe()
+  panels.activeContactModalBtn(false)
   window.onresize = function(){panels.resizeIframe();}
   
   
@@ -47,3 +48,15 @@ panels.getAjaxPanel(hash, () => {
     depart.style.transform = 'translateX(0)'
   }, 100)
 })
+
+let screen = document.querySelector('.mainFlux')
+screen.addEventListener("touchstart", (event) => {
+  console.log('touch start')
+  console.log(event)
+  var touches = event.changedTouches;
+  console.log(touches)
+}, false)
+
+screen.addEventListener("touchend", (event) => {
+  console.log('touch end')
+}, false)

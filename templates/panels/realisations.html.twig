@@ -25,29 +25,30 @@
                     <div class="realisationShowcase">
                         <div class="macbook">
                             <div class="preview">
-                                <iframe src="http://{{ realisation.preview }}" frameborder="0"></iframe>
+                                <iframe src="{{ realisation.preview }}" frameborder="0"></iframe>
                             </div>
                             <img src="images/realisations/responsiveShowcase/macbook.png">
                         </div>
                         <div class="iphone">
                             <div class="preview">
-                                <iframe src="http://{{ realisation.preview }}" frameborder="0"></iframe>
+                                <iframe src="{{ realisation.preview }}" frameborder="0"></iframe>
                             </div>
                             <img src="images/realisations/responsiveShowcase/iphone.png">
                         </div>
                     </div>
                     <div class="realisationInfo">
                         <div class="realisationTitle">{{ realisation.title }}</div>
-                        <div class="realisationDescription">{{ realisation.description }}</div>
+                        <div class="realisationDescription">{{ realisation.description|raw}}</div>
+                        <div class="realisationPreview"><i class="material-icons">link</i><a target="_blank" href="{{ realisation.preview }}">Live Preview</a></div>
+                        <div class="realisationGithub"><i class="devicon-github-plain colored"></i><a target="_blank" href="{{ realisation.github }}">Repository github</a></div>
                     </div>
                 </div>  
                 <div class="separator"></div>  
             {% endfor %}
         </div>
         <div class="contactMe">
-            <div class="contactMe-decorationLeft">{{ contactMe.decorationLeft|raw }}</div>
+            <div class="contactMe-decorationLeft"><i class="material-icons {{ panel.colorTheme.name }}-text-hover">person</i>{{ contactMe.decorationLeft|raw }}</div>
             <span class="contactMe-text">Contactez moi !</span>
-            <div class="contactMe-decorationRight">{{ contactMe.decorationRight|raw }}</div>
         </div>
     </div>
 </article>

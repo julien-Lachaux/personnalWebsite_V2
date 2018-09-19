@@ -9,6 +9,17 @@
 .white-text { color: #fff !important; }
 .black-text { color: #000 !important; }
 
+// text hover
+.home-text-hover:hover { color: $home !important; }
+.bleu-text-hover:hover { color: $bleu !important; }
+.vert-text-hover:hover { color: $vert !important; }
+.orange-text-hover:hover { color: $orange !important; }
+.rouge-text-hover:hover { color: $rouge !important; }
+.violet-text-hover:hover { color: $violet !important; }
+.gris-text-hover:hover { color: $gris !important; }
+.white-text-hover:hover { color: #fff !important; }
+.black-text-hover:hover { color: #000 !important; }
+
 // BACKGROUND COLOR
 .home-background { background: $home !important; }
 .dark-home-background { background: darken($home, 10%) !important; }

@@ -62,8 +62,7 @@ class PagesController {
         $panelColor = $panel->getColorTheme()->getName();
         $panelDecorations = $panel->getDecorations();
         $contactMe = [
-            "decorationLeft" => $panelController->getSvg('decorationPage', $panel->getColorTheme()->getName()),
-            "decorationRight" => $panelController->getSvg('decorationPage', $panel->getColorTheme()->getName())
+            "decorationLeft" => $panelController->getSvg('contactMe', $panel->getColorTheme()->getName())
         ];
 
         foreach ($panelDecorations as $decoration => $active) {
