@@ -4,18 +4,6 @@
     {% include 'components/panels/panelTitle.html.twig' %}
     
     <div class="content">
-
-        <div class="section-title text-center">Productions Graphique</div>
-        <div class="section-subtitle text-center">Du fond d'écran au logo en passant par des éléments de décorations de site web</div>
-        <div class="images-mosaic">
-            {% for graphic in realisations.graphics %}
-            <div class="image">
-                <div class="image-cover"><i class="material-icons">zoom_in</i></div>
-                <img src="images/realisations/graphics/{{ graphic.path }}">
-            </div>
-            {% endfor %}
-        </div>
-        <div class="separator"></div>
         <div class="section-title text-center">Développement Web</div>
         <div class="section-subtitle text-center">Programmes & Sites Web</div>
         <div class="separator"></div>
@@ -44,6 +32,17 @@
                     </div>
                 </div>  
                 <div class="separator"></div>  
+            {% endfor %}
+        </div>
+        <div class="separator"></div>
+        <div class="section-title text-center">Productions Graphique</div>
+        <div class="section-subtitle text-center">Du fond d'écran au logo en passant par des éléments de décorations de site web</div>
+        <div class="images-mosaic">
+            {% for graphic in realisations.graphics %}
+            <div class="image">
+                <div class="image-cover"><i class="material-icons">zoom_in</i></div>
+                <img src="images/realisations/graphics/{{ graphic.path }}">
+            </div>
             {% endfor %}
         </div>
         <div class="contactMe">
