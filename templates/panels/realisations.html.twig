@@ -33,16 +33,6 @@
                 <div class="separator"></div>  
             {% endfor %}
         </div>
-        <div class="section-title text-center">Productions Graphique</div>
-        <div class="section-subtitle text-center">Du fond d'écran au logo en passant par des éléments de décorations de site web</div>
-        <div class="images-mosaic">
-            {% for graphic in realisations.graphics %}
-            <div class="image">
-                <div class="image-cover"><i class="material-icons">zoom_in</i></div>
-                <img src="images/realisations/graphics/{{ graphic.path }}">
-            </div>
-            {% endfor %}
-        </div>
         <div class="contactMe">
             <div class="contactMe-decorationLeft"><i class="material-icons {{ panel.colorTheme.name }}-text-hover">person</i>{{ contactMe.decorationLeft|raw }}</div>
             <span class="contactMe-text">Contactez moi !</span>
