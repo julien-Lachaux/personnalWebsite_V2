@@ -119,12 +119,10 @@ class PagesController {
 
             case 'realisations':
                 $realisations = new RealisationsController();
-                $graphics = $realisations->getGraphicsProducts();
                 $web = $realisations->getWebProducts($doctrine);
 
                 $currentPanel = [
                     'realisations' => [
-                        'graphics' => $graphics,
                         'web' => $web
                     ]
                 ];
