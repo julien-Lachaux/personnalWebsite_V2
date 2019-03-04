@@ -14,7 +14,8 @@ export const panels = {
         let currentPanel = $('.panel')
         let currentBtn = $('div.link-txt[href="/' + hash + '"]').parent()
         let currentIcon = currentBtn.find('.link-logo')
-        let cibleBtn = $('div.link-txt[href="/' + cibleID + '"]').parent()
+        let cibleText = $('div.link-txt[href="/' + cibleID + '"]')
+        let cibleBtn = cibleText.parent()
         let cibleIcon = cibleBtn.find('.link-logo')
         let navbackgroundShadow = currentBtn.find('.navBtn-background-shadow')
         let cibleBtnBackground = $(cibleBtn).find('.nav-decoration-active-background polygon')
@@ -26,11 +27,13 @@ export const panels = {
         currentBtn.removeClass('iconActive')
 
         setTimeout(() => {
-            currentIcon.css('color', '#fff');
+            currentIcon.css('color', '#fff')
             cibleBtn.addClass('iconActive')
         }, 1000)
 
-        cibleBtnBackground.attr('fill', cibleIcon.attr('data-color'));
+        cibleBtnBackground.attr('fill', cibleIcon.attr('data-color'))
+        cibleText.css('border-bottom', '.2em solid ' + cibleIcon.attr('data-color'))
+        console.log('.2em solid ' + cibleIcon.attr('data-color'))
 
         panels.getAjaxPanel(cibleID, () => {
             let cible = $('#' + cibleID + '-panel')
@@ -71,14 +74,14 @@ export const panels = {
     },
 
     getAjaxPanel(panel, callback) {
-        var url = '/ajax/' + panel;
+        var url = '/ajax/' + panel
         app.get(url, (response) => {
-            $('.webContent').html(response);
-            callback();
-            cards.activeFilter();
-            cards.activeSearch();
-            panels.animate();
-        });
+            $('.webContent').html(response)
+            callback()
+            cards.activeFilter()
+            cards.activeSearch()
+            panels.animate()
+        })
     },
 
     activeAnimation() {
@@ -158,7 +161,7 @@ export const panels = {
             iframes.each((index, element) => {
                 let iframe = $(element)
                 let container = iframe.parent()
-                let scaleRatio = container[0].offsetWidth / iframe[0].offsetWidth;
+                let scaleRatio = container[0].offsetWidth / iframe[0].offsetWidth
                 
                 iframe.css('transform', 'scale(' + scaleRatio + ')')
             })

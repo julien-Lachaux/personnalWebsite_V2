@@ -1,6 +1,4 @@
-import { activeCardAnimation, afficherSection, getAjaxPanel } from './utils'
 import { app } from './app'
-import { cards } from './components/cards'
 import { panels } from './components/panels'
 import { navs } from './components/navs'
 import { animations } from './components/animations'
@@ -13,14 +11,16 @@ const saltyHash = (hash + '-panel')
 navs.activeEvent()
 
 // activation du boutons correspondant a la page actuel
-let departBtn = document.querySelector('div.link-txt[href="/' + hash + '"]').parentNode
+let departText = document.querySelector('div.link-txt[href="/' + hash + '"]')
+let departBtn = departText.parentNode
 let departIcon = departBtn.querySelector('.link-logo')
 let departBtnBackground = $(departBtn).find('.nav-decoration-active-background polygon')
 
 setTimeout(() => {
   departBtn.classList.add('iconActive')
 }, 3000)
-departBtnBackground.attr('fill', departIcon.getAttribute('data-color'));
+departText.style.borderBottom = '.2em solid ' + departIcon.getAttribute('data-color')
+departBtnBackground.attr('fill', departIcon.getAttribute('data-color'))
 
 // chargement de la page demandé par l'utilisateur au premier chargement de la page
 panels.getAjaxPanel(hash, () => {
@@ -36,7 +36,7 @@ panels.getAjaxPanel(hash, () => {
   imagesMosaic.activeClick()
   panels.resizeIframe()
   panels.activeContactModalBtn(false)
-  window.onresize = function(){panels.resizeIframe();}
+  window.onresize = function(){panels.resizeIframe()}
   
   
   
@@ -53,7 +53,7 @@ let screen = document.querySelector('.mainFlux')
 screen.addEventListener("touchstart", (event) => {
   console.log('touch start')
   console.log(event)
-  var touches = event.changedTouches;
+  var touches = event.changedTouches
   console.log(touches)
 }, false)
 

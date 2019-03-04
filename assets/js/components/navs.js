@@ -1,6 +1,4 @@
-import { app } from './../app'
 import { panels } from './panels'
-import { cards } from './cards'
 
 export const navs = {
   activeEvent() {
@@ -15,8 +13,9 @@ export const navs = {
         let navText = bouton.find('.link-txt')
         let link = navText.attr('href')
         
-        navbackgroundShadow.attr( 'fill', '#006160')
         navText.css('background-color', '')
+        navText.css('color', '#313131')
+        navbackgroundShadow.attr( 'fill', '#006160')
         
         panels.afficherSection(link)
       } )
@@ -27,7 +26,8 @@ export const navs = {
           let navText = bouton.find('.link-txt')
           let navbackgroundShadow = bouton.find('.navBtn-background-shadow')
 
-          navText.css('background-color', '#00A79D')
+          navText.css('background-color', 'rgba(0, 166, 157, 0.7)')
+          navText.css('color', '#ffffff')
           navbackgroundShadow.attr( 'fill', '#00A79D')
         }
       } )
@@ -39,6 +39,7 @@ export const navs = {
           let navbackgroundShadow = bouton.find('.navBtn-background-shadow')
 
           navText.css('background-color', '')
+          navText.css('color', '#313131')
           navbackgroundShadow.attr( 'fill', '#006160')
         }
       } )

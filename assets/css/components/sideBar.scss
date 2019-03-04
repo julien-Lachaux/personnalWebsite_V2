@@ -130,7 +130,7 @@
 
       .sideNav-Link {
         width: 100%;
-        height: 6em;
+        height: 3em;
         cursor: pointer;
         position: relative;
         transition: all 2s ease-in-out;
@@ -140,9 +140,8 @@
 
         i.link-logo {
           z-index: $lvl-3;
-          right: 1.4em;
-          top: .65em;
-          font-size: 2.5em;
+          top: .45em;
+          font-size: 1.5em;
           position: absolute;
           color: #fff;
         }
@@ -160,8 +159,9 @@
           width: auto;
           height: 100%;
           position: absolute;
-          right: -100%;
+          left: -100%;
           transition: all 2s ease-in-out;
+          opacity: 0;
         }
 
         .nav-decoration-active-background {
@@ -169,24 +169,25 @@
           width: auto;
           height: 100%;
           position: absolute;
-          right: -100%;
+          left: -100%;
           transition: all 2s ease-in-out;
         }
 
         .link-txt {
           position: absolute;
-          top: 0.5em;
+          bottom: 0.2em;
+          color: #313131;
         }
 
         &.iconActive {
   
           .nav-decoration-active {
-            right: 0;
+            left: .5em;
           }
 
           .nav-decoration-active-background {
-            right: 7em;
-            bottom: .25em;
+            left: .1em;
+            bottom: -.15em;
           }
         }
       }
