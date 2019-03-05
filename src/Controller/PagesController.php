@@ -22,7 +22,9 @@ class PagesController {
      * index
      *
      * @Route("/{page}")
+     * @param Request $request
      * @param Environment $twig
+     * @param RegistryInterface $doctrine
      * @return void
      */
     public function index (Request $request, Environment $twig, RegistryInterface $doctrine) {
@@ -49,7 +51,10 @@ class PagesController {
      * panel
      *
      * @Route("/ajax/{panelName}")
+     * @param String $panelName
+     * @param Request $request
      * @param Environment $twig
+     * @param RegistryInterface $doctrine
      * @return void
      */
     public function panel ($panelName, Request $request, Environment $twig, RegistryInterface $doctrine) {

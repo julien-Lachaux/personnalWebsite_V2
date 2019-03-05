@@ -9,6 +9,7 @@ const saltyHash = (hash + '-panel')
 
 // activation des event des boutons de navigation et des changeHistory
 navs.activeEvent()
+navs.changeInProgress = true
 panels.activeChangeHistory()
 
 // activation du boutons correspondant a la page actuel
@@ -22,12 +23,14 @@ setTimeout(() => {
   departText.style.borderBottom = '.2em solid ' + departIcon.getAttribute('data-color')
   departText.style.backgroundColor = departIcon.getAttribute('data-color') + 'b3'
   departBtnBackground.attr('fill', departIcon.getAttribute('data-color'))
-}, 3000)
+}, 2000)
 
 // chargement de la page demandé par l'utilisateur au premier chargement de la page
 panels.getAjaxPanel(hash, () => {
   let depart = document.querySelector('#' + saltyHash)
   
+  navs.changeInProgress = false
+
   animations.activeOnLoadAnimationFor('card')
   animations.activeOnLoadAnimationFor('widget')
   animations.activeOnLoadAnimationFor('section-title')
