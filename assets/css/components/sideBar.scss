@@ -232,7 +232,7 @@
     left: 0;
     right: auto;
     bottom: 0;
-    box-shadow: 0px 0px 110px 70px rgba(245,245,246,1);
+    box-shadow: 0px 0px 50px 30px #f5f5f6;
   }
 
   .nav-decoration-active {
@@ -240,7 +240,7 @@
   }
   .nav-decoration-active-background {
     bottom: -7em;
-    right: 1em;
+    left: -0.5em !important;
   }
   .sideNav {
     height: 4em !important;
