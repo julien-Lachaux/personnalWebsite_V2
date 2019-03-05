@@ -1,7 +1,3 @@
-import { app } from './app'
-import { cards } from './components/cards'
-import { panels } from './components/panels'
-
 Array.prototype.shuffle = function(n)
 {
      if(!n)

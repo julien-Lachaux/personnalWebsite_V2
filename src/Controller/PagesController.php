@@ -146,4 +146,23 @@ class PagesController {
 
         return new response($twig->render("panels/{$panelName}.html.twig", $currentPanel));
     }
+
+    /**
+     * error
+     *
+     * @Route("/error/{errorCode}")
+     * @param String $errorCode
+     * @param Request $request
+     * @param Environment $twig
+     * @param RegistryInterface $doctrine
+     * @return void
+     */
+    public function error ($errorCode, Request $request, Environment $twig, RegistryInterface $doctrine) {
+        $panelController = new PanelsController();
+        $data = [
+            "decoration" => $panelController->getSvg('errors', '404')
+        ];
+
+        return new response($twig->render("errors/{$errorCode}.html.twig", $data));
+    }
 }

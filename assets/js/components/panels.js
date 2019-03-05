@@ -27,66 +27,74 @@ export const panels = {
         const hash = panels.currentPanel
         const currentPanel = $('.panel')
         const currentText = $('div.link-txt[href="/' + hash + '"]')
-        const currentBtn = currentText.parent()
-        const cibleID = ciblePath.substring(1)
-        const cibleText = $('div.link-txt[href="/' + cibleID + '"]')
-        const cibleBtn = cibleText.parent()
-        const cibleIcon = cibleBtn.find('.link-logo')
-        const navbackgroundShadow = currentBtn.find('.navBtn-background-shadow')
-        const cibleBtnBackground = $(cibleBtn).find('.nav-decoration-active-background polygon')
-        const CheminComplet = document.location.href
-        const urlParams = CheminComplet.split('/').slice(3)
 
-        // on réécrie l'url
-        if (urlParams.length === 1) {
-            let stateObj = {
-                foo: cibleID
+        if (currentText === null) { // erreur 404
+            panels.error(404)
+            this.currentPanel = ciblePath.substring(1)
+            navs.changeInProgress = false
+        } else { // fonctionnement normal
+            const currentBtn = currentText.parent()
+            const cibleID = ciblePath.substring(1)
+            const cibleText = $('div.link-txt[href="/' + cibleID + '"]')
+            const cibleBtn = cibleText.parent()
+            const cibleIcon = cibleBtn.find('.link-logo')
+            const navbackgroundShadow = currentBtn.find('.navBtn-background-shadow')
+            const cibleBtnBackground = $(cibleBtn).find('.nav-decoration-active-background polygon')
+            const CheminComplet = document.location.href
+            const urlParams = CheminComplet.split('/').slice(3)
+    
+            // on réécrie l'url
+            if (urlParams.length === 1) {
+                let stateObj = {
+                    foo: cibleID
+                }
+                this.currentPanel = cibleID
+                history.pushState(stateObj, cibleID, ciblePath)
+            } else if (urlParams.length === 2) {
+                let stateObj = {
+                    foo: cibleID
+                }
+                this.currentPanel = cibleID
+                history.pushState(stateObj, cibleID, '/' + urlParams[0] + ciblePath)
             }
-            this.currentPanel = cibleID
-            history.pushState(stateObj, cibleID, ciblePath)
-        } else if (urlParams.length === 2) {
-            let stateObj = {
-                foo: cibleID
-            }
-            this.currentPanel = cibleID
-            history.pushState(stateObj, cibleID, '/' + urlParams[0] + ciblePath)
+    
+            // on retire le visuel du bouton dans la navbar pour la page courante
+            currentText.css('background-color', '#006160b3')
+            currentPanel.css('transform', 'translateX(100%)')
+            currentBtn.removeClass('iconActive')
+            navbackgroundShadow.attr('fill', '#006160')
+            
+            // on ajoute le visuel du bouton dans la navbar pour la nouvelle page
+            cibleBtn.addClass('iconActive')
+            cibleText.css('background-color', cibleIcon.attr('data-color')+ 'b3')
+            cibleBtnBackground.attr('fill', cibleIcon.attr('data-color'))
+            cibleText.css('border-bottom', '.2em solid ' + cibleIcon.attr('data-color'))
+    
+            panels.getAjaxPanel(cibleID, () => {
+                const cible = $('#' + cibleID + '-panel')
+    
+                animations.activeOnLoadAnimationFor('card')
+                animations.activeOnLoadAnimationFor('widget')
+                animations.activeOnLoadAnimationFor('section-title')
+                animations.activeOnLoadAnimationFor('section-subtitle')
+                panels.activeAnimation()
+                panels.activeContactModalBtn()
+                
+                imagesMosaic.activeHover()
+                imagesMosaic.activeClick()
+    
+                panels.resizeIframe()
+    
+                cible.css('transform', 'translateX(100%)')
+                setTimeout(() => {
+                    cible.addClass('active')
+                    cible.css('transform', 'translateX(0)')
+                    navs.changeInProgress = false
+                }, 1000)
+    
+            })
         }
 
-        // on retire le visuel du bouton dans la navbar pour la page courante
-        currentText.css('background-color', '#006160b3')
-        currentPanel.css('transform', 'translateX(100%)')
-        currentBtn.removeClass('iconActive')
-        navbackgroundShadow.attr('fill', '#006160')
-        
-        // on ajoute le visuel du bouton dans la navbar pour la nouvelle page
-        cibleBtn.addClass('iconActive')
-        cibleText.css('background-color', cibleIcon.attr('data-color')+ 'b3')
-        cibleBtnBackground.attr('fill', cibleIcon.attr('data-color'))
-        cibleText.css('border-bottom', '.2em solid ' + cibleIcon.attr('data-color'))
-
-        panels.getAjaxPanel(cibleID, () => {
-            const cible = $('#' + cibleID + '-panel')
-
-            animations.activeOnLoadAnimationFor('card')
-            animations.activeOnLoadAnimationFor('widget')
-            animations.activeOnLoadAnimationFor('section-title')
-            animations.activeOnLoadAnimationFor('section-subtitle')
-            panels.activeAnimation()
-            panels.activeContactModalBtn()
-            
-            imagesMosaic.activeHover()
-            imagesMosaic.activeClick()
-
-            panels.resizeIframe()
-
-            cible.css('transform', 'translateX(100%)')
-            setTimeout(() => {
-                cible.addClass('active')
-                cible.css('transform', 'translateX(0)')
-                navs.changeInProgress = false
-            }, 1000)
-
-        })
     },
 
     getAjaxPanel(panel, callback) {
@@ -166,6 +174,14 @@ export const panels = {
                 }
             ])
         }
+    },
+
+    error(code) {
+        var url = '/error/' + code
+        app.get(url, (response) => {
+            $('.webContent').html(response)
+            //panels.animateError()
+        })
     },
 
     /**

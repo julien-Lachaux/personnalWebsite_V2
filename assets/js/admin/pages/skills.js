@@ -8,7 +8,6 @@ $(document).ready( () => {
             $(form).submit((event) => {
                 var formData = app.serializeForm(form);
                 app.post('/ajax/admin/updateSkillGroup', formData, (response) => {
-                    console.log(response);
                 });
                 event.preventDefault();
             });
