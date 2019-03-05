@@ -10,6 +10,7 @@
         .profile { left: 0; }
         .contact { right: 0; }
         .copyright { right: 0; }
+        .exitBtn { top: .25em; }
     }
 
     i {
@@ -137,10 +138,11 @@
     }
 
     .exitBtn {
-        position: absolute;
-        top: .25em;
+        position: absolute; 
+        top: -100%;
         right: .5em;
         font-size: 2em;
+        transition: top 1s ease-in-out;
 
         &:hover {
             cursor: pointer;
