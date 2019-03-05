@@ -39,8 +39,11 @@
                 <div class="disponibilites font-mono"><i class="material-icons">event</i> Disponible Pour Des Missions Freelance</div>
                 <div class="tel"><i class="material-icons">phone</i> {{ profile.tel }}</div>
                 <div class="mail"><i class="material-icons">email</i> {{ profile.email }}</div>
+                <div class="separator"></div>
+                {{contactLock.left|raw}}
             </section>
             <section class="contact">
+                {{contactLock.right|raw}}
                 <div class="social-icons">
                     <a href="{{ profile.linkedin }}" target="_blank" class="social-icon" id="linkedin"><img alt="logo de linkedin" src="/images/social_network/linkedin.png"></a>
                     <a href="{{ profile.github }}" target="_blank" class="social-icon" id="git-hub"><img alt="logo de git-hub" src="/images/social_network/github.png"></a>
@@ -50,7 +53,6 @@
             <div class="copyright">CV développeur web full stack © 2017<br>Julien Lachaux -
                 <a href="../public/index.php?p=legales">mentions légales</a>
             </div>
-            <div class="separator"></div>
             <div class="exitBtn"><i class="material-icons">close</i></div>
         </div>
         {% block javascripts %}{% endblock %}

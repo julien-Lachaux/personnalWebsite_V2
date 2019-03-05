@@ -6,8 +6,24 @@
     flex-flow: row nowrap;
     color: #fff;
 
+    .contactLock {
+        position: absolute;
+        z-index: $lvl-alert + 1;
+        width: 20em;
+        height: auto;
+
+        &.left {
+            right: -3em;
+            z-index: $lvl-alert + 2;
+        }
+        &.right {
+            left: -2.5em;
+            transform: translateY(1em);
+            z-index: $lvl-alert + 3;
+        }
+    } 
+
     &.active {
-        .separator { left: 50%; }
         .profile { left: 0; }
         .contact { right: 0; }
         .copyright { right: 0; }
@@ -29,7 +45,7 @@
         font-family: $fontMono;
         background: $color-primary;
         left: -100%;
-        transition: all 1s ease-in-out;
+        transition: all 1s ease-in;
         position: relative;
 
         .name, .disponibilites, .job, .tel, .mail {
@@ -85,7 +101,7 @@
         align-items: center;
         background: $color-primary;
         right: -100%;
-        transition: all 1.1s ease-in-out;
+        transition: all 1.1s ease-in;
         position: relative;
 
         .social-icons {
@@ -98,7 +114,7 @@
             img {
                 border-radius: 50%;
                 width: 35%;
-                transition: all 500ms ease-in-out;
+                transition: all 500ms ease-in;
             }
     
             img:hover {
@@ -117,7 +133,7 @@
         text-align: center;
         position: absolute;
         bottom: 1em;
-        transition: right 1.5s ease-in-out;
+        transition: right 1.5s ease-in;
         a {
             color: #fff;
 
@@ -131,11 +147,8 @@
         position: absolute;
         height: 60%;
         width: 1px;
-        left: -100%;
-        transition: left 1s ease-in-out;
-        top: 50%;
+        right: 0;
         opacity: .5;
-        transform: translateY(-50%);
         background: #fff; 
     }
 
@@ -144,7 +157,7 @@
         top: -100%;
         right: .5em;
         font-size: 2em;
-        transition: top 1s ease-in-out;
+        transition: top 1s ease-in;
 
         &:hover {
             cursor: pointer;

@@ -43,6 +43,10 @@ class PagesController {
                 'default' => $navBtn,
                 'active' => $navBtnActive,
                 'activeBackground' => $navBtnActiveBackground,
+            ],
+            "contactLock" => [
+                "left" => $panelController->getSvg('contactLock', 'left'),
+                "right" => $panelController->getSvg('contactLock', 'right')
             ]
         ]));
     }
