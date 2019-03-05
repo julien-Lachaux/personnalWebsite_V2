@@ -1,14 +1,22 @@
 import { app } from './app'
-import { panels } from './components/panels'
 import { navs } from './components/navs'
+import { panels } from './components/panels'
 import { animations } from './components/animations'
 import { imagesMosaic } from './components/imagesMosaic'
 
 const hash = app.getCurrentPage()
 const saltyHash = (hash + '-panel')
 
-// activation des event des boutons de navigation
+// activation des event des boutons de navigation et des changeHistory
 navs.activeEvent()
+
+((original) => { // overwrite history.pushState so that it also calls
+  // the change function when called
+  history.pushState = (state) => {
+      panels.changeHistoryState(state)
+      return original.apply(this, arguments)
+  }
+})(history.pushState)
 
 // activation du boutons correspondant a la page actuel
 let departText = document.querySelector('div.link-txt[href="/' + hash + '"]')

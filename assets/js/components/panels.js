@@ -7,6 +7,15 @@ import { imagesMosaic } from './imagesMosaic'
 const SVG = require('svg.js')
 
 export const panels = {
+    currentPanel: history.state,
+
+    changeHistoryState(newState) {
+        console.log('newStatze: ', newState)
+        if (newState !== this.currentPanel) {
+            this.currentPanel = newState
+        }
+    },
+    
     afficherSection(ciblePath) {
         let CheminComplet = document.location.href
         let cibleID = ciblePath.substring(1)
