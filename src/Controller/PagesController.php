@@ -50,7 +50,8 @@ class PagesController {
             ],
             "decorationsLoader" => [
                 "top" => $panelController->getSvg('loader', 'top'),
-                "bottom" => $panelController->getSvg('loader', 'bottom')
+                "bottom" => $panelController->getSvg('loader', 'bottom'),
+                "bar" => $panelController->getSvg('loader', 'bar')
             ] 
         ]));
     }

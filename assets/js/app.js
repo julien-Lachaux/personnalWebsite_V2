@@ -94,5 +94,39 @@ export const app = {
             loader.classList.add('active')
             loader.classList.add('loaderZindex')
         }
+    },
+
+    toggleLoaderBar() {
+        const loaderBar = document.querySelector('.loaderBar')
+        const isActive = loaderBar.classList.contains('active')
+
+        if (!isActive) {
+            loaderBar.classList.add('active')
+            loaderBar.setAttribute('data-item', 0)
+            this.loaderBarInterval = setInterval(app.loaderBarAddItem, 1000);
+        } else {
+            loaderBar.classList.remove('active')
+            loaderBar.setAttribute('data-item', 0)
+            window.clearInterval(this.loaderBarInterval)
+        }
+    },
+
+    loaderBarAddItem() {
+        const loaderBar = document.querySelector('.loaderBar')
+
+        if (parseInt(loaderBar.getAttribute('data-item')) < 12) {
+            const loaderBarItem = app.createLoaderBarItem()
+            loaderBar.setAttribute('data-item', parseInt(loaderBar.getAttribute('data-item')) + 1)
+            loaderBar.appendChild(loaderBarItem)
+        } else {
+            loaderBar.innerHTML = '';
+            loaderBar.setAttribute('data-item', 0)
+        }
+    },
+
+    createLoaderBarItem() {
+        const loaderItem = document.createElement('div')
+        loaderItem.classList.add('loaderBarItem')
+        return loaderItem
     }
 }

@@ -6,22 +6,23 @@
 
     .loaderPart {
         height: 50%;
-        background: $color-primary-dark;
+        background: $color-background;
         position: relative;
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
+        border-left: .1em solid $color-primary;
+        border-right: .1em solid $color-primary;
+        box-sizing: border-box;
 
         &.top {
-            box-sizing: border-box;
-            border-bottom: .1em solid $color-primary-light;
+            border-bottom: .1em solid $color-primary;
             justify-content: flex-end;
             top: -100%;
             transition: top 1s ease-in;
         }
         &.bottom {
-            box-sizing: border-box;
-            border-top: .1em solid $color-primary-light;
+            border-top: .1em solid $color-primary;
             justify-content: flex-start;
             bottom: -100%;
             transition: bottom 1s ease-in;
@@ -41,12 +42,56 @@
         }
     }
 
+    .loaderMessage {
+        display: none;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+    .loaderBarContainer {
+        display: none;
+        position: relative;
+
+        .decorationLoaderBar {
+            width: 20em;
+            height: auto;
+        }
+        .loaderBar {
+            width: 15.5em;
+            height: 2em;
+            position: absolute;
+            box-sizing: border-box;
+            padding: .25em;
+            top: 2em;
+            left: 2.5em;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-content: center;
+
+            .loaderBarItem {
+                position: relative;
+                height: 100%;
+                width: 1em;
+                margin-right: .25em;
+                background: $color-primary-light;
+            }
+        }
+    }
+
+
     &.loaderZindex { z-index: $lvl-loader; }
     &.pageLoader {
         width: 100%;
+        .loaderBarContainer {
+            display: block !important;
+        }
     }
     &.panelLoader {
         width: $page-width;
+        .loaderMessage {
+            display: block;
+        }
     }
     &.active {
         .loaderPart {

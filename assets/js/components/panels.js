@@ -76,8 +76,10 @@ export const panels = {
     
                 animations.activeOnLoadAnimationFor('card')
                 animations.activeOnLoadAnimationFor('widget')
+                animations.activeOnLoadAnimationFor('realisation')
                 animations.activeOnLoadAnimationFor('section-title')
                 animations.activeOnLoadAnimationFor('section-subtitle')
+                
                 panels.activeAnimation()
                 panels.activeContactModalBtn()
                 
@@ -86,12 +88,12 @@ export const panels = {
     
                 panels.resizeIframe()
     
+                cible.addClass('active')
+                navs.changeInProgress = false
+                
                 setTimeout(() => {
-                    cible.addClass('active')
-                    navs.changeInProgress = false
+                    app.toggleLoader('panel')
                 }, 1000)
-    
-                app.toggleLoader('panel')
             })
         }
 

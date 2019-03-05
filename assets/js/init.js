@@ -7,6 +7,9 @@ import { imagesMosaic } from './components/imagesMosaic'
 const hash = app.getCurrentPage()
 const saltyHash = (hash + '-panel')
 
+// on active l'animation de loading
+app.toggleLoaderBar()
+
 // activation des event des boutons de navigation et des changeHistory
 navs.activeEvent()
 navs.changeInProgress = true
@@ -52,6 +55,7 @@ if (departText === null) { // erreur 404
     $('.coverFlux').click(imagesMosaic.hidePreview)
 
     depart.classList.add('active')
+    app.toggleLoaderBar()
     app.toggleLoader()
   })
   
