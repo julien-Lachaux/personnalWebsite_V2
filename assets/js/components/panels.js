@@ -28,6 +28,8 @@ export const panels = {
         const currentPanel = $('.panel')
         const currentText = $('div.link-txt[href="/' + hash + '"]')
 
+        app.toggleLoader('panel')
+
         if (currentText === null) { // erreur 404
             panels.error(404)
             this.currentPanel = ciblePath.substring(1)
@@ -60,7 +62,6 @@ export const panels = {
     
             // on retire le visuel du bouton dans la navbar pour la page courante
             currentText.css('background-color', '#006160b3')
-            currentPanel.css('transform', 'translateX(100%)')
             currentBtn.removeClass('iconActive')
             navbackgroundShadow.attr('fill', '#006160')
             
@@ -85,13 +86,12 @@ export const panels = {
     
                 panels.resizeIframe()
     
-                cible.css('transform', 'translateX(100%)')
                 setTimeout(() => {
                     cible.addClass('active')
-                    cible.css('transform', 'translateX(0)')
                     navs.changeInProgress = false
                 }, 1000)
     
+                app.toggleLoader('panel')
             })
         }
 

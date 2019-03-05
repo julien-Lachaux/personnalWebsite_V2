@@ -61,5 +61,38 @@ export const app = {
         var hash = CheminComplet.substring(CheminComplet.lastIndexOf( "/" ) + 1)
 
         return hash
+    },
+
+    toggleLoader(role = 'page') {
+        const loader = document.querySelector('.loaderContainer')
+        const isActive = loader.classList.contains('active')
+        const isPage = loader.classList.contains('pageLoader')
+        const isPanel = loader.classList.contains('panelLoader')
+
+        if (role === 'page') {
+            if (!isPage) {
+                loader.classList.add('pageLoader')
+            } 
+            if (isPanel) {
+                loader.classList.remove('panelLoader')
+            }
+        } else if (role === 'panel') {
+            if (!isPanel) {
+                loader.classList.add('panelLoader')
+            } 
+            if (isPage) {
+                loader.classList.remove('pageLoader')
+            }
+        }
+
+        if (isActive) {
+            loader.classList.remove('active')
+            setTimeout(() => {
+                loader.classList.remove('loaderZindex')
+            }, 2000)
+        } else {
+            loader.classList.add('active')
+            loader.classList.add('loaderZindex')
+        }
     }
 }

@@ -35,8 +35,9 @@ $violet: #991ced;
 // ───────────────────────────────────────────────────────────────────── Structur ──────
 //
 // page structure
+$sidebar-width: 15em;
 $page-top: 0px;
-$page-width: calc(100% - 15em);
+$page-width: calc(100% - #{$sidebar-width});
 
 //
 // ───────────────────────────────────────────────────────────────────── Z-index ───────
@@ -45,6 +46,7 @@ $page-width: calc(100% - 15em);
 $lvl-min: -10;
 $lvl-max: 500;
 $lvl-alert: 1000;
+$lvl-loader: 1100;
 
 // Précis
 $lvl-1: 10;

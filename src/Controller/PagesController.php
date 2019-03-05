@@ -47,7 +47,11 @@ class PagesController {
             "contactLock" => [
                 "left" => $panelController->getSvg('contactLock', 'left'),
                 "right" => $panelController->getSvg('contactLock', 'right')
-            ]
+            ],
+            "decorationsLoader" => [
+                "top" => $panelController->getSvg('loader', 'top'),
+                "bottom" => $panelController->getSvg('loader', 'bottom')
+            ] 
         ]));
     }
 

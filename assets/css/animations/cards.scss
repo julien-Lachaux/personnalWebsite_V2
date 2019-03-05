@@ -50,21 +50,21 @@ to {
     &.top {
         transform: translateY(-75vh);
         animation-name: cardsLoad-top;
-        animation-delay: 2.45s;
+        //animation-delay: 2.45s;
     }
     &.bottom {
         transform: translateY(75vh);
         animation-name: cardsLoad-bottom;
-        animation-delay: 2.75s;
+        //animation-delay: 2.75s;
     }
     &.left {
         transform: translateX(-100vw);
         animation-name: cardsLoad-left;
-        animation-delay: 2.20s;
+        //animation-delay: 2.20s;
     }
     &.right {
         transform: translateX(100vw);
         animation-name: cardsLoad-right;
-        animation-delay: 2.20s;
+        //animation-delay: 2.20s;
     }
 }

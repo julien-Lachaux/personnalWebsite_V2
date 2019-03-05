@@ -49,14 +49,10 @@ if (departText === null) { // erreur 404
     window.onresize = function(){panels.resizeIframe()}
     
     
-    
     $('.coverFlux').click(imagesMosaic.hidePreview)
-    
-    depart.style.transform = 'translateX(100%)'
-    setTimeout(() => {
-      depart.classList.add('active')
-      depart.style.transform = 'translateX(0)'
-    }, 100)
+
+    depart.classList.add('active')
+    app.toggleLoader()
   })
   
 }
