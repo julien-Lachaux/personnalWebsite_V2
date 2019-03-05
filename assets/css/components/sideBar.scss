@@ -134,7 +134,7 @@
         cursor: pointer;
         position: relative;
         transition: all 2s ease-in-out;
-        margin: 1em 0;
+        margin: .8em 0;
         display: block;
         text-align: right;
 
@@ -176,7 +176,9 @@
         .link-txt {
           position: absolute;
           bottom: 0.2em;
-          color: #313131;
+          color: #fff;
+          background: #006160b3;
+          transition: all 1.2s ease-in-out;
         }
 
         &.iconActive {

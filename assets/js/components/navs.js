@@ -1,6 +1,8 @@
 import { panels } from './panels'
 
 export const navs = {
+  changeInProgress: false,
+
   activeEvent() {
     let boutons = $('.sideNav-Link')
 
@@ -9,15 +11,13 @@ export const navs = {
 
       // event on click
       bouton.click( () => {
-        let navbackgroundShadow = bouton.find('.navBtn-background-shadow')
-        let navText = bouton.find('.link-txt')
-        let link = navText.attr('href')
-        
-        navText.css('background-color', '')
-        navText.css('color', '#313131')
-        navbackgroundShadow.attr( 'fill', '#006160')
-        
-        panels.afficherSection(link)
+        if (!navs.changeInProgress) {
+          let navText = bouton.find('.link-txt')
+          let link = navText.attr('href')
+          navs.changeInProgress = true
+          
+          panels.afficherSection(link)
+        }
       } )
 
       // event on mouse over
@@ -26,9 +26,8 @@ export const navs = {
           let navText = bouton.find('.link-txt')
           let navbackgroundShadow = bouton.find('.navBtn-background-shadow')
 
-          navText.css('background-color', 'rgba(0, 166, 157, 0.7)')
-          navText.css('color', '#ffffff')
-          navbackgroundShadow.attr( 'fill', '#00A79D')
+          navText.css('background-color', '#00a79db3')
+          navbackgroundShadow.attr( 'fill', '#00a79d')
         }
       } )
 
@@ -38,8 +37,7 @@ export const navs = {
           let navText = bouton.find('.link-txt')
           let navbackgroundShadow = bouton.find('.navBtn-background-shadow')
 
-          navText.css('background-color', '')
-          navText.css('color', '#313131')
+          navText.css('background-color', '#006160b3')
           navbackgroundShadow.attr( 'fill', '#006160')
         }
       } )

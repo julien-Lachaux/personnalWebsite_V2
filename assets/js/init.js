@@ -18,9 +18,10 @@ let departBtnBackground = $(departBtn).find('.nav-decoration-active-background p
 
 setTimeout(() => {
   departBtn.classList.add('iconActive')
+  departText.style.borderBottom = '.2em solid ' + departIcon.getAttribute('data-color')
+  departText.style.backgroundColor = departIcon.getAttribute('data-color') + 'b3'
+  departBtnBackground.attr('fill', departIcon.getAttribute('data-color'))
 }, 3000)
-departText.style.borderBottom = '.2em solid ' + departIcon.getAttribute('data-color')
-departBtnBackground.attr('fill', departIcon.getAttribute('data-color'))
 
 // chargement de la page demandé par l'utilisateur au premier chargement de la page
 panels.getAjaxPanel(hash, () => {

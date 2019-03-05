@@ -12,28 +12,24 @@ export const panels = {
         let cibleID = ciblePath.substring(1)
         let hash = CheminComplet.substring(CheminComplet.lastIndexOf("/") + 1)
         let currentPanel = $('.panel')
-        let currentBtn = $('div.link-txt[href="/' + hash + '"]').parent()
-        let currentIcon = currentBtn.find('.link-logo')
+        let currentText = $('div.link-txt[href="/' + hash + '"]')
+        let currentBtn = currentText.parent()
         let cibleText = $('div.link-txt[href="/' + cibleID + '"]')
         let cibleBtn = cibleText.parent()
         let cibleIcon = cibleBtn.find('.link-logo')
         let navbackgroundShadow = currentBtn.find('.navBtn-background-shadow')
         let cibleBtnBackground = $(cibleBtn).find('.nav-decoration-active-background polygon')
 
-        navbackgroundShadow.attr('fill', '#006160')
-        currentBtn.find('.link-txt').css('background-color', '')
-
+        currentText.css('background-color', '#006160b3')
         currentPanel.css('transform', 'translateX(100%)')
         currentBtn.removeClass('iconActive')
+        navbackgroundShadow.attr('fill', '#006160')
+        
+        cibleBtn.addClass('iconActive')
 
-        setTimeout(() => {
-            currentIcon.css('color', '#fff')
-            cibleBtn.addClass('iconActive')
-        }, 1000)
-
+        cibleText.css('background-color', cibleIcon.attr('data-color')+ 'b3')
         cibleBtnBackground.attr('fill', cibleIcon.attr('data-color'))
         cibleText.css('border-bottom', '.2em solid ' + cibleIcon.attr('data-color'))
-        console.log('.2em solid ' + cibleIcon.attr('data-color'))
 
         panels.getAjaxPanel(cibleID, () => {
             let cible = $('#' + cibleID + '-panel')
@@ -68,6 +64,7 @@ export const panels = {
             setTimeout(() => {
                 cible.addClass('active')
                 cible.css('transform', 'translateX(0)')
+                navs.changeInProgress = false
             }, 1000)
 
         })
