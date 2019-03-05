@@ -1,20 +1,15 @@
 .contactModal {
-    opacity: 0;
     display: flex;
     position: absolute;
-    top: -100%;
-    left: -100%;
     width: 100%;
     height: 100%;
-    background: $color-primary;
     flex-flow: row nowrap;
-    z-index: $lvl-alert;
     color: #fff;
 
     &.active {
-        opacity: 1;
-        top: 0;
-        left: 0;
+        .profile { left: 0; }
+        .contact { right: 0; }
+        .copyright { right: 0; }
     }
 
     i {
@@ -30,6 +25,10 @@
         align-items: center;
         text-align: left;
         font-family: $fontMono;
+        background: $color-primary;
+        left: -100%;
+        transition: all 1s ease-in-out;
+        position: relative;
 
         .name, .disponibilites, .job, .tel, .mail {
             width: 50%;
@@ -82,6 +81,10 @@
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
+        background: $color-primary;
+        right: -100%;
+        transition: all 1.1s ease-in-out;
+        position: relative;
 
         .social-icons {
             display: flex;
@@ -105,12 +108,14 @@
     .copyright {
         display: block;
         width: 100%;
+        right: -100%;
         font-family: 'IBM Plex Serif', serif;
         font-size: 0.7em;
         margin: 0;
         text-align: center;
         position: absolute;
         bottom: 1em;
+        transition: right 1.5s ease-in-out;
         a {
             color: #fff;
 

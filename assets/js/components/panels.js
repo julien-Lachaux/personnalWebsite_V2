@@ -178,8 +178,12 @@ export const panels = {
         let modal = $('.contactModal')
         if (modal.hasClass('active')) {
             modal.removeClass('active')
+            setTimeout(() => {
+                modal.removeClass('index-alert')
+            }, 1000)
         } else {
             modal.addClass('active')
+            modal.addClass('index-alert')
         }
     }
 }
