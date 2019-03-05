@@ -11,7 +11,6 @@ export const cards = {
             for(let i = 1; i <= cardsArray.length; i++) {
                 position.push(i);
             }
-            position.shuffle();
             cardsArray.each((index, filteredCard) => {
                 $(filteredCard).css('order', position[index]);
             });

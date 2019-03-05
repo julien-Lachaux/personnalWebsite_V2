@@ -7,43 +7,65 @@ import { imagesMosaic } from './imagesMosaic'
 const SVG = require('svg.js')
 
 export const panels = {
-    currentPanel: history.state,
+    currentPanel: history.state !== null ? history.state.foo : window.location.href,
 
     changeHistoryState(newState) {
-        console.log('newStatze: ', newState)
         if (newState !== this.currentPanel) {
-            this.currentPanel = newState
+            panels.afficherSection('/' + newState)
         }
     },
-    
-    afficherSection(ciblePath) {
-        let CheminComplet = document.location.href
-        let cibleID = ciblePath.substring(1)
-        let hash = CheminComplet.substring(CheminComplet.lastIndexOf("/") + 1)
-        let currentPanel = $('.panel')
-        let currentText = $('div.link-txt[href="/' + hash + '"]')
-        let currentBtn = currentText.parent()
-        let cibleText = $('div.link-txt[href="/' + cibleID + '"]')
-        let cibleBtn = cibleText.parent()
-        let cibleIcon = cibleBtn.find('.link-logo')
-        let navbackgroundShadow = currentBtn.find('.navBtn-background-shadow')
-        let cibleBtnBackground = $(cibleBtn).find('.nav-decoration-active-background polygon')
 
+    activeChangeHistory() {
+        window.onpopstate = (e) => {
+            if (e.state !== null) {
+                panels.changeHistoryState(e.state.foo)
+            }
+        }
+    },
+
+    afficherSection(ciblePath) {
+        const hash = panels.currentPanel
+        const currentPanel = $('.panel')
+        const currentText = $('div.link-txt[href="/' + hash + '"]')
+        const currentBtn = currentText.parent()
+        const cibleID = ciblePath.substring(1)
+        const cibleText = $('div.link-txt[href="/' + cibleID + '"]')
+        const cibleBtn = cibleText.parent()
+        const cibleIcon = cibleBtn.find('.link-logo')
+        const navbackgroundShadow = currentBtn.find('.navBtn-background-shadow')
+        const cibleBtnBackground = $(cibleBtn).find('.nav-decoration-active-background polygon')
+        const CheminComplet = document.location.href
+        const urlParams = CheminComplet.split('/').slice(3)
+
+        // on réécrie l'url
+        if (urlParams.length === 1) {
+            let stateObj = {
+                foo: cibleID
+            }
+            this.currentPanel = cibleID
+            history.pushState(stateObj, cibleID, ciblePath)
+        } else if (urlParams.length === 2) {
+            let stateObj = {
+                foo: cibleID
+            }
+            this.currentPanel = cibleID
+            history.pushState(stateObj, cibleID, '/' + urlParams[0] + ciblePath)
+        }
+
+        // on retire le visuel du bouton dans la navbar pour la page courante
         currentText.css('background-color', '#006160b3')
         currentPanel.css('transform', 'translateX(100%)')
         currentBtn.removeClass('iconActive')
         navbackgroundShadow.attr('fill', '#006160')
         
+        // on ajoute le visuel du bouton dans la navbar pour la nouvelle page
         cibleBtn.addClass('iconActive')
-
         cibleText.css('background-color', cibleIcon.attr('data-color')+ 'b3')
         cibleBtnBackground.attr('fill', cibleIcon.attr('data-color'))
         cibleText.css('border-bottom', '.2em solid ' + cibleIcon.attr('data-color'))
 
         panels.getAjaxPanel(cibleID, () => {
-            let cible = $('#' + cibleID + '-panel')
-            let CheminComplet = document.location.href
-            let urlParams = CheminComplet.split('/').slice(3)
+            const cible = $('#' + cibleID + '-panel')
 
             animations.activeOnLoadAnimationFor('card')
             animations.activeOnLoadAnimationFor('widget')
@@ -56,18 +78,6 @@ export const panels = {
             imagesMosaic.activeClick()
 
             panels.resizeIframe()
-
-            if (urlParams.length === 1) {
-                let stateObj = {
-                    foo: cibleID
-                }
-                history.pushState(stateObj, cibleID, ciblePath)
-            } else if (urlParams.length === 2) {
-                let stateObj = {
-                    foo: cibleID
-                }
-                history.pushState(stateObj, cibleID, '/' + urlParams[0] + ciblePath)
-            }
 
             cible.css('transform', 'translateX(100%)')
             setTimeout(() => {

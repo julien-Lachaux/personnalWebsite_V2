@@ -9,14 +9,7 @@ const saltyHash = (hash + '-panel')
 
 // activation des event des boutons de navigation et des changeHistory
 navs.activeEvent()
-
-((original) => { // overwrite history.pushState so that it also calls
-  // the change function when called
-  history.pushState = (state) => {
-      panels.changeHistoryState(state)
-      return original.apply(this, arguments)
-  }
-})(history.pushState)
+panels.activeChangeHistory()
 
 // activation du boutons correspondant a la page actuel
 let departText = document.querySelector('div.link-txt[href="/' + hash + '"]')
