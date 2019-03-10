@@ -1,0 +1,57 @@
+{
+  "entrypoints": {
+    "vendor/jscolor-2.0.5/jscolor": {
+      "js": [
+        "/build/vendor/jscolor-2.0.5/jscolor.6c220c63.js"
+      ]
+    },
+    "js/init": {
+      "js": [
+        "/build/js/init.5ae02a19.js"
+      ]
+    },
+    "js/app": {
+      "js": [
+        "/build/js/app.8f1aa86f.js"
+      ]
+    },
+    "js/utils": {
+      "js": [
+        "/build/js/utils.1130beac.js"
+      ]
+    },
+    "js/components/navs": {
+      "js": [
+        "/build/js/components/navs.1f9c9ce5.js"
+      ]
+    },
+    "js/components/cards": {
+      "js": [
+        "/build/js/components/cards.e6d5646b.js"
+      ]
+    },
+    "js/components/panels": {
+      "js": [
+        "/build/js/components/panels.db3db867.js"
+      ]
+    },
+    "js/components/animations": {
+      "js": [
+        "/build/js/components/animations.7a9a070a.js"
+      ]
+    },
+    "js/admin/pages/skills": {
+      "js": [
+        "/build/js/admin/pages/skills.7dd65afe.js"
+      ]
+    },
+    "css/app": {
+      "css": [
+        "/build/css/app.e7eaaec0.css"
+      ],
+      "js": [
+        "/build/css/app.f64fb647.js"
+      ]
+    }
+  }
+}
