@@ -37,8 +37,6 @@ export const animations = {
             elements[i].classList.add('onLoadElement');
             if (lor === 0) {
                 elements[i].classList.add('top');
-            } else if (lor == (elements.length - 1)) {
-                elements[i].classList.add('bottom');
             } else if ((lor % 2) === 0) {
                 elements[i].classList.add('left');
             } else {

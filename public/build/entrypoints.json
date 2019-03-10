@@ -7,7 +7,7 @@
     },
     "js/init": {
       "js": [
-        "/build/js/init.5ae02a19.js"
+        "/build/js/init.124fdaab.js"
       ]
     },
     "js/app": {
@@ -22,7 +22,7 @@
     },
     "js/components/navs": {
       "js": [
-        "/build/js/components/navs.1f9c9ce5.js"
+        "/build/js/components/navs.4cbf9ba9.js"
       ]
     },
     "js/components/cards": {
@@ -32,12 +32,12 @@
     },
     "js/components/panels": {
       "js": [
-        "/build/js/components/panels.db3db867.js"
+        "/build/js/components/panels.8f3f4e06.js"
       ]
     },
     "js/components/animations": {
       "js": [
-        "/build/js/components/animations.7a9a070a.js"
+        "/build/js/components/animations.3fe7629c.js"
       ]
     },
     "js/admin/pages/skills": {
@@ -47,7 +47,7 @@
     },
     "css/app": {
       "css": [
-        "/build/css/app.cf795d52.css"
+        "/build/css/app.66db9852.css"
       ],
       "js": [
         "/build/css/app.f64fb647.js"

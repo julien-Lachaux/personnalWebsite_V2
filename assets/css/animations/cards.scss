@@ -9,16 +9,6 @@
       opacity: 1;
     }
 }
-@keyframes cardsLoad-bottom {
-from {
-    opacity: 0;
-    transform: translateY(75vh);
-}
-to {
-    transform: translateY(0);
-    opacity: 1;
-}
-}
 @keyframes cardsLoad-left {
 from {
     opacity: 0;
@@ -51,11 +41,6 @@ to {
         transform: translateY(-75vh);
         animation-name: cardsLoad-top;
         animation-delay: 2.45s;
-    }
-    &.bottom {
-        transform: translateY(75vh);
-        animation-name: cardsLoad-bottom;
-        animation-delay: 2.75s;
     }
     &.left {
         transform: translateX(-100vw);

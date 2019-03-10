@@ -1,13 +1,13 @@
 {
-  "build/css/app.css": "/build/css/app.cf795d52.css",
+  "build/css/app.css": "/build/css/app.66db9852.css",
   "build/css/app.js": "/build/css/app.f64fb647.js",
   "build/js/admin/pages/skills.js": "/build/js/admin/pages/skills.7dd65afe.js",
   "build/js/app.js": "/build/js/app.8f1aa86f.js",
-  "build/js/components/animations.js": "/build/js/components/animations.7a9a070a.js",
+  "build/js/components/animations.js": "/build/js/components/animations.3fe7629c.js",
   "build/js/components/cards.js": "/build/js/components/cards.e6d5646b.js",
-  "build/js/components/navs.js": "/build/js/components/navs.1f9c9ce5.js",
-  "build/js/components/panels.js": "/build/js/components/panels.db3db867.js",
-  "build/js/init.js": "/build/js/init.5ae02a19.js",
+  "build/js/components/navs.js": "/build/js/components/navs.4cbf9ba9.js",
+  "build/js/components/panels.js": "/build/js/components/panels.8f3f4e06.js",
+  "build/js/init.js": "/build/js/init.124fdaab.js",
   "build/js/utils.js": "/build/js/utils.1130beac.js",
   "build/vendor/jscolor-2.0.5/jscolor.js": "/build/vendor/jscolor-2.0.5/jscolor.6c220c63.js"
 }
