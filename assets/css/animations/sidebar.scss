@@ -136,6 +136,27 @@
     50% {
         bottom: 3.8em;
         opacity: 0;
+        right: 1.9em;
+    }
+    100% {
+        bottom: 3.8em;
+        opacity: 1;
+        right: 1.9em;
+    }
+}
+@keyframes linkLogoToggleMobileXSmall {
+    0% {
+        bottom: 3em;
+        right: 1.4em;
+    }
+    25% {
+        bottom: -7em;
+        opacity: 0;
+        right: 1.4em;
+    }
+    50% {
+        bottom: 3.8em;
+        opacity: 0;
         right: 1.3em;
     }
     100% {
@@ -192,6 +213,14 @@
             .nav-decoration {
                 animation: navDecorationToggleMobile 2s forwards !important;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 758px) {
+    .sideNav-Link.iconActive {
+        .link-logo {
+            animation: linkLogoToggleMobileXSmall 2s forwards !important;
         }
     }
 }

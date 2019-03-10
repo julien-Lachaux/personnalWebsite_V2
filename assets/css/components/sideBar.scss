@@ -252,14 +252,7 @@
     justify-content: center;
 
     .sideNav-Link {
-      width: 8em !important;
-
-      &.iconActive {
-        .nav-decoration-active-background {
-          right: 1em !important;
-          bottom: 0 !important;
-        }
-      }
+      width: 5em !important;
     }
   }
 }

@@ -9,7 +9,7 @@
     .contactLock {
         position: absolute;
         z-index: $lvl-alert + 1;
-        width: 20em;
+        width: 17em;
         height: auto;
 
         &.left {
@@ -105,15 +105,18 @@
         position: relative;
 
         .social-icons {
+            position: relative;
             display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-around;
-            margin: 2% 0 2% 0;
+            flex-flow: column;
+            justify-content: center;
             text-align: center;
+            height: 50%;
+            width: 4em;
     
             img {
+                margin: .5em 0 .5em 0;
                 border-radius: 50%;
-                width: 35%;
+                width: 100%;
                 transition: all 500ms ease-in;
             }
     

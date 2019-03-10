@@ -101,3 +101,9 @@
     }
 
 }
+
+@media screen and (max-width: 1250px) {
+    .loaderContainer.panelLoader {
+        width: 100% !important;
+    }
+}

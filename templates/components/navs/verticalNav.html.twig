@@ -1,28 +1,26 @@
-<nav class="sideBar">
-    <div class="sideNav">
-        <div class="sideNav-profile medium-hidden">
-            <div class="profilePicture-container">
-                <div class="profilePicture-circle">
-                    <img class="profilePicture" src="{{ profile.picture }}">
-                </div>
-                <img class="profilePicture-decoration" src="images/decorations/profilePicture/profilePicture-01.svg">
+<div class="sideNav">
+    <div class="sideNav-profile medium-hidden">
+        <div class="profilePicture-container">
+            <div class="profilePicture-circle">
+                <img class="profilePicture" src="{{ profile.picture }}">
             </div>
-            <div class="profile-info">
-                <div class="profile-name">{{ profile.firstname }} {{ profile.lastname }}</div>
-                <div class="profile-job font-mono">{{ profile.title }}</div>
-            </div>
+            <img class="profilePicture-decoration" src="images/decorations/profilePicture/profilePicture-01.svg">
         </div>
-        <div class="separator medium-hidden"></div>
-        <ul class="sideNav-Links">
-            {% for panel in panels %}
-                <li class="sideNav-Link">
-                    <div class="link-txt" href="/{{ panel.navUrl }}"><span class="medium-hidden">{{ panel.navText }}</span></div>
-                    <i class="link-logo material-icons" data-color="{% if panel.colorTheme.name == 'home' %}{{ panel.colorTheme.colorLight }}{% else %}{{ panel.colorTheme.color }}{% endif %}">{{ panel.navIcon }}</i>
-                    {{ navBtn.default|raw }}
-                    {{ navBtn.active|raw }}
-                    {{ navBtn.activeBackground|raw }}
-                </li>
-            {% endfor %}
-        </ul>
+        <div class="profile-info">
+            <div class="profile-name">{{ profile.firstname }} {{ profile.lastname }}</div>
+            <div class="profile-job font-mono">{{ profile.title }}</div>
+        </div>
     </div>
-</nav>
+    <div class="separator medium-hidden"></div>
+    <ul class="sideNav-Links">
+        {% for panel in panels %}
+            <li class="sideNav-Link">
+                <div class="link-txt" href="/{{ panel.navUrl }}"><span class="medium-hidden">{{ panel.navText }}</span></div>
+                <i class="link-logo material-icons" data-color="{% if panel.colorTheme.name == 'home' %}{{ panel.colorTheme.colorLight }}{% else %}{{ panel.colorTheme.color }}{% endif %}">{{ panel.navIcon }}</i>
+                {{ navBtn.default|raw }}
+                {{ navBtn.active|raw }}
+                {{ navBtn.activeBackground|raw }}
+            </li>
+        {% endfor %}
+    </ul>
+</div>

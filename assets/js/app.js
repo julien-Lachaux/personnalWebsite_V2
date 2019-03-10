@@ -63,6 +63,37 @@ export const app = {
         return hash
     },
 
+    /**
+     * getNav
+     * @description récupère en ajax la barre de nav
+     */
+    getNav(callback) {
+        app.get('/ajax/nav', (response) => {
+            $('.sideBar').html(response)
+            callback()
+        })
+    },
+
+    /**
+     * getNav
+     * @description récupère en ajax la barre de nav
+     */
+    getContactModal() {
+        app.get('/ajax/modal/contact', (response) => {
+            $('.contactModal').html(response)
+        })
+    },
+
+    /**
+     * getNav
+     * @description récupère en ajax la barre de nav
+     */
+    getStylesheets() {
+        app.get('/ajax/assets/stylesheets', (response) => {
+            $('head').html($('head').html() + response)
+        })
+    },
+
     toggleLoader(role = 'page') {
         const loader = document.querySelector('.loaderContainer')
         const isActive = loader.classList.contains('active')
@@ -103,7 +134,7 @@ export const app = {
         if (!isActive) {
             loaderBar.classList.add('active')
             loaderBar.setAttribute('data-item', 0)
-            this.loaderBarInterval = setInterval(app.loaderBarAddItem, 1000);
+            this.loaderBarInterval = setInterval(app.loaderBarAddItem, 325);
         } else {
             loaderBar.classList.remove('active')
             loaderBar.setAttribute('data-item', 0)

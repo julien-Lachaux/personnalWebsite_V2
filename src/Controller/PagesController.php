@@ -57,9 +57,60 @@ class PagesController {
     }
 
     /**
+     * navbar
+     *
+     * @Route("/ajax/nav")
+     * @param Request $request
+     * @param Environment $twig
+     * @param RegistryInterface $doctrine
+     * @return void
+     */
+    public function nav (Request $request, Environment $twig, RegistryInterface $doctrine) {
+        $profile = $doctrine->getRepository(Profile::class)->getProfile();
+        $panels = $doctrine->getRepository(Panel::class)->getDisplayed();
+
+        $panelController = new PanelsController();
+        $navBtn = $panelController->getSvg('navBtn', 'default');
+        $navBtnActive = $panelController->getSvg('navBtn', 'active');
+        $navBtnActiveBackground = $panelController->getSvg('navBtn', 'active-background');
+
+        return new response($twig->render('components/navs/verticalNav.html.twig', [
+            'profile' => $profile[0],
+            'panels' => $panels,
+            'navBtn' => [
+                'default' => $navBtn,
+                'active' => $navBtnActive,
+                'activeBackground' => $navBtnActiveBackground,
+            ]
+        ]));
+    }
+
+    /**
+     * contactModal
+     *
+     * @Route("/ajax/modal/contact")
+     * @param Request $request
+     * @param Environment $twig
+     * @param RegistryInterface $doctrine
+     * @return void
+     */
+    public function contactModal (Request $request, Environment $twig, RegistryInterface $doctrine) {
+        $profile = $doctrine->getRepository(Profile::class)->getProfile();
+        $panelController = new PanelsController();
+
+        return new response($twig->render('modals/contactModal.html.twig', [
+            'profile' => $profile[0],
+            "contactLock" => [
+                "left" => $panelController->getSvg('contactLock', 'left'),
+                "right" => $panelController->getSvg('contactLock', 'right')
+            ],
+        ]));
+    }
+
+    /**
      * panel
      *
-     * @Route("/ajax/{panelName}")
+     * @Route("/ajax/panel/{panelName}")
      * @param String $panelName
      * @param Request $request
      * @param Environment $twig
@@ -154,6 +205,19 @@ class PagesController {
         }
 
         return new response($twig->render("panels/{$panelName}.html.twig", $currentPanel));
+    }
+
+    /**
+     * contactModal
+     *
+     * @Route("/ajax/assets/stylesheets")
+     * @param Request $request
+     * @param Environment $twig
+     * @param RegistryInterface $doctrine
+     * @return void
+     */
+    public function stylesheets (Request $request, Environment $twig, RegistryInterface $doctrine) {
+        return new response($twig->render('assets/stylesheets.html.twig', []));
     }
 
     /**

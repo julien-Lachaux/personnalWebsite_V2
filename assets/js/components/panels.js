@@ -100,7 +100,7 @@ export const panels = {
     },
 
     getAjaxPanel(panel, callback) {
-        var url = '/ajax/' + panel
+        var url = '/ajax/panel/' + panel
         app.get(url, (response) => {
             $('.webContent').html(response)
             callback()
