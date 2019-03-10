@@ -103,7 +103,26 @@
 }
 
 @media screen and (max-width: 1250px) {
-    .loaderContainer.panelLoader {
-        width: 100% !important;
+    .loaderContainer { 
+        &.panelLoader {
+            width: 100% !important;
+        }
+        .loaderDecoration {
+            height: 5em !important;
+        }
+        .decorationLoaderBar {
+            width: 10em !important;
+        }
+        .loaderBar {
+            top: 1em !important;
+            left: 1.25em !important;
+            width: 7.75em !important;
+
+            .loaderBarItem {
+                width: .5em !important;
+                height: 35% !important;
+                margin-right: .125em !important;
+            }
+        }
     }
 }
