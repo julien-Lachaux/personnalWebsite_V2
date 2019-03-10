@@ -25,6 +25,10 @@
     box-sizing: border-box;
     position: relative;
 
+    &#realisations-panel {
+        height: calc(100% - 5em) !important;
+    }
+
     .panelTitle {
         z-index: $lvl-6;
         width: calc(100% - #{$scrollbar-width} - #{$sidebar-width});
