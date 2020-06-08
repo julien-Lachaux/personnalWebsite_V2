@@ -3,10 +3,11 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\PanelRepository;
 
 /**
  * @ORM\Table(name="panels")
- * @ORM\Entity(repositoryClass="App\Repository\PanelRepository")
+ * @ORM\Entity(repositoryClass=App\Repository\PanelRepository::class)
  */
 class Panel
 {

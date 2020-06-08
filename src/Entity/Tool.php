@@ -3,10 +3,11 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ToolRepository;
 
 /**
  * @ORM\Table(name="tools")
- * @ORM\Entity(repositoryClass="App\Repository\ToolRepository")
+ * @ORM\Entity(repositoryClass=ToolRepository::class)
  */
 class Tool
 {

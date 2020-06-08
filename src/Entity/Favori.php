@@ -3,10 +3,11 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\FavoriRepository;
 
 /**
  * @ORM\Table(name="favoris")
- * @ORM\Entity(repositoryClass="App\Repository\FavoriRepository")
+ * @ORM\Entity(repositoryClass=App\Repository\FavoriRepository::class)
  */
 class Favori
 {

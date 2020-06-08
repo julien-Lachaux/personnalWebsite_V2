@@ -3,9 +3,10 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ProfileRepository;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ProfileRepository")
+ * @ORM\Entity(repositoryClass=App\Repository\ProfileRepository::class)
  */
 class Profile
 {

@@ -49,7 +49,7 @@ export const app = {
      * @param {object} error 
      */
     ajaxError(error) {
-        console.log(error)
+        console.log(error.responseText)
     },
 
     /**

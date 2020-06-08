@@ -1,0 +1,27 @@
+doctrine:
+    dbal:
+        driver:               pdo_mysql
+        # if the url option is specified, it will override the above config
+        url:                  mysql://root:root@127.0.0.1:8889/personnalWebsiteV2
+        # the DBAL driverClass option
+        # the DBAL driverOptions option
+        memory:               true
+        server_version:       '5.7'
+    orm:
+        auto_mapping: true
+        default_repository_class:  Doctrine\ORM\EntityRepository
+        # the standard distribution overrides this to be true in debug, false otherwise
+        auto_generate_proxy_classes: false
+        proxy_namespace: Proxies
+        proxy_dir: '%kernel.cache_dir%/doctrine/orm/Proxies'
+        default_entity_manager: default
+        metadata_cache_driver: array
+        query_cache_driver: array
+        result_cache_driver: array
+        mappings:
+            Entity:
+                type: annotation
+                dir: '%kernel.project_dir%/src/Entity'
+                is_bundle: false
+                prefix: App\Entity
+                alias: App

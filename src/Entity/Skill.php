@@ -5,10 +5,11 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\SkillRepository;
 
 /**
  * @ORM\Table(name="skills")
- * @ORM\Entity(repositoryClass="App\Repository\SkillRepository")
+ * @ORM\Entity(repositoryClass=App\Repository\SkillRepository::class)
  */
 class Skill
 {

@@ -1,7 +1,6 @@
 <?php
 namespace App\Controller;
 
-use Symfony\Bridge\Doctrine\RegistryInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Finder\Finder;
 use Twig\Environment;
@@ -12,8 +11,9 @@ use App\Entity\SkillGroup;
 use App\Entity\Tool;
 use App\Entity\Favori;
 use App\Entity\Experience;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  
-class PanelsController {
+class PanelsController extends AbstractController {
 
     /**
      * getSvg

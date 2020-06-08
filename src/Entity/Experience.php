@@ -5,10 +5,11 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ExperienceRepository;
 
 /**
  * @ORM\Table(name="experiences")
- * @ORM\Entity(repositoryClass="App\Repository\ExperienceRepository")
+ * @ORM\Entity(repositoryClass=App\Repository\ExperienceRepository::class)
  */
 class Experience
 {

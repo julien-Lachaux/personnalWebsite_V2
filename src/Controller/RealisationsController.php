@@ -1,13 +1,14 @@
 <?php
 namespace App\Controller;
 
-use Symfony\Bridge\Doctrine\RegistryInterface;
+
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Finder\Finder;
 use Twig\Environment;
 use App\Entity\Realisation;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  
-class RealisationsController {
+class RealisationsController extends AbstractController {
 
     /**
      * getWebProducts
@@ -16,8 +17,8 @@ class RealisationsController {
      *
      * @return Array
      */
-    public function getWebProducts(RegistryInterface $doctrine) {
-        $realisations = $doctrine->getRepository(Realisation::class)->findAll();
+    public function getWebProducts() {
+        $realisations = $this->getDoctrine()->getRepository(Realisation::class)->findAll();
 
         return $realisations;
     }

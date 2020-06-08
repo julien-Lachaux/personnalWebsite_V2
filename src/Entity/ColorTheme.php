@@ -3,10 +3,11 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ColorThemeRepository;
 
 /**
  * @ORM\Table(name="color_themes")
- * @ORM\Entity(repositoryClass="App\Repository\ColorThemeRepository")
+ * @ORM\Entity(repositoryClass=App\Repository\ColorThemeRepository::class)
  */
 class ColorTheme
 {

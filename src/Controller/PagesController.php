@@ -3,7 +3,7 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bridge\Doctrine\RegistryInterface;
+
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Finder\Finder;
 use Twig\Environment;
@@ -16,20 +16,20 @@ use App\Entity\Favori;
 use App\Entity\Experience;
 use App\Controller\PanelsController;
 use App\Controller\RealisationsController;
- 
-class PagesController {
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+class PagesController extends AbstractController {
     /**
      * index
      *
      * @Route("/{page}")
      * @param Request $request
      * @param Environment $twig
-     * @param RegistryInterface $doctrine
      * @return void
      */
-    public function index (Request $request, Environment $twig, RegistryInterface $doctrine) {
-        $profile = $doctrine->getRepository(Profile::class)->getProfile();
-        $panels = $doctrine->getRepository(Panel::class)->getDisplayed();
+    public function index (Request $request, Environment $twig) {
+        $profile = $this->getDoctrine()->getRepository(Profile::class)->getProfile();
+        $panels = $this->getDoctrine()->getRepository(Panel::class)->getDisplayed();
 
         $panelController = new PanelsController();
         $navBtn = $panelController->getSvg('navBtn', 'default');
@@ -62,12 +62,12 @@ class PagesController {
      * @Route("/ajax/nav")
      * @param Request $request
      * @param Environment $twig
-     * @param RegistryInterface $doctrine
+     * @param RegistryInterface $this->getDoctrine()
      * @return void
      */
-    public function nav (Request $request, Environment $twig, RegistryInterface $doctrine) {
-        $profile = $doctrine->getRepository(Profile::class)->getProfile();
-        $panels = $doctrine->getRepository(Panel::class)->getDisplayed();
+    public function nav (Request $request, Environment $twig) {
+        $profile = $this->getDoctrine()->getRepository(Profile::class)->getProfile();
+        $panels = $this->getDoctrine()->getRepository(Panel::class)->getDisplayed();
 
         $panelController = new PanelsController();
         $navBtn = $panelController->getSvg('navBtn', 'default');
@@ -91,11 +91,11 @@ class PagesController {
      * @Route("/ajax/modal/contact")
      * @param Request $request
      * @param Environment $twig
-     * @param RegistryInterface $doctrine
+     * @param RegistryInterface $this->getDoctrine()
      * @return void
      */
-    public function contactModal (Request $request, Environment $twig, RegistryInterface $doctrine) {
-        $profile = $doctrine->getRepository(Profile::class)->getProfile();
+    public function contactModal (Request $request, Environment $twig) {
+        $profile = $this->getDoctrine()->getRepository(Profile::class)->getProfile();
         $panelController = new PanelsController();
 
         return new response($twig->render('modals/contactModal.html.twig', [
@@ -114,16 +114,16 @@ class PagesController {
      * @param String $panelName
      * @param Request $request
      * @param Environment $twig
-     * @param RegistryInterface $doctrine
+     * @param RegistryInterface $this->getDoctrine()
      * @return void
      */
-    public function panel ($panelName, Request $request, Environment $twig, RegistryInterface $doctrine) {
+    public function panel ($panelName, Request $request, Environment $twig) {
         // profile
-        $profile = $doctrine->getRepository(Profile::class)->getProfile()[0];
+        $profile = $this->getDoctrine()->getRepository(Profile::class)->getProfile()[0];
 
         // panel decorations
         $panelController = new PanelsController();
-        $panel = $doctrine->getRepository(Panel::class)->getByNavUrl($panelName);
+        $panel = $this->getDoctrine()->getRepository(Panel::class)->getByNavUrl($panelName);
         $panelColor = $panel->getColorTheme()->getName();
         $panelDecorations = $panel->getDecorations();
         $contactMe = [
@@ -139,29 +139,29 @@ class PagesController {
         switch ($panelName) {
 
             case 'home':
-                $topSkills = $doctrine->getRepository(Skill::class)->getTopSkills(10);
+                $topSkills = $this->getDoctrine()->getRepository(Skill::class)->getTopSkills(10);
                 $currentPanel = [
                     'profile' => $profile,
-                    'tools' => $doctrine->getRepository(Tool::class)->getDisplayed(),
+                    'tools' => $this->getDoctrine()->getRepository(Tool::class)->getDisplayed(),
                     'topSkills' => $topSkills
                 ];
                 break;
 
             case 'skills':
                 $currentPanel = [
-                    'skills_groups' => $doctrine->getRepository(SkillGroup::class)->findAll()
+                    'skills_groups' => $this->getDoctrine()->getRepository(SkillGroup::class)->findAll()
                 ];
                 break;
 
             case 'favoris':
                 $currentPanel = [
-                    'skills_groups' => $doctrine->getRepository(SkillGroup::class)->findAll()
+                    'skills_groups' => $this->getDoctrine()->getRepository(SkillGroup::class)->findAll()
                 ];
                 break;
             
             case 'experiences':
                 // experiences color system
-                $experiences = $doctrine->getRepository(Experience::class)->findAll();
+                $experiences = $this->getDoctrine()->getRepository(Experience::class)->findAll();
                 $i = 0;
                 $color = ['bleu', 'violet', 'vert', 'orange', 'rouge', 'gris'];
 
@@ -184,7 +184,7 @@ class PagesController {
 
             case 'realisations':
                 $realisations = new RealisationsController();
-                $web = $realisations->getWebProducts($doctrine);
+                $web = $realisations->getWebProducts($this->getDoctrine());
 
                 $currentPanel = [
                     'realisations' => [
@@ -213,10 +213,10 @@ class PagesController {
      * @Route("/ajax/assets/stylesheets")
      * @param Request $request
      * @param Environment $twig
-     * @param RegistryInterface $doctrine
+     * @param RegistryInterface $this->getDoctrine()
      * @return void
      */
-    public function stylesheets (Request $request, Environment $twig, RegistryInterface $doctrine) {
+    public function stylesheets (Request $request, Environment $twig) {
         return new response($twig->render('assets/stylesheets.html.twig', []));
     }
 
@@ -227,10 +227,10 @@ class PagesController {
      * @param String $errorCode
      * @param Request $request
      * @param Environment $twig
-     * @param RegistryInterface $doctrine
+     * @param RegistryInterface $this->getDoctrine()
      * @return void
      */
-    public function error ($errorCode, Request $request, Environment $twig, RegistryInterface $doctrine) {
+    public function error ($errorCode, Request $request, Environment $twig) {
         $panelController = new PanelsController();
         $data = [
             "decoration" => $panelController->getSvg('errors', '404')
