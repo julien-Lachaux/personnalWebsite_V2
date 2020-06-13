@@ -1,22 +1,21 @@
 <?php
 namespace App\Controller;
 
+use Twig\Environment;
+use Symfony\Component\Finder\Finder;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Finder\Finder;
-use Twig\Environment;
-use App\Entity\Profile;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Tool;
 use App\Entity\Panel;
 use App\Entity\Skill;
-use App\Entity\SkillGroup;
-use App\Entity\Tool;
 use App\Entity\Favori;
+use App\Entity\Profile;
+use App\Entity\SkillGroup;
 use App\Entity\Experience;
+use App\Entity\Realisation;
 use App\Controller\PanelsController;
-use App\Controller\RealisationsController;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PagesController extends AbstractController {
     /**
@@ -183,8 +182,7 @@ class PagesController extends AbstractController {
                 break;
 
             case 'realisations':
-                $realisations = new RealisationsController();
-                $web = $realisations->getWebProducts($this->getDoctrine());
+                $web = $this->getDoctrine()->getRepository(Realisation::class)->findAll();
 
                 $currentPanel = [
                     'realisations' => [

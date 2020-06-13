@@ -2,7 +2,7 @@ doctrine:
     dbal:
         driver:               pdo_mysql
         # if the url option is specified, it will override the above config
-        url:                  mysql://root:root@127.0.0.1:8889/personnalWebsiteV2
+        url:                  '%env(resolve:DATABASE_URL)%'
         # the DBAL driverClass option
         # the DBAL driverOptions option
         memory:               true

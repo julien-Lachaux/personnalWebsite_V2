@@ -11,7 +11,7 @@
                         <div class="card-header">
                             <div class="card-title">{{ experience.company }}</div>
                             <div class="card-subtitle font-mono {{ experience.color }}-text">{{ experience.job }}</div>
-                            <div class="date font-mono">{{ experience.dateStart|date('d-M-Y') }} - {{ experience.dateEnd|date('d-M-Y') }}</div>
+                            <div class="date font-mono">{{ experience.dateStart|date('d-M-Y') }} - {% if experience.dateEnd != null %}{{ experience.dateEnd|date('d-M-Y') }}{% else %}En cours{% endif %}</div>
                         </div>
                         <article class="card-body">
                             <p>
