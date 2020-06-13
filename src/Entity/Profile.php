@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ProfileRepository;
 
 /**
+ * @ORM\Table(name="profile")
  * @ORM\Entity(repositoryClass=App\Repository\ProfileRepository::class)
  */
 class Profile
